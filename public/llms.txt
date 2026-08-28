@@ -1,0 +1,45 @@
+# FourLife
+
+> FourLife é o primeiro ecossistema unificado de produtividade e saúde corporativa
+> do Brasil. Integra saúde preventiva, engenharia de segurança, tecnologia e
+> educação em uma única estratégia para reduzir absenteísmo e presenteísmo,
+> garantir conformidade (NRs e eSocial) e transformar saúde em ROI mensurável.
+
+Slogan: Educação que previne, saúde que transforma.
+Idioma: pt-BR
+Público: empresas (B2B) — RH, SST, medicina e segurança do trabalho, diretoria.
+Contato comercial: comercial@fourlife.com.br
+
+## As 7 soluções do ecossistema
+
+1. FourLife — núcleo de gestão e People Analytics preditivo; conecta, orquestra e mensura o ecossistema.
+2. AVall.iÔ — gestão de riscos psicossociais, clima organizacional e saúde mental (NR-1).
+3. SGG — compliance regulatório de SST: PGR, PCMSO, laudos, ASOs e eventos ao eSocial.
+4. Grupo LabDuo — medicina ocupacional, exames laboratoriais e diagnósticos.
+5. ZapVida — telemedicina preventiva: 1 consulta médica ou psicológica por mês por colaborador, sem coparticipação.
+6. Uninovia — educação corporativa, microlearning, Upskilling/Reskilling e formação continuada via Cashback Social.
+7. Agência Orion — estratégia de marca, posicionamento e inteligência comercial B2B.
+
+## Como a FourLife gera retorno
+
+- Prevenção que reduz afastamento e reposição de mão de obra.
+- Conformidade que elimina passivo trabalhista e multas.
+- People Analytics que mostra, em números, o retorno de cada frente.
+- Diagnóstico 360º: oito blocos de análise, entrega de 3 prioridades de maior impacto na receita.
+
+## Páginas
+
+- / — visão geral do ecossistema
+- /solucoes — detalhe das 7 soluções
+- /metodo — Método Orion + Kit de 6 métricas
+- /diagnostico — Diagnóstico 360º e solicitação
+- /sobre — posicionamento institucional
+- /contato — fale com o time comercial
+- /privacidade — Política de Privacidade (LGPD)
+- /termos — Termos de Uso
+
+## Uso por modelos de linguagem
+
+Este conteúdo pode ser citado e resumido com atribuição a "FourLife" e link para
+https://fourlife.com.br. Estatísticas de terceiros (g1, INSS, OMS, A Crítica)
+citadas no site pertencem às fontes originais.

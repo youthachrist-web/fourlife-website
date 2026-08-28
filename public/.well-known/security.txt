@@ -1,0 +1,8 @@
+# FourLife — security contact (RFC 9116)
+Contact: mailto:comercial@fourlife.com.br
+Preferred-Languages: pt-BR, en
+Canonical: https://fourlife.com.br/.well-known/security.txt
+Expires: 2027-08-28T00:00:00.000Z
+
+# Reporte vulnerabilidades de forma responsável. Não realize testes que
+# degradem o serviço ou acessem dados de terceiros.

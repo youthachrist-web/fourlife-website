@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/*
+  FourLife design system
+  ----------------------
+  Identity derived from the official FourLife wordmark: a bright teal ("four")
+  paired with a lime green ("Life"). Deep teal is used for text and primary
+  actions so contrast stays AA-compliant on white.
+*/
+
+:root {
+  /* Brand — teal */
+  --brand-50: #ecfbfc;
+  --brand-100: #d0f3f6;
+  --brand-200: #a6e8ee;
+  --brand-300: #6fd6e0;
+  --brand-400: #33bec9;
+  --brand-500: #1aa5b1;
+  --brand-600: #12848f;
+  --brand-700: #136a74;
+  --brand-800: #14555e;
+  --brand-900: #133c43;
+
+  /* Accent — lime */
+  --lime-50: #f5fae8;
+  --lime-100: #e7f2c6;
+  --lime-200: #d3e79a;
+  --lime-300: #bcd968;
+  --lime-400: #a6ce3c;
+  --lime-500: #8bb52a;
+  --lime-600: #6c8f20;
+  --lime-700: #526d1e;
+
+  /* Neutrals */
+  --ink: #0f2a2e;
+  --slate: #46595c;
+  --muted: #6b7d80;
+  --line: #e2e8e8;
+  --surface: #ffffff;
+  --surface-2: #f4f8f8;
+  --surface-3: #eef4f4;
+  --background: #ffffff;
+
+  /* Semantic */
+  --primary: var(--brand-700);
+  --primary-hover: var(--brand-800);
+  --secondary: var(--lime-500);
+  --accent: var(--brand-400);
+  --foreground: var(--ink);
+  --success: #1f8a4c;
+  --warning: #b5730c;
+  --error: #c02626;
+
+  --radius: 0.9rem;
+  --shadow-card: 0 1px 2px rgba(15, 42, 46, 0.04), 0 12px 30px -12px rgba(15, 42, 46, 0.14);
+  --shadow-lift: 0 1px 2px rgba(15, 42, 46, 0.05), 0 22px 44px -16px rgba(15, 42, 46, 0.22);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ecf6f6;
+    --slate: #b6c6c7;
+    --muted: #8ba0a1;
+    --line: #23383b;
+    --surface: #0e1f21;
+    --surface-2: #10262a;
+    --surface-3: #143035;
+    --background: #0a1618;
+    --primary: var(--brand-400);
+    --primary-hover: var(--brand-300);
+    --foreground: var(--ink);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 34px -16px rgba(0, 0, 0, 0.6);
+    --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.45), 0 26px 50px -18px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-slate: var(--slate);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+
+  --color-lime-50: var(--lime-50);
+  --color-lime-100: var(--lime-100);
+  --color-lime-200: var(--lime-200);
+  --color-lime-300: var(--lime-300);
+  --color-lime-400: var(--lime-400);
+  --color-lime-500: var(--lime-500);
+  --color-lime-600: var(--lime-600);
+  --color-lime-700: var(--lime-700);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-display: var(--font-poppins), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.4rem);
+  --radius-2xl: calc(var(--radius) + 0.9rem);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-lift: var(--shadow-lift);
+}
+
+* {
+  border-color: var(--line);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible keyboard focus everywhere. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--brand-200);
+  color: var(--brand-900);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Subtle constellation / grid texture used behind hero + CTA bands. */
+.bg-grid {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(19, 106, 116, 0.14) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Progressive enhancement: only hide when scripting is available, so no-JS
+   visitors always see the content. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  .reveal[data-shown="true"] {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
