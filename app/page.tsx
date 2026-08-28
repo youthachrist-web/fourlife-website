@@ -12,6 +12,7 @@ import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { JsonLd, faqLd, servicesLd } from "@/lib/seo";
 import { solutions, site } from "@/lib/content";
@@ -37,8 +38,10 @@ export default function HomePage() {
           body="Da saúde mental ao compliance de SST, da telemedicina à educação — cada solução gera dados que o núcleo FourLife transforma em decisão."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {solutions.slice(0, 6).map((s) => (
-            <SolutionCard key={s.slug} solution={s} />
+          {solutions.slice(0, 6).map((s, i) => (
+            <Reveal key={s.slug} delay={i * 70}>
+              <SolutionCard solution={s} className="h-full" />
+            </Reveal>
           ))}
         </div>
         <div className="mt-8">

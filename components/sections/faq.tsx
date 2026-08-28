@@ -4,6 +4,7 @@ import { useId, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { faq } from "@/lib/content";
 
 export function Faq({ heading = true }: { heading?: boolean }) {
@@ -19,7 +20,7 @@ export function Faq({ heading = true }: { heading?: boolean }) {
         />
       ) : null}
 
-      <div className="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-background">
+      <Reveal className="mt-10 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-background">
         {faq.map((item, i) => {
           const isOpen = open === i;
           return (
@@ -59,7 +60,7 @@ export function Faq({ heading = true }: { heading?: boolean }) {
             </div>
           );
         })}
-      </div>
+      </Reveal>
     </Section>
   );
 }

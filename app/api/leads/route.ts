@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getEnv } from "@/lib/env";
 import { rateLimit, clientIp } from "@/lib/rate-limit";
-import { leadPayloadSchema } from "@/lib/validation";
+import { leadPayloadSchema, quickLeadPayloadSchema } from "@/lib/validation";
 import { createLead } from "@/lib/leads/service";
 
 export const runtime = "nodejs";
@@ -30,10 +30,12 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Requisição inválida." }, { status: 400 });
   }
 
-  const parsed = leadPayloadSchema.safeParse(body);
-
   // Silent bot handling: honeypot filled or form submitted implausibly fast.
   const raw = (body ?? {}) as Record<string, unknown>;
+  const isQuick = raw.variant === "quick";
+  const parsed = isQuick
+    ? quickLeadPayloadSchema.safeParse(body)
+    : leadPayloadSchema.safeParse(body);
   const honeypot = typeof raw.website === "string" && raw.website.length > 0;
   const renderedAt = Number(raw.renderedAt);
   const tooFast =
@@ -53,18 +55,22 @@ export async function POST(req: Request) {
     );
   }
 
-  const { meta, ...form } = parsed.data;
+  const { meta, ...form } = parsed.data as typeof parsed.data & {
+    company?: string;
+    employees?: string;
+    message?: string;
+  };
   const userAgent = req.headers.get("user-agent")?.slice(0, 512) ?? null;
 
   const result = await createLead({
     name: form.name,
     email: form.email,
     phone: form.phone,
-    company: form.company,
+    company: form.company ?? (isQuick ? "—" : ""),
     employees: form.employees ?? null,
     interest: form.interest ?? null,
     message: form.message ?? null,
-    source: meta?.utmSource ? "campaign" : "website",
+    source: isQuick ? "popup" : meta?.utmSource ? "campaign" : "website",
     page: meta?.pagePath ?? null,
     referrer: meta?.referrer ?? null,
     utmSource: meta?.utmSource ?? null,

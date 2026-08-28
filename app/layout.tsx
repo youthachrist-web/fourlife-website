@@ -4,7 +4,7 @@ import "./globals.css";
 import { site } from "@/lib/content";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
-import { MobileCta } from "@/components/site/mobile-cta";
+import { LeadPopup } from "@/components/lead/lead-popup";
 import { ConsentGate } from "@/components/site/consent-gate";
 import { LeadModalProvider } from "@/components/lead/lead-modal";
 import { JsonLd, organizationLd, websiteLd } from "@/lib/seo";
@@ -93,8 +93,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#136a74",
-  colorScheme: "light dark",
+  themeColor: "#ffffff",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -117,7 +117,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <SiteFooter />
-          <MobileCta />
+          <LeadPopup />
         </LeadModalProvider>
         <ConsentGate />
       </body>

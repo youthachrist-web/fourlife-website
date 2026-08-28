@@ -79,6 +79,30 @@ export const leadFormSchema = z.object({
 
 export type LeadFormValues = z.infer<typeof leadFormSchema>;
 
+/**
+ * Lighter schema for the checklist popup / quick-capture widgets:
+ * name + WhatsApp required, e-mail and company optional.
+ */
+export const quickLeadSchema = z.object({
+  name,
+  phone,
+  email,
+  company: company.optional().or(z.literal("").transform(() => undefined)),
+  interest: z
+    .string()
+    .trim()
+    .max(120)
+    .optional()
+    .transform((v) => (v ? clean(v) : undefined)),
+  consent: z.literal(true, {
+    error: "É necessário aceitar a Política de Privacidade.",
+  }),
+  website: z.string().max(0).optional().or(z.literal("")),
+  renderedAt: z.coerce.number().int().nonnegative().optional(),
+});
+
+export type QuickLeadValues = z.infer<typeof quickLeadSchema>;
+
 export const metaSchema = z.object({
   pagePath: z.string().max(512).optional(),
   referrer: z.string().max(1024).optional(),
@@ -92,6 +116,10 @@ export const metaSchema = z.object({
 export type LeadMeta = z.infer<typeof metaSchema>;
 
 export const leadPayloadSchema = leadFormSchema.extend({
+  meta: metaSchema.optional(),
+});
+
+export const quickLeadPayloadSchema = quickLeadSchema.extend({
   meta: metaSchema.optional(),
 });
 

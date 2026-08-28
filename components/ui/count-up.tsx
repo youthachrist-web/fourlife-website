@@ -36,6 +36,7 @@ export function CountUp({
 
   const [display, setDisplay] = useState<string>(hasNumber ? fmt(0) : value);
   const [shown, setShown] = useState(!hasNumber);
+  const [finished, setFinished] = useState(!hasNumber);
 
   useEffect(() => {
     const node = ref.current;
@@ -51,6 +52,7 @@ export function CountUp({
 
       if (prefersReducedMotion()) {
         setDisplay(fmt(target));
+        setFinished(true);
         return;
       }
       const start = performance.now();
@@ -58,7 +60,11 @@ export function CountUp({
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
         setDisplay(fmt(Math.round(eased * target)));
-        if (t < 1) raf = requestAnimationFrame(tick);
+        if (t < 1) {
+          raf = requestAnimationFrame(tick);
+        } else {
+          setFinished(true);
+        }
       };
       raf = requestAnimationFrame(tick);
     };
@@ -93,8 +99,9 @@ export function CountUp({
   return (
     <span
       ref={ref}
+      data-shown={finished}
       className={cn(
-        "tabular-nums transition-opacity duration-500",
+        "count-pop inline-block tabular-nums transition-opacity duration-500",
         shown ? "opacity-100" : "opacity-0",
         className,
       )}

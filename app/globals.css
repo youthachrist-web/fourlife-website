@@ -56,23 +56,8 @@
   --shadow-lift: 0 1px 2px rgba(15, 42, 46, 0.05), 0 22px 44px -16px rgba(15, 42, 46, 0.22);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ink: #ecf6f6;
-    --slate: #b6c6c7;
-    --muted: #8ba0a1;
-    --line: #23383b;
-    --surface: #0e1f21;
-    --surface-2: #10262a;
-    --surface-3: #143035;
-    --background: #0a1618;
-    --primary: var(--brand-400);
-    --primary-hover: var(--brand-300);
-    --foreground: var(--ink);
-    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 16px 34px -16px rgba(0, 0, 0, 0.6);
-    --shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.45), 0 26px 50px -18px rgba(0, 0, 0, 0.7);
-  }
-}
+/* The FourLife site is intentionally light/white in every context — no dark
+   mode. `color-scheme: light` (set in layout) keeps form controls light too. */
 
 @theme inline {
   --color-background: var(--background);
@@ -189,5 +174,42 @@ body {
     opacity: 1;
     transform: none;
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* Numbers "pop" as they finish counting up. */
+@media (scripting: enabled) {
+  .count-pop[data-shown="true"] {
+    animation: count-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+@keyframes count-pop {
+  0% {
+    transform: scale(0.82);
+    opacity: 0.4;
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Route-change transition (app/template.tsx). */
+@media (scripting: enabled) {
+  .page-enter {
+    animation: page-enter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
