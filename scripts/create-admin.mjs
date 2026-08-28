@@ -10,7 +10,11 @@ if (!email || !password) {
   console.error('Usage: node scripts/create-admin.mjs <email> <password> ["Full Name"]');
   process.exit(1);
 }
-if (!process.env.DATABASE_URL) {
+// Prefer the public proxy URL when present (set by `railway run` locally);
+// falls back to DATABASE_URL inside the container.
+const connectionString =
+  process.env.DATABASE_PUBLIC_URL || process.env.DATABASE_URL;
+if (!connectionString) {
   console.error("DATABASE_URL is not set.");
   process.exit(1);
 }
@@ -20,7 +24,7 @@ if (password.length < 10) {
 }
 
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString,
   ssl: process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : undefined,
 });
 
