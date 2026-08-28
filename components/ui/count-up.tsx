@@ -9,10 +9,9 @@ const prefersReducedMotion = () =>
 
 /**
  * Animates a numeric value from 0 to its target the first time it scrolls into
- * view. Non-numeric values (e.g. "ROI") just fade in. Respects reduced motion.
- *
- * `value` accepts an optional non-digit prefix and suffix, e.g. "34%", "546 mil",
- * "360º", "+12".
+ * view. Preserves the original formatting — prefix, suffix and zero-padding
+ * (so "01" counts up to "01", not "1"). Non-numeric values (e.g. "ROI") just
+ * fade in. Respects reduced motion.
  */
 export function CountUp({
   value,
@@ -25,12 +24,17 @@ export function CountUp({
 }) {
   const ref = useRef<HTMLSpanElement | null>(null);
   const match = value.match(/^(\D*)([\d.,]+)(.*)$/);
-  const target = match ? Number(match[2].replace(/[.,]/g, "")) : NaN;
+  const digits = match ? match[2].replace(/[.,]/g, "") : "";
+  const target = match ? Number(digits) : NaN;
   const prefix = match?.[1] ?? "";
   const suffix = match?.[3] ?? "";
+  const pad = digits.length > 1 && digits.startsWith("0") ? digits.length : 0;
   const hasNumber = Number.isFinite(target);
 
-  const [display, setDisplay] = useState<string>(hasNumber ? `${prefix}0${suffix}` : value);
+  const fmt = (n: number) =>
+    `${prefix}${pad ? String(n).padStart(pad, "0") : n.toLocaleString("pt-BR")}${suffix}`;
+
+  const [display, setDisplay] = useState<string>(hasNumber ? fmt(0) : value);
   const [shown, setShown] = useState(!hasNumber);
 
   useEffect(() => {
@@ -46,15 +50,14 @@ export function CountUp({
       setShown(true);
 
       if (prefersReducedMotion()) {
-        setDisplay(`${prefix}${target.toLocaleString("pt-BR")}${suffix}`);
+        setDisplay(fmt(target));
         return;
       }
       const start = performance.now();
       const tick = (now: number) => {
         const t = Math.min(1, (now - start) / duration);
         const eased = 1 - Math.pow(1 - t, 3);
-        const current = Math.round(eased * target);
-        setDisplay(`${prefix}${current.toLocaleString("pt-BR")}${suffix}`);
+        setDisplay(fmt(Math.round(eased * target)));
         if (t < 1) raf = requestAnimationFrame(tick);
       };
       raf = requestAnimationFrame(tick);
@@ -84,7 +87,8 @@ export function CountUp({
     }
 
     return () => cancelAnimationFrame(raf);
-  }, [hasNumber, prefix, suffix, target, duration]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hasNumber, prefix, suffix, target, duration, pad]);
 
   return (
     <span

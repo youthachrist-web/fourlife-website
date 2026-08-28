@@ -19,13 +19,13 @@ export function Reality() {
         body={realityHeadline.body}
       />
 
-      {/* Retratos de quem carrega o custo — carrossel no mobile, grade no desktop */}
-      <div className="mt-10 -mx-5 flex gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:overflow-visible md:snap-none">
+      {/* Retratos de quem carrega o custo */}
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
         {workerPhotos.map((photo, i) => (
           <Reveal
             key={photo.src}
             delay={i * 90}
-            className="group w-[80%] shrink-0 snap-center overflow-hidden rounded-2xl border border-line bg-surface sm:w-[46%] md:w-auto"
+            className="group overflow-hidden rounded-2xl border border-line bg-surface"
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden">
               <Image

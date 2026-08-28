@@ -1,5 +1,6 @@
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { CountUp } from "@/components/ui/count-up";
 import { method } from "@/lib/content";
 
 export function Method() {
@@ -7,16 +8,16 @@ export function Method() {
     <Section id="metodo" className="bg-background">
       <SectionHeading eyebrow={method.eyebrow} title={method.title} body={method.body} />
 
-      <ol className="mt-10 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
+      <ol className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {method.steps.map((step, i) => (
           <Reveal
             as="li"
             key={step.number}
             delay={i * 70}
-            className="relative flex flex-col rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6"
+            className="relative flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)]"
           >
             <span className="font-display text-sm font-semibold text-brand-400">
-              {step.number}
+              <CountUp value={step.number} duration={900} />
             </span>
             <span className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
               {step.name}

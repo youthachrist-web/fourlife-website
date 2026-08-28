@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { metricsKit } from "@/lib/content";
 
 export function MetricsKit() {
@@ -11,11 +12,13 @@ export function MetricsKit() {
         body={metricsKit.body}
       />
 
-      <ul className="mt-10 grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-        {metricsKit.metrics.map((metric) => (
-          <li
+      <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {metricsKit.metrics.map((metric, i) => (
+          <Reveal
+            as="li"
             key={metric.name}
-            className="flex gap-3 rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow-card)] sm:p-5"
+            delay={i * 60}
+            className="flex gap-3 rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-lime-100 text-lime-700">
               <Check className="h-4 w-4" />
@@ -26,7 +29,7 @@ export function MetricsKit() {
               </span>
               <span className="mt-1 block text-sm text-slate">{metric.detail}</span>
             </span>
-          </li>
+          </Reveal>
         ))}
       </ul>
 

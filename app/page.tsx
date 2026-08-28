@@ -13,7 +13,6 @@ import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { SolutionCard } from "@/components/sections/solution-card";
-import { SectionNav } from "@/components/site/section-nav";
 import { JsonLd, faqLd, servicesLd } from "@/lib/seo";
 import { solutions, site } from "@/lib/content";
 
@@ -27,7 +26,6 @@ export default function HomePage() {
     <>
       <JsonLd data={[faqLd(), servicesLd()]} />
       <Hero />
-      <SectionNav />
       <Reality />
       <Cost />
       <Ecosystem />
@@ -38,13 +36,9 @@ export default function HomePage() {
           title="Uma frente para cada causa de perda de produtividade"
           body="Da saúde mental ao compliance de SST, da telemedicina à educação — cada solução gera dados que o núcleo FourLife transforma em decisão."
         />
-        <div className="mt-10 -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:snap-none xl:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {solutions.slice(0, 6).map((s) => (
-            <SolutionCard
-              key={s.slug}
-              solution={s}
-              className="w-[86%] shrink-0 snap-center sm:w-[60%] md:w-auto"
-            />
+            <SolutionCard key={s.slug} solution={s} />
           ))}
         </div>
         <div className="mt-8">

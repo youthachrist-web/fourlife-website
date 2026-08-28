@@ -15,10 +15,7 @@ export function Section({
   as?: "section" | "div";
 }) {
   return (
-    <Tag
-      id={id}
-      className={cn("scroll-mt-28 py-12 sm:py-16 lg:py-24", className)}
-    >
+    <Tag id={id} className={cn("scroll-mt-24 py-16 sm:py-20 lg:py-24", className)}>
       <Container className={containerClassName}>{children}</Container>
     </Tag>
   );

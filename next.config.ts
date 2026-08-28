@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
+  // Hide the dev-mode overlay indicator ("N" badge).
+  devIndicators: false,
   experimental: {
     optimizePackageImports: ["lucide-react", "motion"],
   },

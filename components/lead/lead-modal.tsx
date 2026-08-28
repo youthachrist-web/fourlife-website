@@ -53,7 +53,7 @@ export function LeadModalProvider({ children }: { children: ReactNode }) {
       {children}
       {state.open ? (
         <div
-          className="fixed inset-0 z-50 flex items-end justify-center p-0 sm:items-center sm:p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4"
           role="dialog"
           aria-modal="true"
           aria-labelledby="lead-modal-title"
@@ -62,9 +62,9 @@ export function LeadModalProvider({ children }: { children: ReactNode }) {
             type="button"
             aria-label="Fechar"
             onClick={close}
-            className="absolute inset-0 bg-black/55 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/55 backdrop-blur-sm"
           />
-          <div className="relative max-h-[92vh] w-full overflow-y-auto rounded-t-3xl border border-line bg-background p-6 shadow-[var(--shadow-lift)] sm:max-w-lg sm:rounded-2xl sm:p-8">
+          <div className="relative my-auto w-full max-w-lg rounded-2xl border border-line bg-background p-6 shadow-[var(--shadow-lift)] sm:p-8">
             <button
               type="button"
               onClick={close}

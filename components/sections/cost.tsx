@@ -10,12 +10,12 @@ export function Cost() {
     <Section id="custo" className="bg-background">
       <SectionHeading eyebrow={cost.eyebrow} title={cost.title} body={cost.body} />
 
-      <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {cost.points.map((point, i) => (
           <Reveal
             key={point.label}
             delay={i * 70}
-            className="rounded-2xl border border-line bg-surface p-4 shadow-[var(--shadow-card)] sm:p-6"
+            className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)]"
           >
             <TrendingDown className="h-5 w-5 text-error" />
             <p className="mt-3 font-display text-3xl font-semibold text-ink">

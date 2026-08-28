@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { CountUp } from "@/components/ui/count-up";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { diagnostico, cta } from "@/lib/content";
 
@@ -13,16 +14,16 @@ export function Diagnostico({ withCta = true }: { withCta?: boolean }) {
         body={diagnostico.body}
       />
 
-      <ol className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+      <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {diagnostico.blocks.map((block, i) => (
           <Reveal
             as="li"
             key={block.number}
             delay={i * 50}
-            className="rounded-xl border border-line bg-background p-4 sm:p-5"
+            className="rounded-xl border border-line bg-background p-5"
           >
             <span className="font-display text-lg font-semibold text-brand-400">
-              {block.number}
+              <CountUp value={block.number} duration={900} />
             </span>
             <p className="mt-1 font-semibold text-ink">{block.name}</p>
             <p className="mt-1 text-sm text-slate">{block.detail}</p>
