@@ -17,7 +17,7 @@ export const site = {
   description:
     "A FourLife integra saúde preventiva, engenharia de segurança, tecnologia e educação em uma única estratégia para reduzir absenteísmo, garantir conformidade e transformar saúde em ROI mensurável.",
   // Set NEXT_PUBLIC_SITE_URL in the environment for the deployed domain.
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://fourlife.com.br",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://fourlife.com.br",
   locale: "pt-BR",
   contact: {
     // From EcossistemaFourLife.pptx, slide 18.

@@ -1,6 +1,6 @@
 import { faq, site, solutions } from "./content";
 
-const url = (process.env.NEXT_PUBLIC_SITE_URL ?? site.url).replace(/\/$/, "");
+const url = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
 
 export function organizationLd() {
   return {

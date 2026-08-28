@@ -22,7 +22,9 @@ const poppins = Poppins({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? site.url;
+// `||` (not `??`) so an empty-string env var still falls back to a valid URL.
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || site.url || "https://fourlife.com.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
