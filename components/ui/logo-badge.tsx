@@ -1,10 +1,13 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { cn } from "@/lib/cn";
 import type { Solution } from "@/lib/content";
 
 /**
  * Renders a solution's logo, or a clean monogram when no logo file exists
- * (e.g. SGG). Used in the ecosystem tab strip and cards.
+ * (e.g. SGG) or the image fails to load. Never leaves an empty gap.
  */
 export function LogoBadge({
   solution,
@@ -15,13 +18,10 @@ export function LogoBadge({
   size?: "sm" | "md" | "lg";
   className?: string;
 }) {
-  const box = {
-    sm: "h-7",
-    md: "h-9",
-    lg: "h-12",
-  }[size];
+  const [failed, setFailed] = useState(false);
+  const box = { sm: "h-7", md: "h-9", lg: "h-12" }[size];
 
-  if (solution.logo) {
+  if (solution.logo && !failed) {
     return (
       <span className={cn("inline-flex items-center", box, className)}>
         <Image
@@ -29,6 +29,7 @@ export function LogoBadge({
           alt={`Logo ${solution.name}`}
           width={200}
           height={72}
+          onError={() => setFailed(true)}
           className="h-full w-auto max-w-[8.5rem] object-contain"
         />
       </span>

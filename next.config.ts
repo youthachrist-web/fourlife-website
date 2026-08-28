@@ -11,6 +11,17 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "motion"],
   },
+  // Image resilience: accept every format we might ever add (incl. SVG logos,
+  // safely sandboxed), keep aspect ratios intact, and cache aggressively so a
+  // one-off optimizer hiccup can't blank a logo on the next request.
+  images: {
+    formats: ["image/avif", "image/webp"],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    minimumCacheTTL: 2678400,
+    deviceSizes: [360, 420, 640, 750, 828, 1080, 1200, 1920],
+  },
   async headers() {
     const csp = [
       "default-src 'self'",

@@ -20,19 +20,13 @@ export function Hero() {
         className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-lime-100 blur-3xl"
         aria-hidden
       />
-      <svg
-        className="pointer-events-none absolute -right-10 top-1/2 hidden h-[120%] -translate-y-1/2 text-brand-200 lg:block"
-        viewBox="0 0 200 260"
-        fill="none"
+      {/* Oversized "4" watermark — same chunky numeral as the FourLife logo. */}
+      <span
         aria-hidden
+        className="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 select-none font-display text-[34rem] font-bold leading-none text-brand-100 lg:block xl:text-[42rem]"
       >
-        <path
-          d="M120 20 L120 240 M120 20 L20 170 L200 170"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinejoin="round"
-        />
-      </svg>
+        4
+      </span>
 
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
         <div>

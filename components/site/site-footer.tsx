@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Mail, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
+import { Logo } from "@/components/site/logo";
 import { nav, site } from "@/lib/content";
 
 const legal = [
@@ -15,13 +15,7 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-surface-2">
       <Container className="grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <Image
-            src="/brand/fourlife-wordmark.png"
-            alt={site.name}
-            width={716}
-            height={212}
-            className="h-9 w-auto"
-          />
+          <Logo className="[&_img]:h-9 [&_span]:text-2xl" />
           <p className="mt-3 font-display text-sm font-medium text-primary">
             {site.slogan}
           </p>

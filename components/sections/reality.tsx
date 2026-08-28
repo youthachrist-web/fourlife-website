@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { Newspaper } from "lucide-react";
+import { ArrowRight, Newspaper } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
+import { SafeImage } from "@/components/ui/safe-image";
 import {
   realityHeadline,
   presenteeismStats,
@@ -19,32 +19,38 @@ export function Reality() {
         body={realityHeadline.body}
       />
 
-      {/* Retratos de quem carrega o custo */}
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-        {workerPhotos.map((photo, i) => (
-          <Reveal
-            key={photo.src}
-            delay={i * 90}
-            className="group overflow-hidden rounded-2xl border border-line bg-surface"
-          >
-            <div className="relative aspect-[4/5] w-full overflow-hidden">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-              <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-ink">
-                {photo.kicker}
-              </span>
-              <p className="absolute inset-x-4 bottom-4 text-sm font-medium leading-snug text-white">
-                {photo.caption}
-              </p>
-            </div>
-          </Reveal>
-        ))}
+      {/* Retratos de quem carrega o custo — carrossel horizontal (PC + mobile) */}
+      <div className="mt-10">
+        <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-muted">
+          <ArrowRight className="h-3.5 w-3.5" /> arraste para o lado
+        </div>
+        <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
+          {workerPhotos.map((photo, i) => (
+            <Reveal
+              key={photo.src}
+              delay={i * 80}
+              className="group w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]"
+            >
+              <div className="relative overflow-hidden rounded-2xl border border-line">
+                <SafeImage
+                  src={photo.src}
+                  alt={photo.alt}
+                  ratio="4 / 5"
+                  rounded="rounded-2xl"
+                  sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 31vw"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+                <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-ink">
+                  {photo.kicker}
+                </span>
+                <p className="absolute inset-x-4 bottom-4 text-sm font-medium leading-snug text-white">
+                  {photo.caption}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       {/* Clippings — a imprensa que o lead pode acompanhar */}

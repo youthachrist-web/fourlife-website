@@ -5,6 +5,7 @@ import { site } from "@/lib/content";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
 import { LeadPopup } from "@/components/lead/lead-popup";
+import { ScrollProgress } from "@/components/site/scroll-progress";
 import { ConsentGate } from "@/components/site/consent-gate";
 import { LeadModalProvider } from "@/components/lead/lead-modal";
 import { JsonLd, organizationLd, websiteLd } from "@/lib/seo";
@@ -93,8 +94,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a1618" },
+  ],
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -111,6 +115,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Pular para o conteúdo
         </a>
+        <ScrollProgress />
         <LeadModalProvider>
           <SiteHeader />
           <main id="conteudo" className="flex-1">
