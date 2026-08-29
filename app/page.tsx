@@ -13,6 +13,7 @@ import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { DragScroll } from "@/components/ui/drag-scroll";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { JsonLd, faqLd, servicesLd } from "@/lib/seo";
 import { solutions, site } from "@/lib/content";
@@ -40,7 +41,7 @@ export default function HomePage() {
         <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-muted">
           <ArrowRight className="h-3.5 w-3.5" /> arraste para ver as soluções
         </div>
-        <div className="-mx-5 mt-3 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
+        <DragScroll ariaLabel="Soluções do ecossistema" className="-mx-5 mt-3 px-5 sm:mx-0 sm:px-0">
           {solutions.slice(0, 6).map((s, i) => (
             <Reveal
               key={s.slug}
@@ -50,7 +51,7 @@ export default function HomePage() {
               <SolutionCard solution={s} className="h-full" />
             </Reveal>
           ))}
-        </div>
+        </DragScroll>
         <div className="mt-8">
           <Link
             href="/solucoes"

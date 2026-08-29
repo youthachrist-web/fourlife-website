@@ -1,8 +1,9 @@
-import { ArrowRight, Newspaper } from "lucide-react";
+import { MoveHorizontal, Newspaper } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
 import { SafeImage } from "@/components/ui/safe-image";
+import { DragScroll } from "@/components/ui/drag-scroll";
 import {
   realityHeadline,
   presenteeismStats,
@@ -19,12 +20,15 @@ export function Reality() {
         body={realityHeadline.body}
       />
 
-      {/* Retratos de quem carrega o custo — carrossel horizontal (PC + mobile) */}
+      {/* Retratos de quem carrega o custo — carrossel (arrasta no PC, desliza no mobile) */}
       <div className="mt-10">
         <div className="mb-2 flex items-center gap-1.5 text-xs font-medium text-muted">
-          <ArrowRight className="h-3.5 w-3.5" /> arraste para o lado
+          <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver
         </div>
-        <div className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
+        <DragScroll
+          ariaLabel="Retratos de trabalhadores"
+          className="-mx-5 px-5 sm:mx-0 sm:px-0"
+        >
           {workerPhotos.map((photo, i) => (
             <Reveal
               key={photo.src}
@@ -50,7 +54,7 @@ export function Reality() {
               </div>
             </Reveal>
           ))}
-        </div>
+        </DragScroll>
       </div>
 
       {/* Clippings — a imprensa que o lead pode acompanhar */}

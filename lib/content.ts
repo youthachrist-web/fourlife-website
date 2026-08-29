@@ -93,15 +93,17 @@ export const workerPhotos = [
     kicker: "A mente que se esgota",
     caption: "Burnout drena foco, decisão e performance muito antes de virar afastamento.",
   },
-  {
-    // Coloque o arquivo em public/images/reality-industria.jpg — o SafeImage
-    // mostra um placeholder elegante enquanto ele não existir.
-    src: "/images/reality-industria.jpg",
-    alt: "Operador industrial com colete refletivo sentado, cabeça apoiada na mão, ao lado do capacete.",
-    kicker: "A pressão do chão de fábrica",
-    caption: "Jornada intensa, meta e risco: a fadiga vira presenteísmo e, depois, afastamento.",
-  },
+  // 4º retrato (chão de fábrica): adicionar quando o arquivo
+  // public/images/reality-industria.jpg existir — ver workerPhotosExtra abaixo.
 ];
+
+/** Extra worker portrait — only rendered when its image file is present. */
+export const workerPhotoIndustria = {
+  src: "/images/reality-industria.jpg",
+  alt: "Operador industrial com colete refletivo sentado, cabeça apoiada na mão, ao lado do capacete.",
+  kicker: "A pressão do chão de fábrica",
+  caption: "Jornada intensa, meta e risco: a fadiga vira presenteísmo e, depois, afastamento.",
+};
 
 /** Manchetes reais sobre a epidemia de afastamentos — clippings com motion. */
 export const newsClips = [

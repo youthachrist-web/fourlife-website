@@ -24,7 +24,7 @@ export function Hero() {
           Present on every breakpoint, just scaled + repositioned. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-8 -top-6 select-none font-display text-[11rem] font-bold leading-none text-brand-100 sm:-right-12 sm:text-[16rem] lg:-right-16 lg:top-1/2 lg:-translate-y-1/2 lg:text-[34rem] xl:text-[42rem]"
+        className="pointer-events-none absolute -right-6 -top-4 select-none font-display text-[12rem] font-bold leading-none text-brand-200/80 sm:-right-12 sm:text-[17rem] lg:-right-16 lg:top-1/2 lg:-translate-y-1/2 lg:text-[34rem] lg:text-brand-100 xl:text-[42rem]"
       >
         4
       </span>

@@ -144,7 +144,7 @@ export function LeadPopup() {
             <CheckCircle2 className="mx-auto h-7 w-7 text-brand-600" />
             <p className="mt-1.5 text-[13px] font-semibold text-ink">Recebido!</p>
             <p className="mt-0.5 text-[11px] leading-snug text-slate">
-              Você recebe o checklist no WhatsApp em instantes.
+              Nossa equipe envia o checklist e retorna pelo seu WhatsApp em até 1 dia útil.
             </p>
           </div>
         ) : (
