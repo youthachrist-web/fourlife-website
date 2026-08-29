@@ -2,7 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Self-contained server bundle for the Docker / Railway image.
-  output: "standalone",
+  // Vercel uses its own build output — `standalone` there trips "Finalizing
+  // page optimization" — so only emit it off-Vercel.
+  output: process.env.VERCEL ? undefined : "standalone",
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,

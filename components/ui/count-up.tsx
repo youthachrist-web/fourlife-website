@@ -15,7 +15,7 @@ const prefersReducedMotion = () =>
  */
 export function CountUp({
   value,
-  duration = 1400,
+  duration = 1900,
   className,
 }: {
   value: string;
@@ -69,7 +69,9 @@ export function CountUp({
       raf = requestAnimationFrame(tick);
     };
 
-    if (node.getBoundingClientRect().top < window.innerHeight * 1.1) {
+    const rect = node.getBoundingClientRect();
+    const onScreen = rect.top < window.innerHeight * 0.85 && rect.bottom > 0;
+    if (onScreen) {
       run();
     } else if (typeof IntersectionObserver !== "undefined") {
       const io = new IntersectionObserver(
@@ -79,10 +81,11 @@ export function CountUp({
             io.disconnect();
           }
         },
-        { threshold: 0.4 },
+        { threshold: 0.6, rootMargin: "0px 0px -10% 0px" },
       );
       io.observe(node);
-      const failsafe = window.setTimeout(run, 2000);
+      // Long failsafe only — must not pre-fire numbers far below the fold.
+      const failsafe = window.setTimeout(run, 7000);
       return () => {
         io.disconnect();
         window.clearTimeout(failsafe);
