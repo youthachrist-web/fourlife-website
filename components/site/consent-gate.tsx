@@ -27,6 +27,17 @@ export function ConsentGate() {
     setReady(true);
   }, []);
 
+  const blocking = ready && !accepted;
+
+  useEffect(() => {
+    if (!blocking) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [blocking]);
+
   function accept() {
     try {
       localStorage.setItem(KEY, "1");
@@ -36,16 +47,16 @@ export function ConsentGate() {
     setAccepted(true);
   }
 
-  if (!ready || accepted) return null;
+  if (!blocking) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[90] flex items-center justify-center overflow-y-auto overscroll-contain bg-black/60 p-4 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="consent-title"
     >
-      <div className="w-full max-w-md rounded-2xl border border-line bg-background p-6 text-center shadow-[var(--shadow-lift)] sm:p-8">
+      <div className="my-auto w-full max-w-md rounded-2xl border border-line bg-background p-6 text-center shadow-[var(--shadow-lift)] sm:p-8">
         <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
           <ShieldCheck className="h-6 w-6" />
         </span>

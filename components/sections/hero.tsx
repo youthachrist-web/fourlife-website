@@ -20,10 +20,11 @@ export function Hero() {
         className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-lime-100 blur-3xl"
         aria-hidden
       />
-      {/* Oversized "4" watermark — same chunky numeral as the FourLife logo. */}
+      {/* Oversized "4" watermark — same chunky numeral as the FourLife logo.
+          Present on every breakpoint, just scaled + repositioned. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -right-16 top-1/2 hidden -translate-y-1/2 select-none font-display text-[34rem] font-bold leading-none text-brand-100 lg:block xl:text-[42rem]"
+        className="pointer-events-none absolute -right-8 -top-6 select-none font-display text-[11rem] font-bold leading-none text-brand-100 sm:-right-12 sm:text-[16rem] lg:-right-16 lg:top-1/2 lg:-translate-y-1/2 lg:text-[34rem] xl:text-[42rem]"
       >
         4
       </span>
