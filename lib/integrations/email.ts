@@ -13,6 +13,10 @@ function getTransporter(): Transporter {
     port: env.SMTP_PORT ?? 465,
     secure: env.SMTP_SECURE ?? (env.SMTP_PORT ?? 465) === 465,
     auth: { user: env.SMTP_USER, pass: env.SMTP_PASS },
+    // Fail fast if the SMTP port is blocked / slow — never hang the request.
+    connectionTimeout: 10_000,
+    greetingTimeout: 8_000,
+    socketTimeout: 15_000,
   });
   return transporter;
 }
