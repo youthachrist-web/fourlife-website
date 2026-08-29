@@ -37,9 +37,16 @@ export default function HomePage() {
           title="Uma frente para cada causa de perda de produtividade"
           body="Da saúde mental ao compliance de SST, da telemedicina à educação — cada solução gera dados que o núcleo FourLife transforma em decisão."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-muted">
+          <ArrowRight className="h-3.5 w-3.5" /> arraste para ver as soluções
+        </div>
+        <div className="-mx-5 mt-3 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:px-0">
           {solutions.slice(0, 6).map((s, i) => (
-            <Reveal key={s.slug} delay={i * 70}>
+            <Reveal
+              key={s.slug}
+              delay={i * 70}
+              className="w-[82%] shrink-0 snap-start sm:w-[60%] lg:w-[calc((100%-2.5rem)/3)]"
+            >
               <SolutionCard solution={s} className="h-full" />
             </Reveal>
           ))}
