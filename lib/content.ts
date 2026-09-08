@@ -39,7 +39,6 @@ export const site = {
 export const nav = [
   { label: "Ecossistema", href: "/#ecossistema" },
   { label: "Soluções", href: "/solucoes" },
-  { label: "Método", href: "/metodo" },
   { label: "Diferenciais", href: "/diferenciais" },
   { label: "Sobre", href: "/sobre" },
 ] as const;
@@ -526,79 +525,6 @@ export const solutions: Solution[] = [
 ];
 
 /* --------------------------------------------------------------------------- */
-/* The method                                                                  */
-/* --------------------------------------------------------------------------- */
-
-export const method = {
-  eyebrow: "O Método Orion",
-  title: "A engenharia de crescimento do ecossistema",
-  body: "A marca vende antes do vendedor, o marketing prova com dados, a venda converte com perguntas e a base expande com o próximo produto.",
-  note: "IA com direção humana: alavanca de produção, nunca substituta da tese.",
-  steps: [
-    {
-      number: "01",
-      name: "Marca",
-      headline: "Saúde vira marca empregadora",
-      detail: "Audiência e desejo antes da oferta.",
-    },
-    {
-      number: "02",
-      name: "Marketing",
-      headline: "Educação que previne",
-      detail: "Consciência de graça, consequência paga.",
-    },
-    {
-      number: "03",
-      name: "Vendas",
-      headline: "Diagnóstico que converte",
-      detail: "Perguntas antes de pitch; qualificação radical.",
-    },
-    {
-      number: "04",
-      name: "Expansão",
-      headline: "Próximo produto em escala",
-      detail: "10% da base compra 10x. Cashback Social multiplica.",
-    },
-  ],
-};
-
-/* --------------------------------------------------------------------------- */
-/* Diagnóstico 360º                                                            */
-/* --------------------------------------------------------------------------- */
-
-export const diagnostico = {
-  eyebrow: "Diagnóstico 360º",
-  title: "Oito blocos antes da solução",
-  body: "O diagnóstico mapeia o dinheiro oculto do seu negócio. A entrega são 3 prioridades — as de maior impacto na receita pelo menor esforço. Não 30 páginas: 3 prioridades que vendem o plano.",
-  blocks: [
-    { number: "01", name: "Fundamentos", detail: "Problema real e meta de 12 meses." },
-    { number: "02", name: "Marca", detail: "“Somos os únicos que…” + arquétipo." },
-    { number: "03", name: "Público", detail: "Perfil que converte + medo e ambição." },
-    { number: "04", name: "Aquisição", detail: "Canais por % e dependência." },
-    { number: "05", name: "Conversão", detail: "Funil, script de perguntas, fugas." },
-    { number: "06", name: "Retenção", detail: "LTV e o próximo produto (10% / 10x)." },
-    { number: "07", name: "Números", detail: "Kit de 6 métricas · CAC × LTV ≥ 3×." },
-    { number: "08", name: "IA & Automação", detail: "Voz documentada + último olho humano." },
-  ],
-};
-
-export const metricsKit = {
-  eyebrow: "O Kit de 6 métricas",
-  title: "O que importa vira número no caixa",
-  body: "Nada de likes e impressões como resultado. Toda ação com indicador definido antes de começar.",
-  footnote:
-    "Acrescido de CAC × LTV ≥ 3× por canal — a conta que define se dá para escalar.",
-  metrics: [
-    { name: "Receita", detail: "Crescimento real no papel, sem receita que esconde prejuízo." },
-    { name: "Lucro", detail: "Margem por serviço — há quem venda e perca dinheiro." },
-    { name: "Quota de mercado", detail: "Tração no segmento-alvo vs. concorrência." },
-    { name: "Saúde da marca", detail: "Busca orgânica, % de vendas do orgânico, seguidores." },
-    { name: "NPS / Reviews", detail: "Satisfação + avaliações Google — 1 melhoria por mês." },
-    { name: "Gargalos", detail: "Onde a operação trava a promessa do marketing." },
-  ],
-};
-
-/* --------------------------------------------------------------------------- */
 /* FAQ                                                                         */
 /* --------------------------------------------------------------------------- */
 
@@ -608,7 +534,7 @@ export const faq = [
     pain: "Dor 1 — Absenteísmo alto e sem causa clara",
     question: "Minha empresa tem muitos afastamentos e eu não sei o motivo real. Como a FourLife ajuda?",
     answer:
-      "O Diagnóstico 360º e o People Analytics da FourLife cruzam dados de saúde física, saúde mental, clima e conformidade para revelar as causas ocultas do absenteísmo — de risco psicossocial a dor osteomuscular — e apontam as 3 frentes de maior impacto na receita pelo menor esforço.",
+      "O diagnóstico gratuito e o People Analytics da FourLife cruzam dados de saúde física, saúde mental, clima e conformidade para revelar as causas ocultas do absenteísmo — de risco psicossocial a dor osteomuscular — e apontam as 3 frentes de maior impacto na receita pelo menor esforço.",
   },
   {
     pain: "Dor 2 — Gasto com SST sem retorno visível",
@@ -632,7 +558,7 @@ export const faq = [
     pain: "Dor 5 — Muitos fornecedores desconectados",
     question: "Tenho um fornecedor para cada coisa e nenhum conversa entre si. Como a FourLife resolve?",
     answer:
-      "A FourLife é o núcleo que conecta as 7 soluções — gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação e estratégia — em uma única estratégia orquestrada por dados. Um contrato, um painel, uma direção. Começa pelo Diagnóstico 360º.",
+      "A FourLife é o núcleo que conecta as 7 soluções — gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação e estratégia — em uma única estratégia orquestrada por dados. Um contrato, um painel, uma direção. Começa por um diagnóstico gratuito.",
   },
 ];
 
@@ -662,7 +588,7 @@ export const testimonials = [
 ];
 
 export const interestOptions = [
-  "Diagnóstico 360º",
+  "Diagnóstico gratuito",
   "Diferenciais Carlos Chagas (saúde ocupacional)",
   "Ecossistema completo",
   "Saúde mental & riscos psicossociais (AVall.iÔ)",

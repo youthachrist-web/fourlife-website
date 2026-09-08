@@ -45,12 +45,12 @@ amigável e `/api/health` reporta `database: "unconfigured"`.
 
 ```
 app/
-  page.tsx                Home — narrativa do ecossistema (Hero → Realidade → Custo →
-                          Ecossistema → 7 Soluções → Método → Diagnóstico → Métricas →
-                          Depoimentos → FAQ → CTA)
+  page.tsx                Home — narrativa do ecossistema (Hero → 4 Pilares → Jornada da
+                          Saúde → Checkup estratégico → Diferenciais Carlos Chagas →
+                          Realidade → Custo → Ecossistema → 7 Soluções → Depoimentos →
+                          FAQ → CTA)
   solucoes/               As 7 soluções em detalhe
-  metodo/                 Método Orion + Kit de 6 métricas
-  diagnostico/            Diagnóstico 360º + formulário
+  diferenciais/           Diferenciais Carlos Chagas em detalhe
   sobre/  contato/        Institucional + captação
   privacidade/  termos/  obrigado/   Legal + agradecimento
   admin/                  Painel de leads (protegido — bcrypt + sessão JWT)
@@ -69,8 +69,10 @@ components/
               mouse + setas + toque) · safe-image (nunca quebra o layout) · logo-badge
   site/       site-header · site-footer · logo (com fallback textual) · consent-gate
               (aceite de Termos na 1ª visita) · scroll-progress (barra de leitura)
-  sections/   hero · reality (fotos + clippings de imprensa) · cost · ecosystem
-              (abas com logotipos) · method · diagnostico · metrics-kit · testimonials
+  sections/   hero · pillars (4 pilares) · health-journey (Jornada da Saúde, ciclo de
+              6 meses) · checkup-insights (o que cada exame revela sobre produtividade)
+              · differentials (Diferenciais Carlos Chagas) · reality (fotos + clippings
+              de imprensa) · cost · ecosystem (abas com logotipos) · testimonials
               · faq (5 dores) · cta-band · solution-card
   lead/       lead-form (formulário completo) · lead-modal (popup do CTA) ·
               lead-cta (botão que abre o modal) · lead-popup (checklist, canto da tela)

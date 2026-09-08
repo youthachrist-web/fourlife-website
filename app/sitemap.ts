@@ -4,7 +4,7 @@ import { site } from "@/lib/content";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
   const now = new Date();
-  const routes = ["", "/solucoes", "/metodo", "/diferenciais", "/diagnostico", "/sobre", "/contato", "/privacidade", "/termos"];
+  const routes = ["", "/solucoes", "/diferenciais", "/sobre", "/contato", "/privacidade", "/termos"];
   return routes.map((path) => ({
     url: `${base}${path}`,
     lastModified: now,
@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       path === ""
         ? 1
-        : path === "/contato" || path === "/diferenciais" || path === "/diagnostico"
+        : path === "/contato" || path === "/diferenciais"
           ? 0.8
           : 0.6,
   }));

@@ -25,7 +25,7 @@ lead no PostgreSQL e dispara um webhook para o n8n, que orquestra o resto.
     "phone": "(48) 99999-0000",
     "company": "Empresa LTDA",
     "employees": "51-200",
-    "interest": "Diagnóstico 360º",
+    "interest": "Diagnóstico gratuito",
     "message": "texto livre ou null",
     "source": "website | campaign",
     "page": "/contato",

@@ -4,13 +4,11 @@ import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/sections/hero";
 import { Pillars } from "@/components/sections/pillars";
 import { HealthJourney } from "@/components/sections/health-journey";
+import { CheckupInsights } from "@/components/sections/checkup-insights";
 import { Differentials } from "@/components/sections/differentials";
 import { Reality } from "@/components/sections/reality";
 import { Cost } from "@/components/sections/cost";
 import { Ecosystem } from "@/components/sections/ecosystem";
-import { Method } from "@/components/sections/method";
-import { Diagnostico } from "@/components/sections/diagnostico";
-import { MetricsKit } from "@/components/sections/metrics-kit";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -33,7 +31,8 @@ export default function HomePage() {
       <Hero />
       <Pillars />
       <HealthJourney />
-      <Differentials />
+      <CheckupInsights className="bg-surface-2" />
+      <Differentials className="bg-background" />
       <Reality />
       <Cost />
       <Ecosystem />
@@ -68,9 +67,6 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Method />
-      <Diagnostico />
-      <MetricsKit />
       <Testimonials />
       <Faq />
       <CtaBand />

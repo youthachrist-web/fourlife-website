@@ -25,14 +25,30 @@ Contato comercial: comercial@fourlife.com.br
 - Prevenção que reduz afastamento e reposição de mão de obra.
 - Conformidade que elimina passivo trabalhista e multas.
 - People Analytics que mostra, em números, o retorno de cada frente.
-- Diagnóstico 360º: oito blocos de análise, entrega de 3 prioridades de maior impacto na receita.
+- Diagnóstico gratuito: mapeia o negócio e entrega as 3 prioridades de maior impacto na receita.
+
+## Os 4 pilares
+
+1. Saúde física e mental — check-up, educação em saúde e monitoramento contínuo.
+2. Tecnologia e inovação — IA e analytics que transformam dados de saúde em decisão de gestão.
+3. Normas regulamentadoras — base para as NRs 01, 05 e 07; evidências para auditoria.
+4. Educação — programa educacional contínuo baseado nos dados dos colaboradores.
+
+## Jornada da Saúde (ciclo de 6 meses)
+
+Mês 1 — check-up, exames clínicos, exames mentais e IA Analytics.
+Meses 2–5 — resultados individuais e ações multidisciplinares presenciais (médicos, nutricionistas, neurologistas, psicólogos).
+Mês 6 — novo check-up e nova medição.
+
+## Diferenciais Carlos Chagas (saúde ocupacional)
+
+Tudo no mesmo dia, resultados em até 48h, atendimento por ordem de chegada, estrutura própria com capilaridade nacional, corpo técnico 100% CLT, atendimento in company e unidade móvel.
 
 ## Páginas
 
-- / — visão geral do ecossistema
+- / — visão geral do ecossistema, 4 pilares, Jornada da Saúde e Diferenciais Carlos Chagas
 - /solucoes — detalhe das 7 soluções
-- /metodo — Método Orion + Kit de 6 métricas
-- /diagnostico — Diagnóstico 360º e solicitação
+- /diferenciais — Diferenciais Carlos Chagas em detalhe
 - /sobre — posicionamento institucional
 - /contato — fale com o time comercial
 - /privacidade — Política de Privacidade (LGPD)

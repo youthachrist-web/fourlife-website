@@ -5,7 +5,7 @@ import { cta, site } from "@/lib/content";
 
 export function CtaBand({
   title = "Saúde que engaja. Dados que provam.",
-  body = "Comece pelo Diagnóstico 360º e receba as 3 prioridades de maior impacto na receita.",
+  body = "Comece por um diagnóstico gratuito e receba as 3 prioridades de maior impacto na receita.",
 }: {
   title?: string;
   body?: string;

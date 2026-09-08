@@ -28,7 +28,7 @@ export default function SolucoesPage() {
       </Section>
       <CtaBand
         title="Qual frente pesa mais na sua operação?"
-        body="No Diagnóstico 360º priorizamos as soluções de maior impacto na receita pelo menor esforço."
+        body="No diagnóstico gratuito priorizamos as soluções de maior impacto na receita pelo menor esforço."
       />
     </>
   );
