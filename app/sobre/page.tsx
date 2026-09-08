@@ -6,7 +6,7 @@ import { pillars, ecosystemIntro, site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Sobre",
   description:
-    "A FourLife é o primeiro ecossistema unificado de produtividade e saúde corporativa do Brasil: prevenção, conformidade, educação e performance em uma só estratégia.",
+    "A FourLife é o primeiro ecossistema unificado de produtividade e saúde corporativa do Brasil: saúde física e mental, tecnologia e inovação, normas regulamentadoras e educação em uma só estratégia.",
   alternates: { canonical: "/sobre" },
 };
 
