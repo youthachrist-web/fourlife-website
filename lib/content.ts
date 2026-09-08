@@ -361,6 +361,10 @@ export const checkupInsights = {
   items: [
     {
       exam: "Hemograma completo",
+      image: {
+        src: "/images/checkup-hemograma.webp",
+        alt: "Profissional ao telefone, mão na testa, sinal de fadiga e sobrecarga diante do notebook.",
+      },
       reads: [
         "Anemias: fadiga, apatia e sonolência — queda de foco e presenteísmo.",
         "Infecções e inflamações: ansiedade e depressão — absenteísmo elevado.",
@@ -370,6 +374,10 @@ export const checkupInsights = {
     },
     {
       exam: "Glicose e colesterol",
+      image: {
+        src: "/images/checkup-glicose.webp",
+        alt: "Aferição de pressão arterial em atendimento clínico, vista de cima.",
+      },
       reads: [
         "Glicose elevada: fadiga, visão turva e neuropatias; ansiedade e medo de complicações crônicas.",
         "Colesterol alto: silencioso até eventos graves (infarto, AVC); estresse e dificuldade de foco.",
@@ -378,6 +386,10 @@ export const checkupInsights = {
     },
     {
       exam: "GGT e função hepática",
+      image: {
+        src: "/images/checkup-ggt.webp",
+        alt: "Homem pensativo apoiado nas mãos, expressão de preocupação.",
+      },
       reads: [
         "Físico: alteração da função hepática — fadiga, mal-estar e risco de evolução para cirrose.",
         "Mental: ansiedade e estresse pelo medo de doenças crônicas; álcool agrava depressão e dependência.",
@@ -386,6 +398,10 @@ export const checkupInsights = {
     },
     {
       exam: "T4 livre e cortisol",
+      image: {
+        src: "/images/checkup-t4cortisol.webp",
+        alt: "Mulher sentada, joelhos abraçados, expressão de esgotamento.",
+      },
       reads: [
         "Físico: função do eixo HPA e resposta ao estresse; níveis cronicamente elevados favorecem alterações metabólicas e cardiovasculares.",
         "Mental: excesso de cortisol associa-se a ansiedade, depressão, irritabilidade e prejuízo de memória; a deficiência gera apatia e baixa motivação.",
