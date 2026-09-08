@@ -7,7 +7,7 @@ import { CheckCircle2, ClipboardCheck, Loader2, X } from "lucide-react";
 import { readUtm } from "@/lib/validation";
 
 const KEY = "fl_checklist_v1";
-const HIDDEN_ON = ["/contato", "/diagnostico", "/admin"];
+const HIDDEN_ON = ["/contato", "/admin"];
 
 /**
  * Compact, dismissible checklist lead-magnet (oriondigital.pt style).
@@ -93,7 +93,7 @@ export function LeadPopup() {
           email,
           consent: true,
           variant: "quick",
-          interest: "Checklist do Diagnóstico 360º",
+          interest: "Checklist da Jornada da Saúde",
           renderedAt: mountedAt.current,
           meta: {
             pagePath: pathname,
@@ -153,10 +153,10 @@ export function LeadPopup() {
               <ClipboardCheck className="h-4 w-4" />
             </span>
             <p className="mt-2 pr-4 font-display text-[13px] font-semibold leading-snug text-ink">
-              Checklist do Diagnóstico 360º
+              Checklist da Jornada da Saúde
             </p>
             <p className="mt-0.5 text-[11px] leading-snug text-slate">
-              Os 8 blocos para achar o dinheiro oculto do seu negócio — no seu WhatsApp.
+              Os 4 pilares para blindar a saúde e a produtividade do seu time — no seu WhatsApp.
             </p>
 
             <form onSubmit={onSubmit} className="mt-2.5 grid gap-1.5" noValidate>

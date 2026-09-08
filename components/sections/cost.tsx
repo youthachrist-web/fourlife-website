@@ -45,8 +45,8 @@ export function Cost() {
             {cta.primary.label} <ArrowRight className="h-4 w-4" />
           </LeadCta>
           <p className="text-xs text-brand-800/70">
-            No Diagnóstico 360º você recebe as 3 prioridades de maior impacto na receita
-            pelo menor esforço.
+            No diagnóstico gratuito você recebe as 3 prioridades de maior impacto na
+            receita pelo menor esforço.
           </p>
         </div>
       </div>

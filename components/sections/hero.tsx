@@ -1,4 +1,4 @@
-import { ArrowRight, ShieldCheck, Activity, GraduationCap, LineChart } from "lucide-react";
+import { ArrowRight, HeartPulse, Cpu, ScrollText, GraduationCap } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
@@ -6,7 +6,7 @@ import { CountUp } from "@/components/ui/count-up";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { site, cta, ecosystemStats, pillars } from "@/lib/content";
 
-const pillarIcons = [ShieldCheck, Activity, GraduationCap, LineChart];
+const pillarIcons = [HeartPulse, Cpu, ScrollText, GraduationCap];
 
 export function Hero() {
   return (
