@@ -1,6 +1,7 @@
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
+import { DeckFigure } from "@/components/ui/deck-figure";
 import { healthJourney } from "@/lib/content";
 
 export function HealthJourney({
@@ -38,6 +39,15 @@ export function HealthJourney({
         ))}
       </ol>
 
+      <Reveal>
+        <DeckFigure
+          className="mt-10"
+          src="/deck/jornada-saude.webp"
+          alt="Infográfico FourLife — Jornada da Saúde: check-up inicial, ações integradas, acompanhamento e resultados (prevenção de doenças, redução de ausências, produtividade e retorno financeiro)."
+          caption="Jornada da Saúde"
+        />
+      </Reveal>
+
       {/* Linha do tempo de 6 meses */}
       <div className="mt-12">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
@@ -73,6 +83,15 @@ export function HealthJourney({
             </Reveal>
           ))}
         </ol>
+
+        <Reveal>
+          <DeckFigure
+            className="mt-8"
+            src="/deck/ciclo-6-meses.webp"
+            alt="Infográfico FourLife — ciclo de 6 meses: Mês 1 (checkup, exames clínicos, coleta de sangue, exames mentais, IA Analytics), Meses 2 a 5 (resultados e diagnósticos individuais, ações multidisciplinares presenciais, campanhas, palestras, eventos, plataforma de educação e microlearning) e Mês 6 (novo check-up)."
+            caption="Ciclo de 6 meses"
+          />
+        </Reveal>
       </div>
     </Section>
   );
