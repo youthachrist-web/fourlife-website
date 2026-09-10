@@ -3,6 +3,7 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
 import { SafeImage } from "@/components/ui/safe-image";
+import { DeckFigure } from "@/components/ui/deck-figure";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import {
   realityHeadline,
@@ -101,8 +102,17 @@ export function Reality() {
         </ol>
       </div>
 
+      <Reveal>
+        <DeckFigure
+          className="mt-16"
+          src="/deck/presenteismo.webp"
+          alt="Infográfico FourLife — 'Já imaginou que esse pode ser o cenário atual da sua empresa?': 34%, 2%, 92%, 19% e 74% de presenteísmo/absenteísmo, representados como cargas de bateria."
+          caption="Presenteísmo e absenteísmo"
+        />
+      </Reveal>
+
       {/* Números do presenteísmo — com motion */}
-      <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {presenteeismStats.map((stat) => (
           <li key={stat.label} className="bg-surface p-6">
             <p className="font-display text-3xl font-semibold text-primary">

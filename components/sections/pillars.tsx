@@ -1,6 +1,7 @@
 import { HeartPulse, Cpu, ScrollText, GraduationCap } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { DeckFigure } from "@/components/ui/deck-figure";
 import { fourPillars } from "@/lib/content";
 
 const pillarIcons = [HeartPulse, Cpu, ScrollText, GraduationCap];
@@ -54,6 +55,15 @@ export function Pillars() {
           );
         })}
       </ol>
+
+      <Reveal>
+        <DeckFigure
+          className="mt-12"
+          src="/deck/pilares.webp"
+          alt="Infográfico FourLife — Nosso plano em 4 pilares: 1. saúde física e mental, 2. tecnologia e inovação, 3. normas regulamentadoras, 4. educação."
+          caption="Nosso plano em 4 pilares"
+        />
+      </Reveal>
     </Section>
   );
 }

@@ -31,8 +31,8 @@ export default function HomePage() {
       <Hero />
       <Pillars />
       <HealthJourney />
-      <CheckupInsights className="bg-surface-2" />
-      <Differentials className="bg-background" />
+      <Differentials className="bg-surface-2" />
+      <CheckupInsights className="bg-background" />
       <Reality />
       <Cost />
       <Ecosystem />
