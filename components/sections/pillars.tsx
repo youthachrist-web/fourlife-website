@@ -64,6 +64,27 @@ export function Pillars() {
           caption="Nosso plano em 4 pilares"
         />
       </Reveal>
+
+      <Reveal className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <DeckFigure
+          src="/deck/pilar-tecnologia.webp"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          alt="Infográfico FourLife — pilar 2, tecnologia e inovação: uso de IA e analytics para coletar e tratar dados de saúde física e mental; relatórios claros para gestores; inovação no modelo de intervenção; educação em saúde como instrumento de gestão estratégica."
+          caption="2. Tecnologia e inovação"
+        />
+        <DeckFigure
+          src="/deck/pilar-normas.webp"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          alt="Infográfico FourLife — pilar 3, normas e regulamentação: base para as NRs 01, 05 e 07; evidências formais para auditorias e órgãos reguladores; redução de riscos trabalhistas e financeiros; segurança jurídica para o negócio."
+          caption="3. Normas e regulamentação"
+        />
+        <DeckFigure
+          src="/deck/pilar-educacao.webp"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          alt="Infográfico FourLife — pilar 4, educação: programa educacional baseado nos dados dos colaboradores; workshops, treinamentos e acompanhamento contínuo; intervenções práticas de educação em saúde, produtividade e qualidade de vida; cultura de prevenção e melhoria contínua."
+          caption="4. Educação"
+        />
+      </Reveal>
     </Section>
   );
 }

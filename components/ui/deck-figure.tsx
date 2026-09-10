@@ -11,6 +11,7 @@ export function DeckFigure({
   caption,
   ratio = "16 / 9",
   className,
+  sizes = "(max-width: 1024px) 100vw, 960px",
   priority,
 }: {
   src: string;
@@ -18,6 +19,7 @@ export function DeckFigure({
   caption?: string;
   ratio?: string;
   className?: string;
+  sizes?: string;
   priority?: boolean;
 }) {
   return (
@@ -28,7 +30,7 @@ export function DeckFigure({
           alt={alt}
           ratio={ratio}
           rounded="rounded-none"
-          sizes="(max-width: 1024px) 100vw, 960px"
+          sizes={sizes}
           priority={priority}
         />
       </div>

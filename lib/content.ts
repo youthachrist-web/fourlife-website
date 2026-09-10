@@ -165,7 +165,7 @@ export const pillars = [
   },
   {
     name: "Tecnologia e inovação",
-    detail: "O que não é medido não pode ser melhorado. Entregamos dados que viram resultado.",
+    detail: "O que não é medido não pode ser melhorado. Entregamos dados que viram resultados.",
   },
   {
     name: "Normas regulamentadoras",
@@ -198,7 +198,7 @@ export const fourPillars = [
     number: "02",
     name: "Tecnologia e inovação",
     thesis:
-      "O que não é medido não pode ser melhorado. Nós entregamos dados que viram resultado.",
+      "O que não é medido não pode ser melhorado. Nós entregamos dados que viram resultados.",
     points: [
       "IA e analytics para coletar e tratar dados de saúde física e mental.",
       "Relatórios claros para gestores: decisões baseadas em evidências.",

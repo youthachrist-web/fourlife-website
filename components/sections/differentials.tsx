@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { DeckFigure } from "@/components/ui/deck-figure";
 import { differentials } from "@/lib/content";
 
 const itemIcons = [CalendarClock, Timer, Users, Building2, BadgeCheck, Truck];
@@ -52,6 +53,15 @@ export function Differentials({
           );
         })}
       </ul>
+
+      <Reveal>
+        <DeckFigure
+          className={showHeading ? "mt-10" : "mt-8"}
+          src="/deck/diferenciais.webp"
+          alt="Infográfico FourLife — Os Grandes Diferenciais Carlos Chagas: tudo no mesmo dia (deslocamento único), resultados em até 48 horas, atendimento por ordem de chegada, estrutura própria e capilaridade nacional, corpo técnico 100% CLT, atendimento in company e unidade móvel."
+          caption="Os Grandes Diferenciais Carlos Chagas"
+        />
+      </Reveal>
     </Section>
   );
 }
