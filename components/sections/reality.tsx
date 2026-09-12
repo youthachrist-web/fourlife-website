@@ -35,18 +35,16 @@ export function Reality() {
               delay={i * 80}
               className="group w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]"
             >
-              <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-brand-700 via-brand-800 to-ink">
+              <div className="relative overflow-hidden rounded-2xl border border-line">
                 <SafeImage
                   src={photo.src}
                   alt={photo.alt}
                   ratio="4 / 5"
                   rounded="rounded-2xl"
-                  contain
-                  className="bg-transparent"
                   sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 31vw"
-                  imgClassName="object-bottom transition-transform duration-700 group-hover:scale-105"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-ink">
                   {photo.kicker}
                 </span>

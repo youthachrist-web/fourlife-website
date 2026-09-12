@@ -75,26 +75,26 @@ export const presenteeismStats: { value: string; label: string }[] = [
 /** Retratos de quem carrega o custo do adoecimento — usados no storytelling. */
 export const workerPhotos = [
   {
-    src: "/images/reality-limpeza-cutout.webp",
-    alt: "Trabalhadora da limpeza sentada no chão, exausta, ao fim do turno, ao lado do carrinho de limpeza.",
+    src: "/images/reality-limpeza.jpg",
+    alt: "Trabalhadora da limpeza sentada no chão, exausta, ao fim do turno em um escritório vazio à noite.",
     kicker: "Fim de turno",
     caption: "O esgotamento raramente é registrado. Ele aparece no absenteísmo do mês seguinte.",
   },
   {
-    src: "/images/reality-fisico-cutout.webp",
-    alt: "Operador segurando o volante de um equipamento industrial, em imagem preto e branco.",
+    src: "/images/reality-fisico.jpg",
+    alt: "Operador de empilhadeira em ambiente industrial, em imagem preto e branco.",
     kicker: "O corpo que trabalha",
     caption: "Distúrbios osteomusculares e lombares lideram a concessão de auxílio por incapacidade temporária.",
   },
   {
-    src: "/images/reality-burnout-cutout.webp",
+    src: "/images/reality-burnout.jpg",
     alt: "Profissional com a mão na cabeça diante do notebook, sinal de sobrecarga no trabalho do conhecimento.",
     kicker: "A mente que se esgota",
     caption: "Burnout drena foco, decisão e performance muito antes de virar afastamento.",
   },
   {
-    src: "/images/reality-industria-cutout.webp",
-    alt: "Operador industrial de colete refletivo, segurando o capacete, cabeça apoiada na mão, exausto.",
+    src: "/images/reality-industria.jpg",
+    alt: "Operador industrial de colete refletivo e capacete, sentado com a cabeça apoiada na mão, exausto no armazém.",
     kicker: "A pressão do chão de fábrica",
     caption: "Jornada intensa, meta e risco: a fadiga vira presenteísmo e, depois, afastamento.",
   },
@@ -345,68 +345,6 @@ export const differentials = {
       title: "Atendimento in company e unidade móvel",
       detail:
         "Equipe multidisciplinar na sua empresa em horários agendados, eliminando o deslocamento do time.",
-    },
-  ],
-};
-
-/* --------------------------------------------------------------------------- */
-/* Checkup que enxerga além do exame — lab markers → productivity              */
-/* Content: "Fourlife add.pptx", slides 9–12.                                  */
-/* --------------------------------------------------------------------------- */
-
-export const checkupInsights = {
-  eyebrow: "Checkup estratégico",
-  title: "Cada marcador conta uma história de produtividade",
-  body: "Exames de rotina, lidos com foco em saúde física, saúde mental e impacto no trabalho, antecipam o afastamento antes que ele aconteça.",
-  items: [
-    {
-      exam: "Hemograma completo",
-      image: {
-        src: "/images/checkup-hemograma.webp",
-        alt: "Profissional ao telefone, mão na testa, sinal de fadiga e sobrecarga diante do notebook.",
-      },
-      reads: [
-        "Anemias: fadiga, apatia e sonolência — queda de foco e presenteísmo.",
-        "Infecções e inflamações: ansiedade e depressão — absenteísmo elevado.",
-        "Distúrbios de coagulação: preocupação com a saúde — afastamentos longos.",
-        "Hemoglobinopatias: dor crônica e irritabilidade — produtividade irregular.",
-      ],
-    },
-    {
-      exam: "Glicose e colesterol",
-      image: {
-        src: "/images/checkup-glicose.webp",
-        alt: "Aferição de pressão arterial em atendimento clínico, vista de cima.",
-      },
-      reads: [
-        "Glicose elevada: fadiga, visão turva e neuropatias; ansiedade e medo de complicações crônicas.",
-        "Colesterol alto: silencioso até eventos graves (infarto, AVC); estresse e dificuldade de foco.",
-        "No trabalho: quedas de desempenho, maior absenteísmo e risco de afastamentos prolongados.",
-      ],
-    },
-    {
-      exam: "GGT e função hepática",
-      image: {
-        src: "/images/checkup-ggt.webp",
-        alt: "Homem pensativo apoiado nas mãos, expressão de preocupação.",
-      },
-      reads: [
-        "Físico: alteração da função hepática — fadiga, mal-estar e risco de evolução para cirrose.",
-        "Mental: ansiedade e estresse pelo medo de doenças crônicas; álcool agrava depressão e dependência.",
-        "Trabalho: queda de energia, mais absenteísmo, prejuízo cognitivo e afastamentos longos.",
-      ],
-    },
-    {
-      exam: "T4 livre e cortisol",
-      image: {
-        src: "/images/checkup-t4cortisol.webp",
-        alt: "Mulher sentada, joelhos abraçados, expressão de esgotamento.",
-      },
-      reads: [
-        "Físico: função do eixo HPA e resposta ao estresse; níveis cronicamente elevados favorecem alterações metabólicas e cardiovasculares.",
-        "Mental: excesso de cortisol associa-se a ansiedade, depressão, irritabilidade e prejuízo de memória; a deficiência gera apatia e baixa motivação.",
-        "Trabalho: menor produtividade, mais absenteísmo e risco de afastamento prolongado.",
-      ],
     },
   ],
 };

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { HealthJourney } from "@/components/sections/health-journey";
-import { CheckupInsights } from "@/components/sections/checkup-insights";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { differentials } from "@/lib/content";
@@ -51,7 +50,6 @@ export default function DiferenciaisPage() {
       </Section>
 
       <HealthJourney className="bg-surface-2" />
-      <CheckupInsights className="bg-background" />
 
       <CtaBand
         title="Leve o check-up estratégico para a sua operação"

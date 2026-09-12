@@ -4,7 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/sections/hero";
 import { Pillars } from "@/components/sections/pillars";
 import { HealthJourney } from "@/components/sections/health-journey";
-import { CheckupInsights } from "@/components/sections/checkup-insights";
 import { Differentials } from "@/components/sections/differentials";
 import { Reality } from "@/components/sections/reality";
 import { Cost } from "@/components/sections/cost";
@@ -32,7 +31,6 @@ export default function HomePage() {
       <Pillars />
       <HealthJourney />
       <Differentials className="bg-surface-2" />
-      <CheckupInsights className="bg-background" />
       <Reality />
       <Cost />
       <Ecosystem />
