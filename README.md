@@ -3,7 +3,7 @@
 Site institucional e de **captação de leads** da **FourLife — Ecossistema Integrado de
 Produtividade e Saúde**.
 
-- **Produção:** https://fourlife-web-production.up.railway.app
+- **Produção:** https://fourlife-website-production.up.railway.app
 - **Stack:** Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind CSS v4 ·
   PostgreSQL + Drizzle · Docker/Railway
 - Conteúdo extraído de `EcossistemaFourLife.pptx` (jan/2026) + site legado
