@@ -75,26 +75,26 @@ export const presenteeismStats: { value: string; label: string }[] = [
 /** Retratos de quem carrega o custo do adoecimento — usados no storytelling. */
 export const workerPhotos = [
   {
-    src: "/images/reality-limpeza.jpg",
-    alt: "Trabalhadora da limpeza sentada no chão, exausta, ao fim do turno em um escritório vazio à noite.",
+    src: "/images/reality-limpeza-cutout.webp",
+    alt: "Trabalhadora da limpeza sentada no chão, exausta, ao fim do turno, ao lado do carrinho de limpeza.",
     kicker: "Fim de turno",
     caption: "O esgotamento raramente é registrado. Ele aparece no absenteísmo do mês seguinte.",
   },
   {
-    src: "/images/reality-fisico.jpg",
-    alt: "Operador de empilhadeira em ambiente industrial, em imagem preto e branco.",
+    src: "/images/reality-fisico-cutout.webp",
+    alt: "Operador segurando o volante de um equipamento industrial, em imagem preto e branco.",
     kicker: "O corpo que trabalha",
     caption: "Distúrbios osteomusculares e lombares lideram a concessão de auxílio por incapacidade temporária.",
   },
   {
-    src: "/images/reality-burnout.jpg",
+    src: "/images/reality-burnout-cutout.webp",
     alt: "Profissional com a mão na cabeça diante do notebook, sinal de sobrecarga no trabalho do conhecimento.",
     kicker: "A mente que se esgota",
     caption: "Burnout drena foco, decisão e performance muito antes de virar afastamento.",
   },
   {
-    src: "/images/reality-industria.jpg",
-    alt: "Operador industrial de colete refletivo e capacete, sentado com a cabeça apoiada na mão, exausto no armazém.",
+    src: "/images/reality-industria-cutout.webp",
+    alt: "Operador industrial de colete refletivo, segurando o capacete, cabeça apoiada na mão, exausto.",
     kicker: "A pressão do chão de fábrica",
     caption: "Jornada intensa, meta e risco: a fadiga vira presenteísmo e, depois, afastamento.",
   },

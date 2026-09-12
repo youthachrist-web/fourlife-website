@@ -3,7 +3,6 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
 import { SafeImage } from "@/components/ui/safe-image";
-import { DeckFigure } from "@/components/ui/deck-figure";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import {
   realityHeadline,
@@ -36,16 +35,18 @@ export function Reality() {
               delay={i * 80}
               className="group w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]"
             >
-              <div className="relative overflow-hidden rounded-2xl border border-line">
+              <div className="relative overflow-hidden rounded-2xl border border-line bg-gradient-to-b from-brand-700 via-brand-800 to-ink">
                 <SafeImage
                   src={photo.src}
                   alt={photo.alt}
                   ratio="4 / 5"
                   rounded="rounded-2xl"
+                  contain
+                  className="bg-transparent"
                   sizes="(max-width: 640px) 78vw, (max-width: 1024px) 46vw, 31vw"
-                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                  imgClassName="object-bottom transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/15 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-ink via-ink/50 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full bg-background/90 px-3 py-1 text-xs font-semibold text-ink">
                   {photo.kicker}
                 </span>
@@ -102,17 +103,8 @@ export function Reality() {
         </ol>
       </div>
 
-      <Reveal>
-        <DeckFigure
-          className="mt-16"
-          src="/deck/presenteismo.webp"
-          alt="Infográfico FourLife — 'Já imaginou que esse pode ser o cenário atual da sua empresa?': 34%, 2%, 92%, 19% e 74% de presenteísmo/absenteísmo, representados como cargas de bateria."
-          caption="Presenteísmo e absenteísmo"
-        />
-      </Reveal>
-
       {/* Números do presenteísmo — com motion */}
-      <ul className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
         {presenteeismStats.map((stat) => (
           <li key={stat.label} className="bg-surface p-6">
             <p className="font-display text-3xl font-semibold text-primary">
