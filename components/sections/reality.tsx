@@ -1,7 +1,7 @@
 import { MoveHorizontal, Newspaper } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { CountUp } from "@/components/ui/count-up";
+import { StatRing } from "@/components/ui/stat-ring";
 import { SafeImage } from "@/components/ui/safe-image";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import {
@@ -101,15 +101,17 @@ export function Reality() {
         </ol>
       </div>
 
-      {/* Números do presenteísmo — com motion */}
-      <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-        {presenteeismStats.map((stat) => (
-          <li key={stat.label} className="bg-surface p-6">
-            <p className="font-display text-3xl font-semibold text-primary">
-              <CountUp value={stat.value} />
-            </p>
-            <p className="mt-1 text-sm leading-snug text-slate">{stat.label}</p>
-          </li>
+      {/* Números do presenteísmo — painel de gauges animados */}
+      <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {presenteeismStats.map((stat, i) => (
+          <Reveal as="li" key={stat.label} delay={i * 80}>
+            <StatRing
+              value={Number(stat.value.replace(/\D/g, ""))}
+              label={stat.label}
+              tone={i % 2 === 0 ? "lime" : "brand"}
+              className="h-full w-full"
+            />
+          </Reveal>
         ))}
       </ul>
 

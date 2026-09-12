@@ -7,7 +7,6 @@ import { HealthJourney } from "@/components/sections/health-journey";
 import { Differentials } from "@/components/sections/differentials";
 import { Reality } from "@/components/sections/reality";
 import { Cost } from "@/components/sections/cost";
-import { Ecosystem } from "@/components/sections/ecosystem";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
 import { CtaBand } from "@/components/sections/cta-band";
@@ -33,7 +32,6 @@ export default function HomePage() {
       <Differentials className="bg-surface-2" />
       <Reality />
       <Cost />
-      <Ecosystem />
 
       <Section id="solucoes" className="bg-background">
         <SectionHeading
@@ -45,7 +43,7 @@ export default function HomePage() {
           <ArrowRight className="h-3.5 w-3.5" /> arraste para ver as soluções
         </div>
         <DragScroll ariaLabel="Soluções do ecossistema" className="-mx-5 mt-3 px-5 sm:mx-0 sm:px-0">
-          {solutions.slice(0, 6).map((s, i) => (
+          {solutions.map((s, i) => (
             <Reveal
               key={s.slug}
               delay={i * 70}

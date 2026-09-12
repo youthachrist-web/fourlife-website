@@ -217,6 +217,18 @@ body {
     animation: count-pop 0.55s cubic-bezier(0.22, 1, 0.36, 1);
   }
 }
+
+/* Progress/timeline bars that wipe in together with their Reveal wrapper. */
+@media (scripting: enabled) {
+  .reveal .progress-fill {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .reveal[data-shown="true"] .progress-fill {
+    transform: scaleX(1);
+    transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 200ms;
+  }
+}
 @keyframes count-pop {
   0% {
     transform: scale(0.7);

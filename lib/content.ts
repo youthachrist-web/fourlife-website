@@ -37,7 +37,6 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Ecossistema", href: "/#ecossistema" },
   { label: "Soluções", href: "/solucoes" },
   { label: "Diferenciais", href: "/diferenciais" },
   { label: "Sobre", href: "/sobre" },
@@ -233,9 +232,6 @@ export const fourPillars = [
 ];
 
 export const ecosystemIntro = {
-  eyebrow: "A nova visão",
-  title: "De soluções isoladas para um ecossistema",
-  body: "Saúde, segurança, educação, tecnologia e estratégia trabalhando juntas. A empresa deixa de reagir aos problemas e passa a antecipar resultados.",
   equation: "Saúde + Segurança + Educação + Tecnologia + Estratégia = Performance com ROI",
 };
 
