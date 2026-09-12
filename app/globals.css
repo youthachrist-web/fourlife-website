@@ -218,15 +218,15 @@ body {
   }
 }
 
-/* Progress/timeline bars that wipe in together with their Reveal wrapper. */
+/* Small SVG progress rings (e.g. the Differentials rank badge) that draw in
+   together with their Reveal wrapper — see --ring-circumference/--ring-offset. */
 @media (scripting: enabled) {
-  .reveal .progress-fill {
-    transform: scaleX(0);
-    transform-origin: left;
+  .reveal .chart-ring {
+    stroke-dashoffset: var(--ring-circumference, 100);
   }
-  .reveal[data-shown="true"] .progress-fill {
-    transform: scaleX(1);
-    transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1) 200ms;
+  .reveal[data-shown="true"] .chart-ring {
+    stroke-dashoffset: var(--ring-offset, 0);
+    transition: stroke-dashoffset 900ms cubic-bezier(0.16, 1, 0.3, 1) 250ms;
   }
 }
 @keyframes count-pop {

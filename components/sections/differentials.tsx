@@ -14,6 +14,9 @@ import { differentials } from "@/lib/content";
 
 const itemIcons = [CalendarClock, Timer, Users, Building2, BadgeCheck, Truck];
 
+const RING_R = 16;
+const RING_C = 2 * Math.PI * RING_R;
+
 export function Differentials({
   className = "bg-surface-2",
   showHeading = true,
@@ -21,6 +24,8 @@ export function Differentials({
   className?: string;
   showHeading?: boolean;
 }) {
+  const total = differentials.items.length;
+
   return (
     <Section id="diferenciais" className={className}>
       {showHeading ? (
@@ -40,35 +45,59 @@ export function Differentials({
       <DragScroll ariaLabel="Diferenciais Carlos Chagas" className="-mx-5 px-5 sm:mx-0 sm:px-0">
         {differentials.items.map((item, i) => {
           const Icon = itemIcons[i];
+          const fraction = (i + 1) / total;
+          const offset = RING_C * (1 - fraction);
           return (
             <Reveal
               key={item.title}
               delay={i * 70}
-              className="group relative w-[80%] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-800 via-brand-900 to-ink p-6 shadow-[0_1px_2px_rgba(0,0,0,0.4),0_24px_44px_-20px_rgba(0,0,0,0.7)] transition-transform duration-500 hover:-translate-y-1 sm:w-[52%] lg:w-[31%]"
+              className="group w-[80%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-background shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[52%] lg:w-[31%]"
             >
-              <div
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent"
-              />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-8 -bottom-10 h-40 w-40 rounded-full bg-lime-400/20 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
-              />
-              <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-lime-300 shadow-[0_0_16px_-2px_rgba(166,206,60,0.5)]">
-                <Icon className="h-5 w-5" />
-              </span>
-              <span
-                aria-hidden
-                className="pointer-events-none absolute right-5 top-5 select-none font-display text-3xl font-bold text-white/[0.12]"
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="relative mt-4 font-display text-base font-semibold text-white">
-                {item.title}
-              </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-white/70">
-                {item.detail}
-              </p>
+              <div className="h-1.5 w-full bg-gradient-to-r from-brand-400 to-lime-400" />
+              <div className="p-6">
+                <div className="flex items-start justify-between gap-3">
+                  {/* Ícone com motion contínua (anel pulsando) */}
+                  <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 animate-ping rounded-xl bg-brand-300/50 [animation-duration:2.4s]"
+                    />
+                    <Icon className="relative h-5 w-5" />
+                  </span>
+
+                  {/* Mini-gráfico: posição do diferencial no conjunto dos 6 */}
+                  <div className="relative flex h-11 w-11 shrink-0 items-center justify-center">
+                    <svg viewBox="0 0 40 40" className="h-11 w-11 -rotate-90">
+                      <circle cx="20" cy="20" r={RING_R} fill="none" stroke="var(--line)" strokeWidth="4" />
+                      <circle
+                        cx="20"
+                        cy="20"
+                        r={RING_R}
+                        fill="none"
+                        stroke="var(--lime-400)"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_C}
+                        className="chart-ring"
+                        style={
+                          {
+                            "--ring-circumference": RING_C,
+                            "--ring-offset": offset,
+                          } as React.CSSProperties
+                        }
+                      />
+                    </svg>
+                    <span className="absolute font-display text-[11px] font-semibold text-ink">
+                      {i + 1}/{total}
+                    </span>
+                  </div>
+                </div>
+
+                <h3 className="mt-4 font-display text-base font-semibold text-ink">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">{item.detail}</p>
+              </div>
             </Reveal>
           );
         })}

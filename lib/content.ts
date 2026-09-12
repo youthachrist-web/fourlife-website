@@ -55,21 +55,7 @@ export const realityHeadline = {
   eyebrow: "A realidade invisível",
   title: "O adoecimento no trabalho já é epidemia — e o custo não aparece na planilha",
   body: "Mais de 546 mil afastamentos por saúde mental no Brasil em 2025 — recorde pela segunda vez em 10 anos. Distúrbios osteomusculares e lombares lideram a concessão de auxílio por incapacidade temporária. Antes do afastamento, a sobrecarga já drena foco, decisão e performance.",
-  sources: [
-    { label: "g1 · 26/01/2026", detail: "546 mil afastamentos por saúde mental em 2025" },
-    { label: "INSS", detail: "Perfil epidemiológico — auxílio-doença" },
-    { label: "OMS / ISST 2024", detail: "Burnout no trabalho do conhecimento" },
-  ],
 };
-
-export const presenteeismStats: { value: string; label: string }[] = [
-  { value: "34%", label: "dos colaboradores apresentam sinais de presenteísmo" },
-  { value: "74%", label: "dos afastamentos ligados a transtornos mentais e dores crônicas" },
-  { value: "19%", label: "das jornadas perdidas com queda de foco e fadiga" },
-  { value: "92%", label: "das empresas não medem o impacto financeiro do presenteísmo" },
-  { value: "2%", label: "dos gestores identificam o presenteísmo precocemente" },
-  { value: "267%", label: "de alta em processos por burnout em SC em 9 anos" },
-];
 
 /** Retratos de quem carrega o custo do adoecimento — usados no storytelling. */
 export const workerPhotos = [

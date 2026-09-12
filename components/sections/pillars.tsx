@@ -26,44 +26,42 @@ export function Pillars() {
             <Reveal
               key={pillar.number}
               delay={i * 90}
-              className="group relative w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-800 via-brand-900 to-ink p-6 shadow-[0_1px_2px_rgba(0,0,0,0.4),0_24px_44px_-20px_rgba(0,0,0,0.7)] transition-transform duration-500 hover:-translate-y-1 sm:w-[58%] lg:w-[31%]"
+              className="group relative w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-background shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[58%] lg:w-[31%]"
             >
-              {/* Glass sheen + glow */}
+              {/* Brand-color accent stripe — the logo's teal-to-lime */}
               <div
                 aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent"
+                className="h-1.5 w-full bg-gradient-to-r from-brand-400 to-lime-400"
               />
-              <div
-                aria-hidden
-                className="pointer-events-none absolute -right-8 -top-10 h-40 w-40 rounded-full bg-lime-400/20 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
-              />
-              <span
-                aria-hidden
-                className="pointer-events-none absolute -right-3 -top-6 select-none font-display text-[7rem] font-bold leading-none text-white/[0.06]"
-              >
-                {pillar.number.replace(/^0/, "")}
-              </span>
+              <div className="relative p-6">
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute -right-3 -top-2 select-none font-display text-[7rem] font-bold leading-none text-brand-50"
+                >
+                  {pillar.number.replace(/^0/, "")}
+                </span>
 
-              <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-lime-300 shadow-[0_0_16px_-2px_rgba(166,206,60,0.5)]">
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="relative mt-4 font-display text-lg font-semibold text-white">
-                {pillar.name}
-              </h3>
-              <p className="relative mt-2 text-sm leading-relaxed text-white/70">
-                {pillar.thesis}
-              </p>
-              <ul className="relative mt-4 space-y-2 border-t border-white/10 pt-4 text-sm text-white/80">
-                {pillar.points.map((point) => (
-                  <li key={point} className="flex gap-2">
-                    <span
-                      aria-hidden
-                      className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400"
-                    />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="relative mt-4 font-display text-lg font-semibold text-ink">
+                  {pillar.name}
+                </h3>
+                <p className="relative mt-2 text-sm leading-relaxed text-slate">
+                  {pillar.thesis}
+                </p>
+                <ul className="relative mt-4 space-y-2 border-t border-line pt-4 text-sm text-slate">
+                  {pillar.points.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <span
+                        aria-hidden
+                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400"
+                      />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           );
         })}

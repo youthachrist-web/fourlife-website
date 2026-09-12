@@ -1,15 +1,9 @@
 import { MoveHorizontal, Newspaper } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { StatRing } from "@/components/ui/stat-ring";
 import { SafeImage } from "@/components/ui/safe-image";
 import { DragScroll } from "@/components/ui/drag-scroll";
-import {
-  realityHeadline,
-  presenteeismStats,
-  workerPhotos,
-  newsClips,
-} from "@/lib/content";
+import { realityHeadline, workerPhotos, newsClips } from "@/lib/content";
 
 export function Reality() {
   return (
@@ -99,32 +93,6 @@ export function Reality() {
             referência do cenário.
           </li>
         </ol>
-      </div>
-
-      {/* Números do presenteísmo — painel de gauges animados */}
-      <ul className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {presenteeismStats.map((stat, i) => (
-          <Reveal as="li" key={stat.label} delay={i * 80}>
-            <StatRing
-              value={Number(stat.value.replace(/\D/g, ""))}
-              label={stat.label}
-              tone={i % 2 === 0 ? "lime" : "brand"}
-              className="h-full w-full"
-            />
-          </Reveal>
-        ))}
-      </ul>
-
-      <div className="mt-6 flex flex-wrap gap-2">
-        {realityHeadline.sources.map((s) => (
-          <span
-            key={s.label}
-            className="rounded-full border border-line bg-surface-2 px-3 py-1 text-xs text-muted"
-            title={s.detail}
-          >
-            {s.label}
-          </span>
-        ))}
       </div>
     </Section>
   );
