@@ -345,7 +345,7 @@ export const techInnovation = {
       detail: "Uso de IA e analytics para coletar e tratar dados de saúde física e mental.",
       image: {
         src: "/images/tech-ia-analytics.jpg",
-        alt: "Equipe médica treina reanimação cardiopulmonar em um manequim, coletando dados clínicos durante a simulação.",
+        alt: "Médico acompanha um procedimento assistido por braço robótico, com um tablet em mãos.",
       },
     },
     {
@@ -353,7 +353,7 @@ export const techInnovation = {
       detail: "Relatórios claros para gestores: decisões baseadas em evidências.",
       image: {
         src: "/images/tech-relatorios-gestores.jpg",
-        alt: "Pesquisadores em laboratório analisam amostras e tubos de ensaio para gerar dados de saúde.",
+        alt: "Médico revisa um relatório impresso de análise mineral capilar, com gráficos e indicadores.",
       },
     },
     {
@@ -361,7 +361,7 @@ export const techInnovation = {
       detail: "Inovação no modelo de intervenção — menos achismos, mais produtividade mensurável.",
       image: {
         src: "/images/tech-inovacao-modelo.jpg",
-        alt: "Médico revisa um relatório impresso de análise mineral capilar, com gráficos e indicadores.",
+        alt: "Pesquisadores em laboratório analisam amostras e tubos de ensaio para gerar dados de saúde.",
       },
     },
     {
@@ -369,7 +369,7 @@ export const techInnovation = {
       detail: "Educação em saúde como instrumento de gestão estratégica.",
       image: {
         src: "/images/tech-educacao-saude.jpg",
-        alt: "Médico acompanha um procedimento assistido por braço robótico, com um tablet em mãos.",
+        alt: "Equipe médica treina reanimação cardiopulmonar em um manequim, coletando dados clínicos durante a simulação.",
       },
     },
   ] satisfies TechInnovationItem[],
