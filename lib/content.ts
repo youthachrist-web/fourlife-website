@@ -324,6 +324,57 @@ export const healthJourney = {
   ],
 };
 
+export type TechInnovationItem = {
+  name: string;
+  detail: string;
+  image: { src: string; alt: string };
+};
+
+/**
+ * Pilar 2 (Tecnologia e inovação) em detalhe, no mesmo formato visual da
+ * Jornada da Saúde — cartão com foto — exibido logo abaixo do Ciclo de 6
+ * meses. Content: "Fourlife add.pptx", slides 9–10.
+ */
+export const techInnovation = {
+  eyebrow: "Pilar 2 · Tecnologia e inovação",
+  title: "O que não é medido não pode ser melhorado",
+  body: "Nós entregamos dados que viram resultados.",
+  items: [
+    {
+      name: "IA e analytics",
+      detail: "Uso de IA e analytics para coletar e tratar dados de saúde física e mental.",
+      image: {
+        src: "/images/tech-ia-analytics.jpg",
+        alt: "Equipe médica treina reanimação cardiopulmonar em um manequim, coletando dados clínicos durante a simulação.",
+      },
+    },
+    {
+      name: "Relatórios para gestores",
+      detail: "Relatórios claros para gestores: decisões baseadas em evidências.",
+      image: {
+        src: "/images/tech-relatorios-gestores.jpg",
+        alt: "Pesquisadores em laboratório analisam amostras e tubos de ensaio para gerar dados de saúde.",
+      },
+    },
+    {
+      name: "Inovação no modelo",
+      detail: "Inovação no modelo de intervenção — menos achismos, mais produtividade mensurável.",
+      image: {
+        src: "/images/tech-inovacao-modelo.jpg",
+        alt: "Médico revisa um relatório impresso de análise mineral capilar, com gráficos e indicadores.",
+      },
+    },
+    {
+      name: "Educação em saúde",
+      detail: "Educação em saúde como instrumento de gestão estratégica.",
+      image: {
+        src: "/images/tech-educacao-saude.jpg",
+        alt: "Médico acompanha um procedimento assistido por braço robótico, com um tablet em mãos.",
+      },
+    },
+  ] satisfies TechInnovationItem[],
+};
+
 /* --------------------------------------------------------------------------- */
 /* Diferenciais Carlos Chagas                                                  */
 /* Content: "Fourlife add.pptx", slide 6.                                      */
