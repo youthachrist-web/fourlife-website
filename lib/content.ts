@@ -259,10 +259,6 @@ export const healthJourney = {
     {
       period: "Mês 1",
       title: "Diagnóstico",
-      image: {
-        src: "/images/checkup-hemograma.webp",
-        alt: "Profissional ao telefone, mão na testa, sinal de fadiga e sobrecarga diante do notebook.",
-      },
       items: [
         "Checkup",
         "Exames clínicos e coleta de sangue",
@@ -273,10 +269,6 @@ export const healthJourney = {
     {
       period: "Meses 2 a 5",
       title: "Ações multidisciplinares",
-      image: {
-        src: "/images/checkup-ggt.webp",
-        alt: "Homem pensativo apoiado nas mãos, expressão de preocupação.",
-      },
       items: [
         "Resultados e diagnósticos individuais",
         "Ações multidisciplinares presenciais",
@@ -287,10 +279,6 @@ export const healthJourney = {
     {
       period: "Mês 6",
       title: "Nova medição",
-      image: {
-        src: "/images/checkup-t4cortisol.webp",
-        alt: "Mulher sentada, joelhos abraçados, expressão de esgotamento.",
-      },
       items: [
         "Novo check-up",
         "Exames clínicos e coleta de sangue",

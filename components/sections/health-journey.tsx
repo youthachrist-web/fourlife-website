@@ -6,13 +6,9 @@ import {
   Syringe,
   UsersRound,
   ClipboardCheck,
-  MoveHorizontal,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { SafeImage } from "@/components/ui/safe-image";
-import { DragScroll } from "@/components/ui/drag-scroll";
-import { BatteryGauge } from "@/components/ui/battery-gauge";
 import { healthJourney } from "@/lib/content";
 
 const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
@@ -24,6 +20,11 @@ function endMonth(period: string): number {
   if (range) return Number(range[2]);
   const single = period.match(/(\d+)/);
   return single ? Number(single[1]) : 1;
+}
+
+/** Position along the Mês 1 -> Mês 6 axis, as a 0–100% fraction. */
+function monthPercent(month: number): number {
+  return ((month - 1) / 5) * 100;
 }
 
 const RING_R = 15;
@@ -55,11 +56,15 @@ export function HealthJourney({
               as="li"
               key={stage.name}
               delay={i * 60}
-              className="relative flex flex-col rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
+              className="group relative flex flex-col rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <div className="flex items-start justify-between gap-2">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                  <Icon className="h-5 w-5" />
+                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 animate-ping rounded-xl bg-brand-300/40 [animation-duration:2.6s]"
+                  />
+                  <Icon className="relative h-5 w-5" />
                 </span>
                 <div className="relative flex h-9 w-9 shrink-0 items-center justify-center">
                   <svg viewBox="0 0 36 36" className="h-9 w-9 -rotate-90">
@@ -98,68 +103,90 @@ export function HealthJourney({
         })}
       </ol>
 
-      {/* Linha do tempo de 6 meses — carrossel, foto + bateria de progresso */}
+      {/* Ciclo de 6 meses — um único gráfico de linha do tempo, com motion */}
       <div className="mt-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
           Ciclo de 6 meses
         </p>
-        <div className="mb-2 mt-3 flex items-center gap-1.5 text-xs font-medium text-muted">
-          <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver as 3 fases
-        </div>
 
-        <DragScroll ariaLabel="Ciclo de 6 meses" className="-mx-5 px-5 sm:mx-0 sm:px-0">
-          {healthJourney.timeline.map((phase, i) => {
-            const PhaseIcon = phaseIcons[i];
-            return (
+        <Reveal className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
+          {/* Eixo do tempo: Mês 1 -> Mês 6, com os 3 marcos animados */}
+          <div className="relative mx-2 mt-6 h-2 sm:mx-4">
+            <div className="absolute inset-y-0 left-0 right-0 rounded-full bg-line" />
+            <div className="progress-fill absolute inset-y-0 left-0 right-0 rounded-full bg-gradient-to-r from-brand-400 to-lime-400" />
+
+            {/* Marcações dos 6 meses */}
+            {Array.from({ length: 6 }, (_, m) => m + 1).map((month) => (
+              <span
+                key={month}
+                aria-hidden
+                className="absolute top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-background bg-brand-200"
+                style={{ left: `${monthPercent(month)}%` }}
+              />
+            ))}
+
+            {/* Marcos das 3 fases */}
+            {healthJourney.timeline.map((phase, i) => {
+              const PhaseIcon = phaseIcons[i];
+              const left = monthPercent(endMonth(phase.period));
+              return (
+                <div
+                  key={phase.period}
+                  className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{ left: `${left}%` }}
+                >
+                  <span className="relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-background bg-brand-700 text-white shadow-[var(--shadow-card)]">
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 animate-ping rounded-full bg-brand-400/60"
+                      style={{ animationDuration: `${2.4 + i * 0.4}s` }}
+                    />
+                    <PhaseIcon className="relative h-4 w-4" />
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Rótulos Mês 1 ... Mês 6 sob o eixo */}
+          <div className="mx-2 mt-4 flex justify-between text-[11px] text-muted sm:mx-4">
+            {Array.from({ length: 6 }, (_, m) => m + 1).map((month) => (
+              <span key={month}>Mês {month}</span>
+            ))}
+          </div>
+
+          {/* Detalhe das 3 fases */}
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {healthJourney.timeline.map((phase, i) => (
               <Reveal
                 key={phase.period}
-                delay={i * 90}
-                className="group w-[84%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-background shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[62%] lg:w-[31%]"
+                delay={i * 100}
+                className="group flex flex-col rounded-xl border border-line bg-background p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
               >
-                <SafeImage
-                  src={phase.image.src}
-                  alt={phase.image.alt}
-                  ratio="16 / 9"
-                  contain
-                  rounded="rounded-none"
-                  className="bg-brand-50"
-                  sizes="(max-width: 640px) 84vw, (max-width: 1024px) 62vw, 31vw"
-                  imgClassName="transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="h-1.5 w-full bg-gradient-to-r from-brand-400 to-lime-400" />
-                <div className="p-6">
-                  <div className="flex items-baseline justify-between gap-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
-                      <PhaseIcon className="h-3.5 w-3.5" />
-                      {phase.period}
-                    </span>
-                    <span className="text-xs font-medium uppercase tracking-wide text-muted">
-                      {phase.title}
-                    </span>
-                  </div>
-
-                  <BatteryGauge
-                    className="mt-4"
-                    value={Math.round((endMonth(phase.period) / 6) * 100)}
-                    label={`Carga da jornada até o mês ${endMonth(phase.period)} de 6`}
-                  />
-
-                  <ul className="mt-4 space-y-2 border-t border-line pt-4 text-sm text-slate">
-                    {phase.items.map((item) => (
-                      <li key={item} className="flex gap-2">
-                        <span
-                          aria-hidden
-                          className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400"
-                        />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="h-1 w-8 rounded-full bg-gradient-to-r from-brand-400 to-lime-400 transition-all duration-500 group-hover:w-14" />
+                <div className="mt-3 flex items-baseline justify-between gap-3">
+                  <span className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                    {phase.period}
+                  </span>
+                  <span className="text-xs font-medium uppercase tracking-wide text-muted">
+                    {phase.title}
+                  </span>
                 </div>
+                <ul className="mt-4 space-y-2 text-sm text-slate">
+                  {phase.items.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span
+                        aria-hidden
+                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-lime-400"
+                      />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
-            );
-          })}
-        </DragScroll>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </Section>
   );
