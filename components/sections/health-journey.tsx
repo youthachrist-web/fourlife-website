@@ -6,11 +6,13 @@ import {
   Syringe,
   UsersRound,
   ClipboardCheck,
+  MoveHorizontal,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SafeImage } from "@/components/ui/safe-image";
 import { LogoBadge } from "@/components/ui/logo-badge";
+import { DragScroll } from "@/components/ui/drag-scroll";
 import { healthJourney, solutions } from "@/lib/content";
 
 const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
@@ -48,17 +50,20 @@ export function HealthJourney({
       />
 
       {/* Quatro etapas do ciclo — ícone + mini-gráfico de progresso por etapa */}
-      <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-2 mt-10 flex items-center gap-1.5 text-xs font-medium text-muted">
+        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver as 4 etapas
+      </div>
+
+      <DragScroll ariaLabel="As 4 etapas da Jornada da Saúde" className="-mx-5 px-5 sm:mx-0 sm:px-0">
         {healthJourney.stages.map((stage, i) => {
           const Icon = stageIcons[i];
           const fraction = (i + 1) / totalStages;
           const offset = RING_C * (1 - fraction);
           return (
             <Reveal
-              as="li"
               key={stage.name}
               delay={i * 60}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="group relative w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[58%] lg:w-[31%]"
             >
               {stage.image ? (
                 <SafeImage
@@ -66,7 +71,7 @@ export function HealthJourney({
                   alt={stage.image.alt}
                   ratio="4 / 3"
                   rounded="rounded-none"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 82vw, (max-width: 1024px) 58vw, 31vw"
                   imgClassName="transition-transform duration-700 group-hover:scale-105"
                 />
               ) : null}
@@ -139,7 +144,7 @@ export function HealthJourney({
             </Reveal>
           );
         })}
-      </ol>
+      </DragScroll>
 
       {/* Ciclo de 6 meses — um único gráfico de linha do tempo, com motion */}
       <div className="mt-12">
