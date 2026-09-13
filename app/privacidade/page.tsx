@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Política de Privacidade",
   description:
     "Como a FourLife coleta, usa e protege os dados pessoais enviados pelos formulários do site, em conformidade com a LGPD.",
-  alternates: { canonical: "/privacidade" },
+  alternates: { canonical: "/privacidade", languages: { "pt-BR": "/privacidade" } },
   robots: { index: true, follow: false },
 };
 

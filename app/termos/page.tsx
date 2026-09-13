@@ -5,7 +5,7 @@ import { site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Termos de Uso",
   description: "Termos de uso do site institucional da FourLife.",
-  alternates: { canonical: "/termos" },
+  alternates: { canonical: "/termos", languages: { "pt-BR": "/termos" } },
   robots: { index: true, follow: false },
 };
 

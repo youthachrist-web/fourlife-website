@@ -7,7 +7,7 @@ import { site } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Obrigado",
   description: "Recebemos seu contato.",
-  alternates: { canonical: "/obrigado" },
+  alternates: { canonical: "/obrigado", languages: { "pt-BR": "/obrigado" } },
   robots: { index: false, follow: false },
 };
 

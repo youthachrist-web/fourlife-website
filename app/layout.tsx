@@ -72,7 +72,7 @@ export const metadata: Metadata = {
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
     : undefined,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "pt-BR": "/" } },
   openGraph: {
     type: "website",
     locale: "pt_BR",

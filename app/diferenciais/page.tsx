@@ -5,7 +5,7 @@ import { HealthJourney } from "@/components/sections/health-journey";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { differentials } from "@/lib/content";
-import { JsonLd, breadcrumbLd, pageSocial } from "@/lib/seo";
+import { JsonLd, breadcrumbLd, pageSocial, localBusinessLd } from "@/lib/seo";
 
 const title = "Diferenciais Carlos Chagas — medicina ocupacional";
 const description =
@@ -14,7 +14,7 @@ const description =
 export const metadata: Metadata = {
   title: "Diferenciais",
   description,
-  alternates: { canonical: "/diferenciais" },
+  alternates: { canonical: "/diferenciais", languages: { "pt-BR": "/diferenciais" } },
   keywords: [
     "medicina ocupacional Porto Alegre",
     "exames admissionais Canoas",
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
     "medicina do trabalho RS",
     "atendimento in company unidade móvel",
   ],
+  // Sinaliza a praça de atuação física (RS) para busca local — a página em
+  // si é nacional, mas a operação presencial da Carlos Chagas é no RS.
+  other: {
+    "geo.region": "BR-RS",
+    "geo.placename": "Porto Alegre, Canoas, Cachoeirinha",
+  },
   ...pageSocial("/diferenciais", title, description),
 };
 
@@ -31,10 +37,13 @@ export default function DiferenciaisPage() {
   return (
     <>
       <JsonLd
-        data={breadcrumbLd([
-          { name: "Início", path: "/" },
-          { name: "Diferenciais", path: "/diferenciais" },
-        ])}
+        data={[
+          breadcrumbLd([
+            { name: "Início", path: "/" },
+            { name: "Diferenciais", path: "/diferenciais" },
+          ]),
+          localBusinessLd(),
+        ]}
       />
       <Section className="bg-surface">
         <div className="max-w-2xl">

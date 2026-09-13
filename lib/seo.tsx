@@ -14,6 +14,7 @@ export function organizationLd() {
     email: site.contact.email,
     description: site.shortDescription,
     slogan: site.slogan,
+    inLanguage: "pt-BR",
     // Nacional (B2B, todo o Brasil) + as praças com estrutura própria da
     // Diferenciais Carlos Chagas (medicina ocupacional presencial).
     areaServed: [
@@ -21,6 +22,16 @@ export function organizationLd() {
       { "@type": "City", name: "Porto Alegre" },
       { "@type": "City", name: "Canoas" },
       { "@type": "City", name: "Cachoeirinha" },
+    ],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "vendas",
+        email: site.contact.email,
+        url: site.contact.whatsappUrl,
+        areaServed: "BR",
+        availableLanguage: "Portuguese",
+      },
     ],
     knowsAbout: [
       "Saúde ocupacional",
@@ -39,6 +50,38 @@ export function organizationLd() {
       "Upskilling e Reskilling",
       "Diagnóstico gratuito de saúde corporativa",
       "ROI em saúde corporativa",
+    ],
+  };
+}
+
+/**
+ * Diferenciais Carlos Chagas — a operação de medicina ocupacional
+ * presencial do ecossistema, com estrutura própria no RS. Sem endereço
+ * completo (não fornecido), o schema já ajuda o Google a associar a marca
+ * à região; a cobertura no Google Maps/Local Pack depende de completar o
+ * Google Business Profile com o endereço exato de cada unidade.
+ */
+export function localBusinessLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "@id": `${url}/diferenciais#localbusiness`,
+    name: "Diferenciais Carlos Chagas",
+    parentOrganization: { "@id": `${url}/#organization` },
+    description:
+      "Medicina ocupacional com estrutura própria: exames clínicos e complementares, ASOs e laudos, resultados em até 48h.",
+    url: `${url}/diferenciais`,
+    inLanguage: "pt-BR",
+    medicalSpecialty: "Occupational",
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "RS",
+      addressCountry: "BR",
+    },
+    areaServed: [
+      { "@type": "City", name: "Porto Alegre" },
+      { "@type": "City", name: "Canoas" },
+      { "@type": "City", name: "Cachoeirinha" },
     ],
   };
 }

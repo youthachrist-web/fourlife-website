@@ -3,6 +3,7 @@ import { site } from "@/lib/content";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+export const alt = `${site.name} — ${site.tagline}`;
 
 // Card padrão de compartilhamento (Open Graph + Twitter) para todo o site —
 // sem isto, qualquer link do FourLife aparece sem imagem ao ser

@@ -12,7 +12,7 @@ const description =
 export const metadata: Metadata = {
   title: "Soluções",
   description,
-  alternates: { canonical: "/solucoes" },
+  alternates: { canonical: "/solucoes", languages: { "pt-BR": "/solucoes" } },
   keywords: [
     "soluções de saúde corporativa",
     "riscos psicossociais NR-1",

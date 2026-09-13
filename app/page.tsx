@@ -19,7 +19,7 @@ import { solutions, site } from "@/lib/content";
 
 export const metadata: Metadata = {
   description: site.description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "pt-BR": "/" } },
 };
 
 export default function HomePage() {

@@ -12,7 +12,7 @@ const description =
 export const metadata: Metadata = {
   title: "Contato",
   description,
-  alternates: { canonical: "/contato" },
+  alternates: { canonical: "/contato", languages: { "pt-BR": "/contato" } },
   ...pageSocial("/contato", title, description),
 };
 
