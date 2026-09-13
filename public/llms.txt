@@ -8,7 +8,26 @@
 Slogan: Educação que previne, saúde que transforma.
 Idioma: pt-BR
 Público: empresas (B2B) — RH, SST, medicina e segurança do trabalho, diretoria.
+Atuação: nacional (Brasil), com atendimento presencial próprio em Porto Alegre,
+Canoas e Cachoeirinha (RS) via Diferenciais Carlos Chagas.
 Contato comercial: comercial@fourlife.com.br
+
+## Nichos e termos de busca atendidos
+
+- Saúde ocupacional e medicina do trabalho: exames admissionais, periódicos e
+  demissionais, ASO, PCMSO, PGR, exames toxicológicos, laudos.
+- Compliance regulatório de SST: eSocial (eventos S-2210/S-2220/S-2240), NRs,
+  auditoria e redução de passivo trabalhista.
+- Saúde mental e riscos psicossociais: NR-1, clima organizacional, prevenção
+  de burnout, absenteísmo e presenteísmo.
+- Telemedicina corporativa: consulta médica e psicológica para colaboradores,
+  benefício de saúde sem coparticipação.
+- Educação corporativa: microlearning, Upskilling, Reskilling, EJA, cursos
+  técnicos e superiores via Cashback Social.
+- People Analytics e ROI em saúde corporativa: diagnóstico gratuito de saúde
+  e produtividade, indicadores de retorno sobre investimento em SST.
+- Estratégia de marca e aquisição B2B (Agência Orion): posicionamento,
+  comunicação institucional, CRM.
 
 ## As 7 soluções do ecossistema
 
@@ -43,6 +62,40 @@ Mês 6 — novo check-up e nova medição.
 ## Diferenciais Carlos Chagas (saúde ocupacional)
 
 Tudo no mesmo dia, resultados em até 48h, atendimento por ordem de chegada, estrutura própria com capilaridade nacional, corpo técnico 100% CLT, atendimento in company e unidade móvel.
+
+## Perguntas frequentes
+
+P: Minha empresa tem muitos afastamentos e eu não sei o motivo real. Como a
+FourLife ajuda?
+R: O diagnóstico gratuito e o People Analytics da FourLife cruzam dados de
+saúde física, saúde mental, clima e conformidade para revelar as causas
+ocultas do absenteísmo — de risco psicossocial a dor osteomuscular — e
+apontam as 3 frentes de maior impacto na receita pelo menor esforço.
+
+P: Pago medicina, segurança e exames e continuo enxergando isso só como
+custo. Dá para medir retorno?
+R: Sim. Cada solução do ecossistema gera indicadores comparáveis que a
+FourLife transforma em ROI: quanto a prevenção reduziu de afastamento e
+reposição de mão de obra, quanto a conformidade evitou de passivo e multa, e
+qual o retorno por real investido em cada frente.
+
+P: Tenho medo de multa, ação trabalhista e evento de SST atrasado no
+eSocial. Como fico coberto?
+R: A plataforma SGG automatiza e controla PGR, PCMSO, laudos, emissão de
+ASOs e o envio de eventos de SST ao eSocial, mantendo conformidade com as
+NRs e ISOs aplicáveis e eliminando pendências antes que virem passivo.
+
+P: Perco gente boa e o time está desengajado. O que o ecossistema faz por
+retenção?
+R: AVall.iÔ antecipa conflitos e riscos emocionais; ZapVida leva 1 consulta
+médica ou psicológica por mês a cada colaborador, sem coparticipação; e a
+Uninovia oferece formação continuada via Cashback Social.
+
+P: Tenho um fornecedor para cada coisa e nenhum conversa entre si. Como a
+FourLife resolve?
+R: A FourLife é o núcleo que conecta as 7 soluções em uma única estratégia
+orquestrada por dados. Um contrato, um painel, uma direção. Começa por um
+diagnóstico gratuito.
 
 ## Páginas
 

@@ -3,17 +3,41 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { CtaBand } from "@/components/sections/cta-band";
 import { solutions } from "@/lib/content";
+import { JsonLd, breadcrumbLd, pageSocial, servicesLd } from "@/lib/seo";
+
+const title = "Soluções do ecossistema FourLife";
+const description =
+  "As sete soluções do ecossistema FourLife: gestão inteligente e People Analytics, saúde mental e riscos psicossociais (NR-1), compliance de SST e eSocial, medicina ocupacional, telemedicina corporativa, educação corporativa e estratégia comercial B2B.";
 
 export const metadata: Metadata = {
   title: "Soluções",
-  description:
-    "As sete soluções do ecossistema FourLife: gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação corporativa e estratégia comercial.",
+  description,
   alternates: { canonical: "/solucoes" },
+  keywords: [
+    "soluções de saúde corporativa",
+    "riscos psicossociais NR-1",
+    "compliance SST eSocial",
+    "PGR PCMSO",
+    "medicina ocupacional exames",
+    "telemedicina corporativa",
+    "educação corporativa upskilling",
+    "People Analytics saúde do trabalho",
+  ],
+  ...pageSocial("/solucoes", title, description),
 };
 
 export default function SolucoesPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          breadcrumbLd([
+            { name: "Início", path: "/" },
+            { name: "Soluções", path: "/solucoes" },
+          ]),
+          servicesLd(),
+        ]}
+      />
       <Section className="bg-surface">
         <SectionHeading
           eyebrow="O ecossistema"

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { faq, site, solutions } from "./content";
 
 const url = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
@@ -13,18 +14,73 @@ export function organizationLd() {
     email: site.contact.email,
     description: site.shortDescription,
     slogan: site.slogan,
-    areaServed: { "@type": "Country", name: "Brasil" },
+    // Nacional (B2B, todo o Brasil) + as praças com estrutura própria da
+    // Diferenciais Carlos Chagas (medicina ocupacional presencial).
+    areaServed: [
+      { "@type": "Country", name: "Brasil" },
+      { "@type": "City", name: "Porto Alegre" },
+      { "@type": "City", name: "Canoas" },
+      { "@type": "City", name: "Cachoeirinha" },
+    ],
     knowsAbout: [
       "Saúde ocupacional",
+      "Medicina do trabalho",
       "Segurança do trabalho",
       "Absenteísmo",
       "Presenteísmo",
       "Riscos psicossociais (NR-1)",
       "eSocial SST",
+      "PGR e PCMSO",
+      "ASO — Atestado de Saúde Ocupacional",
       "Telemedicina corporativa",
       "People Analytics",
+      "Clima organizacional",
+      "Educação corporativa",
+      "Upskilling e Reskilling",
+      "Diagnóstico gratuito de saúde corporativa",
       "ROI em saúde corporativa",
     ],
+  };
+}
+
+/**
+ * Título e descrição de Open Graph / Twitter para uma página interna —
+ * sem isto, todo compartilhamento herda o preview da home (`layout.tsx`),
+ * o que prejudica CTR em redes sociais e a citação por engines de IA (GEO).
+ */
+export function pageSocial(
+  path: string,
+  title: string,
+  description: string,
+): Pick<Metadata, "openGraph" | "twitter"> {
+  return {
+    openGraph: {
+      type: "website",
+      locale: "pt_BR",
+      url: `${url}${path}`,
+      siteName: site.name,
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+/** Breadcrumb JSON-LD — reforça a hierarquia do site para busca e GEO. */
+export function breadcrumbLd(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: `${url}${item.path}`,
+    })),
   };
 }
 

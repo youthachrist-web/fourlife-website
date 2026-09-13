@@ -2,17 +2,28 @@ import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { CtaBand } from "@/components/sections/cta-band";
 import { pillars, ecosystemIntro, site } from "@/lib/content";
+import { JsonLd, breadcrumbLd, pageSocial } from "@/lib/seo";
+
+const title = "Sobre a FourLife";
+const description =
+  "A FourLife é o primeiro ecossistema unificado de produtividade e saúde corporativa do Brasil: saúde física e mental, tecnologia e inovação, normas regulamentadoras e educação em uma só estratégia.";
 
 export const metadata: Metadata = {
   title: "Sobre",
-  description:
-    "A FourLife é o primeiro ecossistema unificado de produtividade e saúde corporativa do Brasil: saúde física e mental, tecnologia e inovação, normas regulamentadoras e educação em uma só estratégia.",
+  description,
   alternates: { canonical: "/sobre" },
+  ...pageSocial("/sobre", title, description),
 };
 
 export default function SobrePage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Início", path: "/" },
+          { name: "Sobre", path: "/sobre" },
+        ])}
+      />
       <Section className="bg-surface">
         <SectionHeading
           eyebrow="Sobre a FourLife"

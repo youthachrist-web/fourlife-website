@@ -5,17 +5,37 @@ import { HealthJourney } from "@/components/sections/health-journey";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { differentials } from "@/lib/content";
+import { JsonLd, breadcrumbLd, pageSocial } from "@/lib/seo";
+
+const title = "Diferenciais Carlos Chagas — medicina ocupacional";
+const description =
+  "Os diferenciais Carlos Chagas em medicina ocupacional: exames, ASOs e laudos com estrutura própria em Porto Alegre, Canoas e Cachoeirinha (RS), resultados em até 48h, atendimento por ordem de chegada e corpo técnico 100% CLT. Mais a Jornada da Saúde de 6 meses.";
 
 export const metadata: Metadata = {
   title: "Diferenciais",
-  description:
-    "Os grandes diferenciais Carlos Chagas: exames, ASOs e laudos com estrutura própria, resultados em até 48h, atendimento por ordem de chegada e corpo técnico 100% CLT. Mais a Jornada da Saúde de 6 meses.",
+  description,
   alternates: { canonical: "/diferenciais" },
+  keywords: [
+    "medicina ocupacional Porto Alegre",
+    "exames admissionais Canoas",
+    "ASO atestado de saúde ocupacional",
+    "PCMSO PGR laudos",
+    "exames toxicológicos",
+    "medicina do trabalho RS",
+    "atendimento in company unidade móvel",
+  ],
+  ...pageSocial("/diferenciais", title, description),
 };
 
 export default function DiferenciaisPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Início", path: "/" },
+          { name: "Diferenciais", path: "/diferenciais" },
+        ])}
+      />
       <Section className="bg-surface">
         <div className="max-w-2xl">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
