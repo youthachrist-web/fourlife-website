@@ -11,17 +11,29 @@ import {
   FileText,
   Lightbulb,
   GraduationCap,
+  HardHat,
+  FileCheck2,
+  ShieldCheck,
+  Scale,
+  type LucideIcon,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SafeImage } from "@/components/ui/safe-image";
 import { LogoBadge } from "@/components/ui/logo-badge";
 import { DragScroll } from "@/components/ui/drag-scroll";
-import { healthJourney, techInnovation, solutions } from "@/lib/content";
+import {
+  healthJourney,
+  techInnovation,
+  normasRegulamentadoras,
+  solutions,
+  type TechInnovationShowcase,
+} from "@/lib/content";
 
 const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
 const phaseIcons = [Syringe, UsersRound, ClipboardCheck];
 const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
+const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
 
 /** "Mês 6" -> 6; "Meses 2 a 5" -> 5 (the phase's last month). */
 function endMonth(period: string): number {
@@ -237,59 +249,79 @@ export function HealthJourney({
         </Reveal>
       </div>
 
-      {/* Pilar 2 em detalhe — mesmo tratamento visual da Jornada (cartão com
+      {/* Pilares em detalhe — mesmo tratamento visual da Jornada (cartão com
           foto), logo abaixo do Ciclo de 6 meses. */}
-      <div className="mt-16">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          {techInnovation.eyebrow}
-        </p>
-        <h3 className="mt-2 font-display text-2xl font-semibold text-ink">
-          {techInnovation.title}
-        </h3>
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate">
-          {techInnovation.body}
-        </p>
-
-        <div className="mb-2 mt-6 flex items-center gap-1.5 text-xs font-medium text-muted">
-          <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os 4 itens
-        </div>
-
-        <DragScroll
-          ariaLabel="Pilar 2 — Tecnologia e inovação em detalhe"
-          className="-mx-5 px-5 sm:mx-0 sm:px-0"
-        >
-          {techInnovation.items.map((item, i) => {
-            const Icon = techIcons[i];
-            return (
-              <Reveal
-                key={item.name}
-                delay={i * 60}
-                className="group relative w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[58%] lg:w-[31%]"
-              >
-                <SafeImage
-                  src={item.image.src}
-                  alt={item.image.alt}
-                  ratio="4 / 3"
-                  rounded="rounded-none"
-                  sizes="(max-width: 640px) 82vw, (max-width: 1024px) 58vw, 31vw"
-                  imgClassName="transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="p-5">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <span className="mt-3 block font-display text-base font-semibold text-ink">
-                    {item.name}
-                  </span>
-                  <span className="mt-2 block text-sm leading-relaxed text-slate">
-                    {item.detail}
-                  </span>
-                </div>
-              </Reveal>
-            );
-          })}
-        </DragScroll>
-      </div>
+      <PillarShowcase
+        showcase={techInnovation}
+        icons={techIcons}
+        ariaLabel="Pilar 2 — Tecnologia e inovação em detalhe"
+      />
+      <PillarShowcase
+        showcase={normasRegulamentadoras}
+        icons={normsIcons}
+        ariaLabel="Pilar 3 — Normas regulamentadoras em detalhe"
+      />
     </Section>
+  );
+}
+
+function PillarShowcase({
+  showcase,
+  icons,
+  ariaLabel,
+}: {
+  showcase: TechInnovationShowcase;
+  icons: LucideIcon[];
+  ariaLabel: string;
+}) {
+  return (
+    <div className="mt-16">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+        {showcase.eyebrow}
+      </p>
+      <h3 className="mt-2 font-display text-2xl font-semibold text-ink">
+        {showcase.title}
+      </h3>
+      <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate">
+        {showcase.body}
+      </p>
+
+      <div className="mb-2 mt-6 flex items-center gap-1.5 text-xs font-medium text-muted">
+        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os 4 itens
+      </div>
+
+      <DragScroll ariaLabel={ariaLabel} className="-mx-5 px-5 sm:mx-0 sm:px-0">
+        {showcase.items.map((item, i) => {
+          const Icon = icons[i];
+          return (
+            <Reveal
+              key={item.name}
+              delay={i * 60}
+              className="group relative w-[82%] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[58%] lg:w-[31%]"
+            >
+              <SafeImage
+                src={item.image.src}
+                alt={item.image.alt}
+                ratio="4 / 3"
+                rounded="rounded-none"
+                sizes="(max-width: 640px) 82vw, (max-width: 1024px) 58vw, 31vw"
+                imgClassName="transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="p-5">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <span className="mt-3 block font-display text-base font-semibold text-ink">
+                  {item.name}
+                </span>
+                <span className="mt-2 block text-sm leading-relaxed text-slate">
+                  {item.detail}
+                </span>
+              </div>
+            </Reveal>
+          );
+        })}
+      </DragScroll>
+    </div>
   );
 }

@@ -330,6 +330,14 @@ export type TechInnovationItem = {
   image: { src: string; alt: string };
 };
 
+/** Shape shared by every "pilar em detalhe" showcase (Pilares 2, 3, 4…). */
+export type TechInnovationShowcase = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  items: TechInnovationItem[];
+};
+
 /**
  * Pilar 2 (Tecnologia e inovação) em detalhe, no mesmo formato visual da
  * Jornada da Saúde — cartão com foto — exibido logo abaixo do Ciclo de 6
@@ -370,6 +378,51 @@ export const techInnovation = {
       image: {
         src: "/images/tech-educacao-saude.jpg",
         alt: "Equipe médica treina reanimação cardiopulmonar em um manequim, coletando dados clínicos durante a simulação.",
+      },
+    },
+  ] satisfies TechInnovationItem[],
+};
+
+/**
+ * Pilar 3 (Normas regulamentadoras) em detalhe — mesmo formato visual da
+ * Jornada da Saúde, exibido logo abaixo do Pilar 2. Content: "Fourlife
+ * add.pptx", slides 11–12.
+ */
+export const normasRegulamentadoras = {
+  eyebrow: "Pilar 3 · Normas regulamentadoras",
+  title: "Estar em conformidade não é opção",
+  body: "É blindagem contra riscos e passivos.",
+  items: [
+    {
+      name: "Base para as NRs",
+      detail: "Base para as NRs 01, 05 e 07.",
+      image: {
+        src: "/images/norms-nrs.jpg",
+        alt: "Equipe de operários com capacetes e uniformes de segurança trabalha à noite em uma via pública.",
+      },
+    },
+    {
+      name: "Evidências para auditorias",
+      detail: "Evidências formais para auditorias e órgãos reguladores.",
+      image: {
+        src: "/images/norms-evidencias-auditorias.jpg",
+        alt: "Advogado em seu escritório revisa um livro jurídico ao lado de uma estátua da balança da justiça.",
+      },
+    },
+    {
+      name: "Redução de riscos",
+      detail: "Redução de riscos trabalhistas e financeiros.",
+      image: {
+        src: "/images/norms-riscos-financeiros.jpg",
+        alt: "Profissional analisa relatórios financeiros com gráficos, calculadora e notebook.",
+      },
+    },
+    {
+      name: "Segurança jurídica",
+      detail: "Segurança jurídica para o negócio.",
+      image: {
+        src: "/images/norms-seguranca-juridica.jpg",
+        alt: "Advogada revisa um documento assinado em um escritório, com a estátua da balança da justiça ao lado.",
       },
     },
   ] satisfies TechInnovationItem[],
