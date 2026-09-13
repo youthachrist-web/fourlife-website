@@ -15,8 +15,13 @@ import {
   FileCheck2,
   ShieldCheck,
   Scale,
+  BookOpen,
+  Presentation,
+  Sparkles,
+  RefreshCw,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { SafeImage } from "@/components/ui/safe-image";
@@ -26,6 +31,7 @@ import {
   healthJourney,
   techInnovation,
   normasRegulamentadoras,
+  educacao,
   solutions,
   type TechInnovationShowcase,
 } from "@/lib/content";
@@ -34,6 +40,7 @@ const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
 const phaseIcons = [Syringe, UsersRound, ClipboardCheck];
 const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
 const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
+const eduIcons = [BookOpen, Presentation, Sparkles, RefreshCw];
 
 /** "Mês 6" -> 6; "Meses 2 a 5" -> 5 (the phase's last month). */
 function endMonth(period: string): number {
@@ -261,6 +268,11 @@ export function HealthJourney({
         icons={normsIcons}
         ariaLabel="Pilar 3 — Normas regulamentadoras em detalhe"
       />
+      <PillarShowcase
+        showcase={educacao}
+        icons={eduIcons}
+        ariaLabel="Pilar 4 — Educação em detalhe"
+      />
     </Section>
   );
 }
@@ -322,6 +334,21 @@ function PillarShowcase({
           );
         })}
       </DragScroll>
+
+      {showcase.closingLogo ? (
+        <div className="mt-8 flex items-center gap-3 border-t border-line pt-6">
+          <span className="inline-flex h-9 items-center rounded-lg bg-white px-2.5">
+            <Image
+              src={showcase.closingLogo.src}
+              alt={showcase.closingLogo.alt}
+              width={200}
+              height={91}
+              className="h-full w-auto max-w-[9rem] object-contain"
+            />
+          </span>
+          <span className="text-xs text-muted">{showcase.closingLogo.caption}</span>
+        </div>
+      ) : null}
     </div>
   );
 }

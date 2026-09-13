@@ -336,6 +336,8 @@ export type TechInnovationShowcase = {
   title: string;
   body: string;
   items: TechInnovationItem[];
+  /** Closing credit logo (used once, on Pilar 4 — from the source deck's last slide). */
+  closingLogo?: { src: string; alt: string; caption: string };
 };
 
 /**
@@ -426,6 +428,57 @@ export const normasRegulamentadoras = {
       },
     },
   ] satisfies TechInnovationItem[],
+};
+
+/**
+ * Pilar 4 (Educação) em detalhe — mesmo formato visual da Jornada da Saúde,
+ * exibido logo abaixo do Pilar 3. Fecha a sequência dos 4 pilares com o
+ * crédito de fechamento do deck original. Content: "Fourlife add.pptx",
+ * slides 13–14.
+ */
+export const educacao = {
+  eyebrow: "Pilar 4 · Educação",
+  title: "Empresas que educam seus colaboradores",
+  body: "Criam times mais engajados, produtivos e leais.",
+  items: [
+    {
+      name: "Programa educacional",
+      detail: "Programa educacional baseado nos dados dos colaboradores.",
+      image: {
+        src: "/images/edu-programa-dados.jpg",
+        alt: "Equipe de um ateliê de moda trabalha em conjunto no desenvolvimento de peças, com fichas técnicas na parede.",
+      },
+    },
+    {
+      name: "Workshops e treinamentos",
+      detail: "Workshops, treinamentos e acompanhamento contínuo.",
+      image: {
+        src: "/images/edu-workshops-treinamentos.jpg",
+        alt: "Plateia acompanha uma palestra corporativa em um auditório amplo.",
+      },
+    },
+    {
+      name: "Intervenções práticas",
+      detail: "Intervenções práticas de educação em saúde, produtividade e qualidade de vida.",
+      image: {
+        src: "/images/edu-intervencoes-praticas.jpg",
+        alt: "Colaborador assina um formulário de acompanhamento apresentado em uma prancheta.",
+      },
+    },
+    {
+      name: "Cultura de prevenção",
+      detail: "Cultura de prevenção e melhoria contínua.",
+      image: {
+        src: "/images/edu-cultura-prevencao.jpg",
+        alt: "Dois operários com capacete e óculos de proteção examinam juntos uma máquina industrial.",
+      },
+    },
+  ] satisfies TechInnovationItem[],
+  closingLogo: {
+    src: "/brand/gen-logo.png",
+    alt: "Logo do Grupo Europa de Negócios (GEN)",
+    caption: "Grupo Europa de Negócios",
+  },
 };
 
 /* --------------------------------------------------------------------------- */
