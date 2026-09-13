@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/container";
 import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
+import { SafeImage } from "@/components/ui/safe-image";
 import { LeadCta } from "@/components/lead/lead-cta";
 import { site, cta, ecosystemStats, pillars } from "@/lib/content";
 
@@ -63,30 +64,43 @@ export function Hero() {
         </div>
 
         <Reveal className="relative">
-          <div className="rounded-2xl border border-line bg-background p-6 shadow-[var(--shadow-lift)] sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-              4 pilares, 1 estratégia
-            </p>
-            <ul className="mt-5 space-y-4">
-              {pillars.map((pillar, i) => {
-                const Icon = pillarIcons[i];
-                return (
-                  <li key={pillar.name} className="flex gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    <span>
-                      <span className="block font-medium text-ink">{pillar.name}</span>
-                      <span className="block text-sm text-slate">{pillar.detail}</span>
-                    </span>
-                  </li>
-                );
-              })}
-            </ul>
-            <p className="mt-6 rounded-xl bg-surface-2 px-4 py-3 text-sm text-slate">
-              Saúde + Segurança + Educação + Tecnologia + Estratégia ={" "}
-              <strong className="text-primary">Performance com ROI</strong>
-            </p>
+          <div className="overflow-hidden rounded-2xl border border-line bg-background shadow-[var(--shadow-lift)]">
+            {/* Foto de abertura do card — mesmo tratamento (SafeImage, sem distorcer)
+                usado nos cards de pilares e na seção Realidade. */}
+            <SafeImage
+              src="/images/hero-team-safety.jpg"
+              alt="Equipe de colaboradores com EPI reunida em círculo, mãos entrelaçadas em sinal de união."
+              ratio="3 / 2"
+              rounded="rounded-none"
+              sizes="(max-width: 1024px) 90vw, 480px"
+              priority
+            />
+
+            <div className="p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                4 pilares, 1 estratégia
+              </p>
+              <ul className="mt-5 space-y-4">
+                {pillars.map((pillar, i) => {
+                  const Icon = pillarIcons[i];
+                  return (
+                    <li key={pillar.name} className="flex gap-4">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <span>
+                        <span className="block font-medium text-ink">{pillar.name}</span>
+                        <span className="block text-sm text-slate">{pillar.detail}</span>
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="mt-6 rounded-xl bg-surface-2 px-4 py-3 text-sm text-slate">
+                Saúde + Segurança + Educação + Tecnologia + Estratégia ={" "}
+                <strong className="text-primary">Performance com ROI</strong>
+              </p>
+            </div>
           </div>
         </Reveal>
       </Container>

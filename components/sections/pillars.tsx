@@ -2,6 +2,7 @@ import { HeartPulse, Cpu, ScrollText, GraduationCap, MoveHorizontal } from "luci
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { DragScroll } from "@/components/ui/drag-scroll";
+import { SafeImage } from "@/components/ui/safe-image";
 import { fourPillars } from "@/lib/content";
 
 const pillarIcons = [HeartPulse, Cpu, ScrollText, GraduationCap];
@@ -33,6 +34,18 @@ export function Pillars() {
                 aria-hidden
                 className="h-1.5 w-full bg-gradient-to-r from-brand-400 to-lime-400"
               />
+
+              {pillar.image ? (
+                <SafeImage
+                  src={pillar.image.src}
+                  alt={pillar.image.alt}
+                  ratio="3 / 2"
+                  rounded="rounded-none"
+                  sizes="(max-width: 640px) 82vw, (max-width: 1024px) 58vw, 31vw"
+                  imgClassName="object-[center_35%] transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : null}
+
               <div className="relative p-6">
                 <span
                   aria-hidden

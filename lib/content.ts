@@ -162,11 +162,19 @@ export const pillars = [
   },
 ];
 
+export type FourPillar = {
+  number: string;
+  name: string;
+  thesis: string;
+  points: string[];
+  image?: { src: string; alt: string };
+};
+
 /**
  * Detailed version of the four pillars for the homepage section.
  * Content: "Fourlife add.pptx", slides 4, 7–8, 13–18.
  */
-export const fourPillars = [
+export const fourPillars: FourPillar[] = [
   {
     number: "01",
     name: "Saúde física e mental",
@@ -176,7 +184,7 @@ export const fourPillars = [
       "Mapeamento do estado de saúde dos colaboradores.",
       "Educação em saúde e hábitos saudáveis.",
       "Monitoramento dos indicadores de saúde física e mental.",
-      "Prevenção de doenças, redução de ausências e retorno financeiro.",
+      "Prevenção de doenças, redução de ausências, produtividade e retorno financeiro.",
     ],
   },
   {
@@ -233,6 +241,14 @@ export const ecosystemStats = [
 /* Content: "Fourlife add.pptx", slides 5 and 8.                               */
 /* --------------------------------------------------------------------------- */
 
+export type HealthJourneyStage = {
+  name: string;
+  detail: string;
+  image?: { src: string; alt: string };
+  /** Slugs into `solutions` — rendered as small LogoBadge chips for this stage. */
+  logos?: string[];
+};
+
 export const healthJourney = {
   eyebrow: "Jornada da Saúde",
   title: "Da fotografia inicial ao retorno financeiro",
@@ -241,20 +257,36 @@ export const healthJourney = {
     {
       name: "Check-up inicial",
       detail: "Mapeamento do estado de saúde física e mental dos colaboradores.",
+      image: {
+        src: "/images/pillar-saude-fisica-mental.jpg",
+        alt: "Profissional de saúde afere a pressão arterial de uma paciente durante um check-up.",
+      },
+      logos: ["labduo", "avallio"],
     },
     {
       name: "Ações integradas",
       detail: "Educação em saúde e construção de hábitos saudáveis.",
+      logos: ["zapvida"],
     },
     {
       name: "Acompanhamento",
       detail: "Monitoramento contínuo dos indicadores de saúde física e mental.",
+      image: {
+        src: "/images/journey-acompanhamento.jpg",
+        alt: "Profissional de saúde consulta indicadores em um smartwatch durante o acompanhamento.",
+      },
+      logos: ["zapvida", "sgg"],
     },
     {
       name: "Resultados",
       detail: "Prevenção de doenças, redução de ausências, produtividade e retorno financeiro para a empresa.",
+      image: {
+        src: "/images/journey-resultados.jpg",
+        alt: "Médica mostra o resultado de um exame de imagem ao paciente.",
+      },
+      logos: ["fourlife"],
     },
-  ],
+  ] satisfies HealthJourneyStage[],
   timeline: [
     {
       period: "Mês 1",

@@ -9,7 +9,9 @@ import {
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
-import { healthJourney } from "@/lib/content";
+import { SafeImage } from "@/components/ui/safe-image";
+import { LogoBadge } from "@/components/ui/logo-badge";
+import { healthJourney, solutions } from "@/lib/content";
 
 const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
 const phaseIcons = [Syringe, UsersRound, ClipboardCheck];
@@ -56,48 +58,84 @@ export function HealthJourney({
               as="li"
               key={stage.name}
               delay={i * 60}
-              className="group relative flex flex-col rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
-              <div className="flex items-start justify-between gap-2">
-                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                  <span
-                    aria-hidden
-                    className="absolute inset-0 animate-ping rounded-xl bg-brand-300/40 [animation-duration:2.6s]"
-                  />
-                  <Icon className="relative h-5 w-5" />
-                </span>
-                <div className="relative flex h-9 w-9 shrink-0 items-center justify-center">
-                  <svg viewBox="0 0 36 36" className="h-9 w-9 -rotate-90">
-                    <circle cx="18" cy="18" r={RING_R} fill="none" stroke="var(--line)" strokeWidth="3" />
-                    <circle
-                      cx="18"
-                      cy="18"
-                      r={RING_R}
-                      fill="none"
-                      stroke="var(--lime-400)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeDasharray={RING_C}
-                      className="chart-ring"
-                      style={
-                        {
-                          "--ring-circumference": RING_C,
-                          "--ring-offset": offset,
-                        } as React.CSSProperties
-                      }
+              {stage.image ? (
+                <SafeImage
+                  src={stage.image.src}
+                  alt={stage.image.alt}
+                  ratio="4 / 3"
+                  rounded="rounded-none"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
+                />
+              ) : null}
+
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-start justify-between gap-2">
+                  <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 animate-ping rounded-xl bg-brand-300/40 [animation-duration:2.6s]"
                     />
-                  </svg>
-                  <span className="absolute font-display text-[10px] font-semibold text-ink">
-                    {i + 1}/{totalStages}
+                    <Icon className="relative h-5 w-5" />
                   </span>
+                  <div className="relative flex h-9 w-9 shrink-0 items-center justify-center">
+                    <svg viewBox="0 0 36 36" className="h-9 w-9 -rotate-90">
+                      <circle cx="18" cy="18" r={RING_R} fill="none" stroke="var(--line)" strokeWidth="3" />
+                      <circle
+                        cx="18"
+                        cy="18"
+                        r={RING_R}
+                        fill="none"
+                        stroke="var(--lime-400)"
+                        strokeWidth="3"
+                        strokeLinecap="round"
+                        strokeDasharray={RING_C}
+                        className="chart-ring"
+                        style={
+                          {
+                            "--ring-circumference": RING_C,
+                            "--ring-offset": offset,
+                          } as React.CSSProperties
+                        }
+                      />
+                    </svg>
+                    <span className="absolute font-display text-[10px] font-semibold text-ink">
+                      {i + 1}/{totalStages}
+                    </span>
+                  </div>
                 </div>
+                <span className="mt-3 font-display text-base font-semibold text-ink">
+                  {stage.name}
+                </span>
+                <span className="mt-2 text-sm leading-relaxed text-slate">
+                  {stage.detail}
+                </span>
+
+                {stage.logos && stage.logos.length > 0 ? (
+                  <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-line pt-3">
+                    {stage.logos.map((slug) => {
+                      const solution = solutions.find((s) => s.slug === slug);
+                      if (!solution) return null;
+                      // Partner logo files assume a light background — give them
+                      // a white chip so they stay legible on the dark card too.
+                      // The text-fallback badge (e.g. SGG) already carries its
+                      // own tone background, so it's left unwrapped.
+                      return solution.logo ? (
+                        <span
+                          key={slug}
+                          className="inline-flex items-center rounded-lg bg-white px-2 py-1"
+                        >
+                          <LogoBadge solution={solution} size="sm" />
+                        </span>
+                      ) : (
+                        <LogoBadge key={slug} solution={solution} size="sm" />
+                      );
+                    })}
+                  </div>
+                ) : null}
               </div>
-              <span className="mt-3 font-display text-base font-semibold text-ink">
-                {stage.name}
-              </span>
-              <span className="mt-2 text-sm leading-relaxed text-slate">
-                {stage.detail}
-              </span>
             </Reveal>
           );
         })}
