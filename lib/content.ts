@@ -37,6 +37,8 @@ export const site = {
 } as const;
 
 export const nav = [
+  { label: "Pilares", href: "/#pilares" },
+  { label: "Jornada", href: "/#jornada" },
   { label: "Soluções", href: "/solucoes" },
   { label: "Diferenciais", href: "/diferenciais" },
   { label: "Sobre", href: "/sobre" },
@@ -462,7 +464,7 @@ export const educacao = {
       detail: "Intervenções práticas de educação em saúde, produtividade e qualidade de vida.",
       image: {
         src: "/images/edu-intervencoes-praticas.jpg",
-        alt: "Colaborador assina um formulário de acompanhamento apresentado em uma prancheta.",
+        alt: "Colaboradora sorri enquanto trabalha em um computador no chão de fábrica.",
       },
     },
     {
