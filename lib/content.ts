@@ -266,6 +266,10 @@ export const healthJourney = {
     {
       name: "Ações integradas",
       detail: "Educação em saúde e construção de hábitos saudáveis.",
+      image: {
+        src: "/images/journey-acoes-integradas.jpg",
+        alt: "Médica em teleconsulta orienta paciente sobre o uso de uma bombinha de inalação.",
+      },
       logos: ["zapvida"],
     },
     {
