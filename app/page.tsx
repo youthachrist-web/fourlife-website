@@ -32,12 +32,12 @@ export default function HomePage() {
       <Hero />
       <InvisibleCost />
       <Risks />
+      <Cost />
       <Pillars />
       <Results />
       <HealthJourney />
       <Differentials className="bg-surface-2" />
       <Reality />
-      <Cost />
 
       <Section id="solucoes" className="bg-background">
         <SectionHeading
