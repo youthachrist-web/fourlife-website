@@ -33,8 +33,8 @@ export function Pillars() {
 
       <SectionHeading
         eyebrow="Nosso plano em 4 pilares"
-        title="O branding começa aqui: saúde, tecnologia, conformidade e educação"
-        body="Quatro frentes que sustentam a marca FourLife e organizam cada entrega — do check-up ao relatório de gestão."
+        title="Tocamos na dor. Agora, o plano que resolve: saúde, tecnologia, conformidade e educação"
+        body="Depois de olhar de frente para o custo e os riscos, estas são as quatro frentes que sustentam a marca FourLife e organizam cada entrega — do check-up ao relatório de gestão."
       />
 
       <div className="mb-2 mt-10 flex items-center gap-1.5 text-xs font-medium text-muted">
