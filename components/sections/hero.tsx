@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { CountUp } from "@/components/ui/count-up";
 import { SafeImage } from "@/components/ui/safe-image";
 import { LeadCta } from "@/components/lead/lead-cta";
-import { site, cta, ecosystemStats, pillars } from "@/lib/content";
+import { site, ecosystemStats, pillars } from "@/lib/content";
 
 const pillarIcons = [HeartPulse, Cpu, ScrollText, GraduationCap];
 
@@ -33,21 +33,21 @@ export function Hero() {
       <Container className="relative grid gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
         <div>
           <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
-            Ecossistema Integrado de Produtividade e Saúde
+            {site.heroEyebrow}
           </p>
           <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] text-ink sm:text-5xl lg:text-6xl">
-            {site.tagline}
+            {site.slogan}
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">
-            {site.description}
+            {site.heroBody}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <LeadCta size="lg">
-              {cta.primary.label} <ArrowRight className="h-4 w-4" />
+              Agendar diagnóstico gratuito <ArrowRight className="h-4 w-4" />
             </LeadCta>
-            <ButtonLink href="/solucoes" size="lg" variant="outline">
-              Conhecer as 7 soluções
+            <ButtonLink href="/#pilares" size="lg" variant="outline">
+              Conhecer os 4 pilares <ArrowRight className="h-4 w-4" />
             </ButtonLink>
           </div>
 

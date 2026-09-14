@@ -11,11 +11,15 @@ export const site = {
   name: "FourLife",
   legalName: "FourLife — Ecossistema Integrado de Produtividade e Saúde",
   tagline: "Saúde que engaja. Dados que provam.",
-  slogan: "Educação que previne, saúde que transforma.",
+  slogan: "Educação que previne. Saúde que transforma.",
   shortDescription:
     "O primeiro ecossistema unificado de produtividade e saúde corporativa do Brasil.",
   description:
     "A FourLife integra saúde preventiva, engenharia de segurança, tecnologia e educação em uma única estratégia para reduzir absenteísmo, garantir conformidade e transformar saúde em ROI mensurável.",
+  /** Copy específica do Hero (badge + parágrafo) — não usada em meta/SEO. */
+  heroEyebrow: "Saúde Corporativa · Educação · Compliance",
+  heroBody:
+    "Reduzimos presenteísmo e absenteísmo, garantimos conformidade com NR-01 e SST, e desenvolvemos seus talentos do EJA ao MBA — tudo em uma plataforma integrada.",
   // Set NEXT_PUBLIC_SITE_URL in the environment for the deployed domain.
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://fourlife.com.br",
   locale: "pt-BR",
