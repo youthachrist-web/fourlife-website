@@ -131,14 +131,6 @@ export const cost = {
     { value: "19%", label: "da jornada perdida com queda de foco e fadiga" },
     { value: "267%", label: "de alta em processos por burnout em Santa Catarina em 9 anos" },
   ],
-  turn: {
-    title: "A FourLife transforma esse custo em investimento com retorno mensurável",
-    items: [
-      "Prevenção que reduz afastamento e reposição de mão de obra.",
-      "Conformidade (SGG + eSocial) que elimina passivo e multa.",
-      "People Analytics que mostra, em números, o retorno de cada frente.",
-    ],
-  },
 };
 
 /* --------------------------------------------------------------------------- */
