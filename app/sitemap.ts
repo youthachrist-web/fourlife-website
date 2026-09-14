@@ -4,7 +4,16 @@ import { site } from "@/lib/content";
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
   const now = new Date();
-  const routes = ["", "/solucoes", "/diferenciais", "/sobre", "/contato", "/privacidade", "/termos"];
+  const routes = [
+    "",
+    "/solucoes",
+    "/diferenciais",
+    "/realidade-invisivel",
+    "/sobre",
+    "/contato",
+    "/privacidade",
+    "/termos",
+  ];
   return routes.map((path) => ({
     url: `${base}${path}`,
     lastModified: now,

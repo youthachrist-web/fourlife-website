@@ -368,7 +368,7 @@ export type HealthJourneyStage = {
 
 export const healthJourney = {
   eyebrow: "Jornada da Saúde",
-  title: "Da fotografia inicial ao retorno financeiro",
+  title: "Do diagnóstico inicial ao retorno financeiro",
   body: "Um ciclo de seis meses que começa mapeando a saúde do time e termina com indicadores de prevenção, menos ausências e ROI para a empresa. Saúde física + saúde mental = produtividade.",
   stages: [
     {

@@ -173,7 +173,7 @@ export function HealthJourney({
       {/* Ciclo de 6 meses — um único gráfico de linha do tempo, com motion */}
       <div className="mt-12">
         <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-          Ciclo de 6 meses
+          Pilar 1 · Saúde física e mental
         </p>
 
         <Reveal className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">

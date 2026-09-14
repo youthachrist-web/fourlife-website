@@ -8,7 +8,6 @@ import { Pillars } from "@/components/sections/pillars";
 import { Results } from "@/components/sections/results";
 import { HealthJourney } from "@/components/sections/health-journey";
 import { Differentials } from "@/components/sections/differentials";
-import { Reality } from "@/components/sections/reality";
 import { Cost } from "@/components/sections/cost";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Faq } from "@/components/sections/faq";
@@ -37,7 +36,6 @@ export default function HomePage() {
       <Pillars />
       <HealthJourney />
       <Differentials className="bg-surface-2" />
-      <Reality />
 
       <Section id="solucoes" className="bg-background">
         <SectionHeading
