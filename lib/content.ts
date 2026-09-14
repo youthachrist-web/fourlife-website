@@ -142,6 +142,125 @@ export const cost = {
 };
 
 /* --------------------------------------------------------------------------- */
+/* O Custo Invisível → Cenário Atual → Riscos → Solução                        */
+/* A narrativa que antecede os 4 pilares na home. Fontes externas (não do      */
+/* deck FourLife): Carta Capital, IBGE, Ministério do Trabalho — material de   */
+/* apoio da Orion Digital.                                                     */
+/* --------------------------------------------------------------------------- */
+
+export type InvisibleCostPoint = {
+  value: string;
+  label: string;
+  /** 0–100 quando o valor é um percentual "de algo" (renderiza como anel). */
+  ringPercent?: number;
+  /** Estatística mais alarmante do grupo — recebe o tom de alerta (vermelho). */
+  critical?: boolean;
+};
+
+export const invisibleCost = {
+  eyebrow: "O custo invisível",
+  title: "O custo invisível nas empresas",
+  body: "Antes de olhar para dentro do seu negócio, os números do país já mostram o tamanho do problema.",
+  points: [
+    { value: "R$ 340 bi/ano", label: "Custo do presenteísmo no Brasil" },
+    {
+      value: "74%",
+      label: "Colaboradores afetados por presenteísmo ou absenteísmo",
+      ringPercent: 74,
+    },
+    {
+      value: "267%",
+      label: "Aumento de processos por burnout em SC em 9 anos",
+      critical: true,
+    },
+    { value: "3×", label: "Mais caro tratar doenças do que prevenir" },
+  ] satisfies InvisibleCostPoint[],
+  sources: "Carta Capital, IBGE, Ministério do Trabalho",
+};
+
+export const currentScenario = {
+  eyebrow: "O cenário atual",
+  title: "Já imaginou que esse pode ser o cenário da sua empresa?",
+  body: "Colaboradores presentes fisicamente mas improdutivos. Afastamentos frequentes. Talentos saindo. Passivos trabalhistas acumulando.",
+};
+
+export type IdentifiedRisk = {
+  severity: "Crítica" | "Alta";
+  title: string;
+  detail: string;
+};
+
+export const identifiedRisks: IdentifiedRisk[] = [
+  {
+    severity: "Alta",
+    title: "Presenteísmo silencioso",
+    detail:
+      "Queda de desempenho, erros frequentes, desmotivação e falta de foco. O colaborador está presente, mas a produtividade foi embora.",
+  },
+  {
+    severity: "Crítica",
+    title: "Absenteísmo crescente",
+    detail:
+      "Transtornos mentais, dores crônicas e estresse são as 3 principais causas de afastamento no Brasil — e são evitáveis com prevenção.",
+  },
+  {
+    severity: "Alta",
+    title: "Fuga de talentos",
+    detail:
+      "Sem desenvolvimento e sem cuidado com bem-estar, colaboradores qualificados migram para empresas que oferecem mais do que salário.",
+  },
+];
+
+/** Banner de transição exibido no topo da seção dos 4 pilares. */
+export const solutionIntro = {
+  eyebrow: "A solução FourLife",
+  title: "Uma plataforma. Quatro pilares. Resultados reais.",
+  body: "A FourLife conecta saúde física e mental, tecnologia de ponta, conformidade regulatória e desenvolvimento educacional em um único ecossistema — pensado para empresas que querem resultados sustentáveis.",
+  items: [
+    "Checkups físicos e mentais com IA + Analytics preditiva",
+    "Plataforma digital de saúde como benefício corporativo",
+    "Conformidade NR-01 e SST com painel gerencial",
+    "Plano de carreira do EJA ao MBA para retenção de talentos",
+  ],
+};
+
+export type ResultPoint = {
+  value: string;
+  label: string;
+  direction: "down" | "up" | "flat";
+  /** 0–100 para os indicadores comparáveis na mesma escala (barra). */
+  barPercent?: number;
+};
+
+/** Resultados após a Jornada da Saúde de 6 meses — seção exibida após os pilares. */
+export const results = {
+  eyebrow: "Resultados",
+  title: "O retorno de transformar saúde em estratégia",
+  body: "Indicadores medidos após o ciclo de 6 meses da Jornada da Saúde — a prevenção comprovada em números.",
+  points: [
+    {
+      value: "40%",
+      label: "Redução média de absenteísmo após 6 meses",
+      direction: "down",
+      barPercent: 40,
+    },
+    {
+      value: "28%",
+      label: "Aumento de produtividade documentado",
+      direction: "up",
+      barPercent: 28,
+    },
+    { value: "3×", label: "ROI sobre o investimento em saúde preventiva", direction: "flat" },
+    {
+      value: "100%",
+      label: "Compliance com NR-01 garantido",
+      direction: "flat",
+      barPercent: 100,
+    },
+  ] satisfies ResultPoint[],
+};
+
+/* --------------------------------------------------------------------------- */
 /* The shift — from isolated services to an ecosystem                          */
 /* --------------------------------------------------------------------------- */
 

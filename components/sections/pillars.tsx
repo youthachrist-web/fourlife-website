@@ -1,15 +1,36 @@
-import { HeartPulse, Cpu, ScrollText, GraduationCap, MoveHorizontal } from "lucide-react";
+import { HeartPulse, Cpu, ScrollText, GraduationCap, MoveHorizontal, Check } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import { SafeImage } from "@/components/ui/safe-image";
-import { fourPillars } from "@/lib/content";
+import { fourPillars, solutionIntro } from "@/lib/content";
 
 const pillarIcons = [HeartPulse, Cpu, ScrollText, GraduationCap];
 
 export function Pillars() {
   return (
     <Section id="pilares" className="bg-surface-2">
+      {/* A Solução FourLife — banner de transição do problema para os pilares */}
+      <Reveal className="mb-12 rounded-2xl border border-brand-200 bg-brand-50 p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-700">
+          {solutionIntro.eyebrow}
+        </p>
+        <h3 className="mt-2 font-display text-xl font-semibold text-brand-800 sm:text-2xl">
+          {solutionIntro.title}
+        </h3>
+        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-800/90">
+          {solutionIntro.body}
+        </p>
+        <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
+          {solutionIntro.items.map((item) => (
+            <li key={item} className="flex gap-2.5 text-sm text-brand-800/90">
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-600" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
+
       <SectionHeading
         eyebrow="Nosso plano em 4 pilares"
         title="O branding começa aqui: saúde, tecnologia, conformidade e educação"

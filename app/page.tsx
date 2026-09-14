@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/sections/hero";
+import { InvisibleCost } from "@/components/sections/invisible-cost";
+import { Risks } from "@/components/sections/risks";
 import { Pillars } from "@/components/sections/pillars";
+import { Results } from "@/components/sections/results";
 import { HealthJourney } from "@/components/sections/health-journey";
 import { Differentials } from "@/components/sections/differentials";
 import { Reality } from "@/components/sections/reality";
@@ -27,7 +30,10 @@ export default function HomePage() {
     <>
       <JsonLd data={[faqLd(), servicesLd()]} />
       <Hero />
+      <InvisibleCost />
+      <Risks />
       <Pillars />
+      <Results />
       <HealthJourney />
       <Differentials className="bg-surface-2" />
       <Reality />
