@@ -33,8 +33,8 @@ export default function HomePage() {
       <InvisibleCost />
       <Risks />
       <Cost />
-      <Pillars />
       <Results />
+      <Pillars />
       <HealthJourney />
       <Differentials className="bg-surface-2" />
       <Reality />
