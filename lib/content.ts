@@ -707,8 +707,53 @@ export const provenResult = {
 };
 
 /* --------------------------------------------------------------------------- */
+/* Por que a FourLife — 6 diferenciais do ecossistema, nível C-Level.          */
+/* Exibido na home, no lugar antes ocupado pela prévia de Diferenciais Carlos  */
+/* Chagas (que segue intacta e completa em /diferenciais).                    */
+/* Material de apoio Orion Digital.                                           */
+/* --------------------------------------------------------------------------- */
+
+export const ecosystemDifferentials = {
+  eyebrow: "Por que a FourLife",
+  title: "Seis motivos para o C-Level escolher a FourLife",
+  body: "Não é só compliance — é uma plataforma que transforma saúde ocupacional em vantagem competitiva mensurável.",
+  items: [
+    {
+      title: "Da burocracia ao ROI",
+      detail:
+        "Transformamos o custo compulsório de SST em métricas claras de retorno financeiro, produtividade e rentabilidade para o C-Level.",
+    },
+    {
+      title: "People Analytics integrado",
+      detail:
+        "O fim dos dados isolados: conectamos laudos médicos, SST, clima mental e educação em uma inteligência centralizada para tomada de decisão.",
+    },
+    {
+      title: "Atendimento in company & saúde digital",
+      detail:
+        "Cuidado médico preventivo direto na sua empresa combinado a suporte digital contínuo, reduzindo o absenteísmo e aumentando o comprometimento da equipe.",
+    },
+    {
+      title: "Blindagem ativa da NR-01",
+      detail:
+        "Mapeamento anônimo de riscos psicossociais e burnout, antecipando e neutralizando crises antes que virem licenças médicas ou acionamentos judiciais.",
+    },
+    {
+      title: "Cashback social único",
+      detail:
+        "O único ecossistema que converte a prevenção em saúde e os hábitos saudáveis dos colaboradores em bolsas de estudo e qualificação profissional.",
+    },
+    {
+      title: "Faturamento inteligente & incentivo fiscal",
+      detail:
+        "Flexibilidade para alocar custos nos centros de receita certos da sua empresa e aproveitar benefícios tributários como a Lei do Bem.",
+    },
+  ],
+};
+
+/* --------------------------------------------------------------------------- */
 /* Diferenciais Carlos Chagas                                                  */
-/* Content: "Fourlife add.pptx", slide 6.                                      */
+/* Content: "Fourlife add.pptx", slide 6. Página própria: /diferenciais.       */
 /* --------------------------------------------------------------------------- */
 
 export const differentials = {

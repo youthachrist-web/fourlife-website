@@ -1,6 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  LineChart,
+  BrainCircuit,
+  Smartphone,
+  ShieldCheck,
+  HandCoins,
+  Receipt,
+} from "lucide-react";
 import { Hero } from "@/components/sections/hero";
 import { InvisibleCost } from "@/components/sections/invisible-cost";
 import { Risks } from "@/components/sections/risks";
@@ -17,12 +25,21 @@ import { Reveal } from "@/components/ui/reveal";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { JsonLd, faqLd, servicesLd } from "@/lib/seo";
-import { solutions, site } from "@/lib/content";
+import { solutions, site, ecosystemDifferentials } from "@/lib/content";
 
 export const metadata: Metadata = {
   description: site.description,
   alternates: { canonical: "/", languages: { "pt-BR": "/" } },
 };
+
+const ecosystemDifferentialsIcons = [
+  LineChart,
+  BrainCircuit,
+  Smartphone,
+  ShieldCheck,
+  HandCoins,
+  Receipt,
+];
 
 export default function HomePage() {
   return (
@@ -35,7 +52,13 @@ export default function HomePage() {
       <Results />
       <Pillars />
       <HealthJourney />
-      <Differentials className="bg-surface-2" />
+      <Differentials
+        className="bg-surface-2"
+        data={ecosystemDifferentials}
+        icons={ecosystemDifferentialsIcons}
+        id="por-que-fourlife"
+        ariaLabel="Por que a FourLife"
+      />
 
       <Section id="solucoes" className="bg-background">
         <SectionHeading

@@ -6,6 +6,7 @@ import {
   BadgeCheck,
   Truck,
   MoveHorizontal,
+  type LucideIcon,
 } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -17,34 +18,45 @@ const itemIcons = [CalendarClock, Timer, Users, Building2, BadgeCheck, Truck];
 const RING_R = 16;
 const RING_C = 2 * Math.PI * RING_R;
 
+type DifferentialsData = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  items: { title: string; detail: string }[];
+};
+
 export function Differentials({
   className = "bg-surface-2",
   showHeading = true,
+  data = differentials,
+  icons = itemIcons,
+  id = "diferenciais",
+  ariaLabel = "Diferenciais Carlos Chagas",
 }: {
   className?: string;
   showHeading?: boolean;
+  data?: DifferentialsData;
+  icons?: LucideIcon[];
+  id?: string;
+  ariaLabel?: string;
 }) {
-  const total = differentials.items.length;
+  const total = data.items.length;
 
   return (
-    <Section id="diferenciais" className={className}>
+    <Section id={id} className={className}>
       {showHeading ? (
-        <SectionHeading
-          eyebrow={differentials.eyebrow}
-          title={differentials.title}
-          body={differentials.body}
-        />
+        <SectionHeading eyebrow={data.eyebrow} title={data.title} body={data.body} />
       ) : null}
 
       <div
         className={`mb-2 flex items-center gap-1.5 text-xs font-medium text-muted ${showHeading ? "mt-10" : "mt-8"}`}
       >
-        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os 6 diferenciais
+        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os {total} diferenciais
       </div>
 
-      <DragScroll ariaLabel="Diferenciais Carlos Chagas" className="-mx-5 px-5 sm:mx-0 sm:px-0">
-        {differentials.items.map((item, i) => {
-          const Icon = itemIcons[i];
+      <DragScroll ariaLabel={ariaLabel} className="-mx-5 px-5 sm:mx-0 sm:px-0">
+        {data.items.map((item, i) => {
+          const Icon = icons[i];
           const fraction = (i + 1) / total;
           const offset = RING_C * (1 - fraction);
           return (
@@ -62,10 +74,10 @@ export function Differentials({
                       aria-hidden
                       className="absolute inset-0 animate-ping rounded-xl bg-brand-300/50 [animation-duration:2.4s]"
                     />
-                    <Icon className="relative h-5 w-5" />
+                    {Icon ? <Icon className="relative h-5 w-5" /> : null}
                   </span>
 
-                  {/* Mini-gráfico: posição do diferencial no conjunto dos 6 */}
+                  {/* Mini-gráfico: posição do diferencial no conjunto */}
                   <div className="relative flex h-11 w-11 shrink-0 items-center justify-center">
                     <svg viewBox="0 0 40 40" className="h-11 w-11 -rotate-90">
                       <circle cx="20" cy="20" r={RING_R} fill="none" stroke="var(--line)" strokeWidth="4" />
