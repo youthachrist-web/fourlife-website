@@ -20,7 +20,6 @@ import {
   Sparkles,
   RefreshCw,
   LayoutDashboard,
-  Bot,
   Wrench,
   Award,
   UserCheck,
@@ -52,7 +51,7 @@ const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
 const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
 const eduIcons = [BookOpen, Presentation, Sparkles, RefreshCw];
 
-const techCompactIcons = [LayoutDashboard, Bot];
+const techCompactIcons = [LayoutDashboard];
 const normsHighlightIcons = [ClipboardList, FileCheck2, Award];
 const eduTrackIcons = [BookOpen, Wrench, GraduationCap, Award];
 const eduCompactIcons = [UserCheck, Gift, TrendingUp, ShieldCheck];
