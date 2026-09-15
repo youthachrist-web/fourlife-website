@@ -19,6 +19,15 @@ import {
   Presentation,
   Sparkles,
   RefreshCw,
+  LayoutDashboard,
+  Bot,
+  Wrench,
+  Award,
+  UserCheck,
+  Gift,
+  ClipboardList,
+  AlertTriangle,
+  Quote,
   type LucideIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -32,6 +41,7 @@ import {
   techInnovation,
   normasRegulamentadoras,
   educacao,
+  provenResult,
   solutions,
   type TechInnovationShowcase,
 } from "@/lib/content";
@@ -41,6 +51,11 @@ const phaseIcons = [Syringe, UsersRound, ClipboardCheck];
 const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
 const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
 const eduIcons = [BookOpen, Presentation, Sparkles, RefreshCw];
+
+const techCompactIcons = [LayoutDashboard, Bot];
+const normsHighlightIcons = [ClipboardList, FileCheck2, Award];
+const eduTrackIcons = [BookOpen, Wrench, GraduationCap, Award];
+const eduCompactIcons = [UserCheck, Gift, TrendingUp, ShieldCheck];
 
 /** "Mês 6" -> 6; "Meses 2 a 5" -> 5 (the phase's last month). */
 function endMonth(period: string): number {
@@ -172,8 +187,11 @@ export function HealthJourney({
 
       {/* Ciclo de 6 meses — um único gráfico de linha do tempo, com motion */}
       <div className="mt-12">
-        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
           Pilar 1 · Saúde física e mental
+        </p>
+        <p className="mb-6 mt-2 max-w-2xl text-sm italic leading-relaxed text-slate">
+          “{healthJourney.quote}”
         </p>
 
         <Reveal className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] sm:p-8">
@@ -261,18 +279,34 @@ export function HealthJourney({
       <PillarShowcase
         showcase={techInnovation}
         icons={techIcons}
+        compactIcons={techCompactIcons}
         ariaLabel="Pilar 2 — Tecnologia e inovação em detalhe"
       />
       <PillarShowcase
         showcase={normasRegulamentadoras}
         icons={normsIcons}
+        highlightIcons={normsHighlightIcons}
         ariaLabel="Pilar 3 — Normas regulamentadoras em detalhe"
       />
       <PillarShowcase
         showcase={educacao}
         icons={eduIcons}
+        trackIcons={eduTrackIcons}
+        compactIcons={eduCompactIcons}
         ariaLabel="Pilar 4 — Educação em detalhe"
       />
+
+      {/* Citação de fechamento — mesmo padrão de destaque usado na Pillars/Cost. */}
+      <Reveal className="mt-16 rounded-2xl border border-brand-200 bg-brand-50 p-6 text-center sm:p-10">
+        <p className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700">
+          {provenResult.badge}
+        </p>
+        <Quote className="mx-auto mt-4 h-6 w-6 text-brand-400" aria-hidden />
+        <p className="mx-auto mt-3 max-w-2xl font-display text-xl font-semibold leading-snug text-brand-800 sm:text-2xl">
+          {provenResult.quote}
+        </p>
+        <p className="mt-4 text-sm text-brand-800/70">— {provenResult.attribution}</p>
+      </Reveal>
     </Section>
   );
 }
@@ -280,10 +314,16 @@ export function HealthJourney({
 function PillarShowcase({
   showcase,
   icons,
+  trackIcons,
+  compactIcons,
+  highlightIcons,
   ariaLabel,
 }: {
   showcase: TechInnovationShowcase;
   icons: LucideIcon[];
+  trackIcons?: LucideIcon[];
+  compactIcons?: LucideIcon[];
+  highlightIcons?: LucideIcon[];
   ariaLabel: string;
 }) {
   return (
@@ -297,6 +337,37 @@ function PillarShowcase({
       <p className="mt-2 max-w-2xl text-sm leading-relaxed text-slate">
         {showcase.body}
       </p>
+      {showcase.quote ? (
+        <p className="mt-2 max-w-2xl text-sm italic leading-relaxed text-slate">
+          “{showcase.quote}”
+        </p>
+      ) : null}
+
+      {/* Trilhas em ícone circular, sem foto (Pilar 4 — EJA, Técnico…) */}
+      {showcase.tracks && showcase.tracks.length > 0 ? (
+        <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {showcase.tracks.map((track, i) => {
+            const Icon = trackIcons?.[i];
+            return (
+              <Reveal
+                key={track.name}
+                delay={i * 60}
+                className="flex flex-col items-center text-center"
+              >
+                <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-lime-300 bg-brand-50 text-brand-700">
+                  {Icon ? <Icon className="h-6 w-6" /> : null}
+                </span>
+                <span className="mt-3 font-display text-sm font-semibold text-ink">
+                  {track.name}
+                </span>
+                <span className="mt-1 text-xs leading-relaxed text-slate">
+                  {track.detail}
+                </span>
+              </Reveal>
+            );
+          })}
+        </div>
+      ) : null}
 
       <div className="mb-2 mt-6 flex items-center gap-1.5 text-xs font-medium text-muted">
         <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os 4 itens
@@ -334,6 +405,69 @@ function PillarShowcase({
           );
         })}
       </DragScroll>
+
+      {/* Cartões compactos sem foto — ex.: Dashboard RH, IA Analytics preditiva */}
+      {showcase.compactItems && showcase.compactItems.length > 0 ? (
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {showcase.compactItems.map((item, i) => {
+            const Icon = compactIcons?.[i];
+            return (
+              <Reveal
+                key={item.name}
+                delay={i * 70}
+                className="rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
+              >
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  {Icon ? <Icon className="h-5 w-5" /> : null}
+                </span>
+                <span className="mt-3 block font-display text-base font-semibold text-ink">
+                  {item.name}
+                </span>
+                <span className="mt-2 block text-sm leading-relaxed text-slate">
+                  {item.detail}
+                </span>
+              </Reveal>
+            );
+          })}
+        </div>
+      ) : null}
+
+      {/* Grupos de checklist — ex.: Conformidade Legal, Vantagem Competitiva */}
+      {showcase.highlights && showcase.highlights.length > 0 ? (
+        <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          {showcase.highlights.map((group, i) => {
+            const Icon = highlightIcons?.[i];
+            return (
+              <Reveal
+                key={group.title}
+                delay={i * 80}
+                className="rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
+              >
+                <span className="flex items-center gap-2 font-display text-sm font-semibold text-ink">
+                  {Icon ? <Icon className="h-4 w-4 text-brand-600" /> : null}
+                  {group.title}
+                </span>
+                <ul className="mt-3 space-y-2">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex gap-2 text-sm text-slate">
+                      <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-lime-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            );
+          })}
+        </div>
+      ) : null}
+
+      {/* Alerta de atenção — ex.: risco de não conformidade com a NR-01 */}
+      {showcase.warning ? (
+        <Reveal className="mt-4 flex gap-3 rounded-2xl border border-warning/30 bg-warning/10 p-5">
+          <AlertTriangle className="h-5 w-5 shrink-0 text-warning" />
+          <p className="text-sm leading-relaxed text-ink">{showcase.warning}</p>
+        </Reveal>
+      ) : null}
 
       {showcase.closingLogo ? (
         <div className="mt-8 flex items-center gap-3 border-t border-line pt-6">

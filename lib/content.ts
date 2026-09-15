@@ -370,6 +370,8 @@ export const healthJourney = {
   eyebrow: "Jornada da Saúde",
   title: "Do diagnóstico inicial ao retorno financeiro",
   body: "Um ciclo de seis meses que começa mapeando a saúde do time e termina com indicadores de prevenção, menos ausências e ROI para a empresa. Saúde física + saúde mental = produtividade.",
+  /** Citação de abertura do Pilar 1, no mesmo padrão dos Pilares 2–4 abaixo. */
+  quote: "Investir na educação em saúde não é custo, é estratégia para resultados sustentáveis.",
   stages: [
     {
       name: "Check-up inicial",
@@ -447,12 +449,28 @@ export type TechInnovationItem = {
   image: { src: string; alt: string };
 };
 
+/** Cartão compacto (ícone + título + detalhe), sem foto. */
+export type CompactItem = { name: string; detail: string };
+
+/** Grupo de destaques em checklist (ex.: "Conformidade Legal"). */
+export type HighlightGroup = { title: string; items: string[] };
+
 /** Shape shared by every "pilar em detalhe" showcase (Pilares 2, 3, 4…). */
 export type TechInnovationShowcase = {
   eyebrow: string;
   title: string;
   body: string;
+  /** Citação em destaque, exibida em itálico logo abaixo do body. */
+  quote?: string;
+  /** Trilhas em ícone circular, sem foto (usado no Pilar 4 — EJA, Técnico…). */
+  tracks?: CompactItem[];
   items: TechInnovationItem[];
+  /** Cartões compactos sem foto, exibidos após os cartões com foto. */
+  compactItems?: CompactItem[];
+  /** Grupos de checklist (usado no Pilar 3 — Conformidade Legal, etc.). */
+  highlights?: HighlightGroup[];
+  /** Alerta de atenção (usado no Pilar 3 — risco de não conformidade). */
+  warning?: string;
   /** Closing credit logo (used once, on Pilar 4 — from the source deck's last slide). */
   closingLogo?: { src: string; alt: string; caption: string };
 };
@@ -465,7 +483,8 @@ export type TechInnovationShowcase = {
 export const techInnovation = {
   eyebrow: "Pilar 2 · Tecnologia e inovação",
   title: "O que não é medido não pode ser melhorado",
-  body: "Nós entregamos dados que viram resultados.",
+  body: "Nossa plataforma digital centraliza checkups, resultados, planos de ação e indicadores de saúde — tudo em um painel gerencial acessível ao RH, com privacidade garantida para cada colaborador.",
+  quote: "Saúde digital como benefício corporativo real — plataforma, dados e IA a serviço do seu RH.",
   items: [
     {
       name: "IA e analytics",
@@ -500,6 +519,18 @@ export const techInnovation = {
       },
     },
   ] satisfies TechInnovationItem[],
+  compactItems: [
+    {
+      name: "Dashboard RH em tempo real",
+      detail:
+        "Indicadores de saúde, afastamentos, retorno sobre investimento e alertas automatizados para tomada de decisão.",
+    },
+    {
+      name: "IA Analytics preditiva",
+      detail:
+        "Identifica padrões de risco antes que se tornem afastamentos — recomendações personalizadas por colaborador que empoderam o RH e protegem a empresa.",
+    },
+  ] satisfies CompactItem[],
 };
 
 /**
@@ -510,7 +541,8 @@ export const techInnovation = {
 export const normasRegulamentadoras = {
   eyebrow: "Pilar 3 · Normas regulamentadoras",
   title: "Estar em conformidade não é opção",
-  body: "É blindagem contra riscos e passivos.",
+  body: "A nova NR-01 exige Gerenciamento de Riscos Ocupacionais (GRO) e Programa de Gerenciamento de Riscos (PGR). Nossa plataforma gerencial torna o compliance simples, auditável e integrado à cultura da empresa.",
+  quote: "Compliance com NR-01 e SST transforma obrigação legal em vantagem competitiva.",
   items: [
     {
       name: "Base para as NRs",
@@ -545,6 +577,37 @@ export const normasRegulamentadoras = {
       },
     },
   ] satisfies TechInnovationItem[],
+  highlights: [
+    {
+      title: "Plataforma NR-01 & SST",
+      items: [
+        "GRO — Gerenciamento de Riscos Ocupacionais",
+        "PGR — Programa de Gerenciamento de Riscos",
+        "PCMSO integrado",
+        "Laudos e ASOs digitais",
+      ],
+    },
+    {
+      title: "Conformidade legal",
+      items: [
+        "Conformidade com legislação trabalhista vigente",
+        "Redução de passivo trabalhista",
+        "Documentação auditável e rastreável",
+        "Prevenção proativa de acidentes",
+      ],
+    },
+    {
+      title: "Vantagem competitiva",
+      items: [
+        "Score ESG elevado",
+        "Reputação como empregador responsável",
+        "Redução de multas e notificações",
+        "Cultura de segurança consolidada",
+      ],
+    },
+  ] satisfies HighlightGroup[],
+  warning:
+    "Empresas não conformes com a nova NR-01 estão sujeitas a embargos, multas e ações trabalhistas. A FourLife garante que você esteja sempre à frente da fiscalização.",
 };
 
 /**
@@ -556,7 +619,26 @@ export const normasRegulamentadoras = {
 export const educacao = {
   eyebrow: "Pilar 4 · Educação",
   title: "Empresas que educam seus colaboradores",
-  body: "Criam times mais engajados, produtivos e leais.",
+  body: "Oferecemos trilhas educacionais completas como benefício corporativo — do ensino fundamental (EJA) à especialização, graduação e MBA — criando vínculos de longo prazo entre o colaborador e a empresa.",
+  quote: "Do EJA ao MBA — plano de carreira com formação formal que retém e desenvolve talentos.",
+  tracks: [
+    {
+      name: "EJA",
+      detail: "Educação de Jovens e Adultos — alfabetização e ensino fundamental/médio.",
+    },
+    {
+      name: "Técnico",
+      detail: "Cursos técnicos profissionalizantes alinhados à área de atuação.",
+    },
+    {
+      name: "Graduação",
+      detail: "Ensino superior com flexibilidade de horários para o trabalhador.",
+    },
+    {
+      name: "Pós / MBA",
+      detail: "Especializações, MBAs e pós-graduações para líderes e gestores.",
+    },
+  ] satisfies CompactItem[],
   items: [
     {
       name: "Programa educacional",
@@ -591,11 +673,37 @@ export const educacao = {
       },
     },
   ] satisfies TechInnovationItem[],
+  compactItems: [
+    {
+      name: "Retenção de talentos",
+      detail: "Colaboradores que se desenvolvem dentro da empresa permanecem até 2× mais.",
+    },
+    {
+      name: "Benefício diferenciado",
+      detail: "Educação formal como benefício é um dos mais valorizados na pesquisa de clima.",
+    },
+    {
+      name: "Aumento de produtividade",
+      detail: "Equipes mais capacitadas cometem menos erros e entregam mais resultado.",
+    },
+    {
+      name: "Compliance trabalhista",
+      detail: "Treinamentos e capacitações documentados reduzem o risco de ações judiciais.",
+    },
+  ] satisfies CompactItem[],
   closingLogo: {
     src: "/brand/gen-logo.png",
     alt: "Logo do Grupo Europa de Negócios (GEN)",
     caption: "Grupo Europa de Negócios",
   },
+};
+
+/** Citação de fechamento da Jornada/Pilares — material de apoio Orion Digital. */
+export const provenResult = {
+  badge: "Resultado comprovado",
+  quote:
+    "Investir na saúde do colaborador não é custo. É a estratégia de negócio mais rentável que sua empresa pode adotar.",
+  attribution: "Filosofia FourLife",
 };
 
 /* --------------------------------------------------------------------------- */
