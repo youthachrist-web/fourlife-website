@@ -384,7 +384,7 @@ export const healthJourney = {
       detail: "Mapeamento do estado de saúde física e mental dos colaboradores.",
       image: {
         src: "/images/pillar-saude-fisica-mental.jpg",
-        alt: "Profissional de saúde afere a pressão arterial de uma paciente durante um check-up.",
+        alt: "Profissional de saúde realiza exame dermatoscópico em uma paciente durante um check-up.",
       },
       logos: ["labduo", "avallio"],
     },
