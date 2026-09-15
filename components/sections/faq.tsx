@@ -16,7 +16,7 @@ export function Faq({ heading = true }: { heading?: boolean }) {
       {heading ? (
         <SectionHeading
           eyebrow="Perguntas frequentes"
-          title="As 5 dores que mais ouvimos — e o que o ecossistema faz por elas"
+          title="As 6 dores que mais ouvimos — e o que o ecossistema faz por elas"
         />
       ) : null}
 

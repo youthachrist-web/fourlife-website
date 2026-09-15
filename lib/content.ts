@@ -963,6 +963,12 @@ export const faq = [
     answer:
       "A FourLife é o núcleo que conecta as 7 soluções — gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação e estratégia — em uma única estratégia orquestrada por dados. Um contrato, um painel, uma direção. Começa por um diagnóstico gratuito.",
   },
+  {
+    pain: "Dor 6 — Empresa fora do Rio Grande do Sul",
+    question: "A FourLife atende empresas em todo o Brasil ou só no Rio Grande do Sul?",
+    answer:
+      "O ecossistema FourLife — diagnóstico, People Analytics, telemedicina (ZapVida), compliance de SST (SGG), saúde mental (AVall.iÔ) e educação corporativa (Uninovia) — é 100% digital e atende empresas em todo o Brasil. Já os exames clínicos presenciais da Diferenciais Carlos Chagas têm estrutura própria hoje em Porto Alegre, Canoas e Cachoeirinha (RS), com resultado em até 48h.",
+  },
 ];
 
 /* --------------------------------------------------------------------------- */

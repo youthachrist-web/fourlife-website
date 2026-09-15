@@ -64,6 +64,9 @@ export const metadata: Metadata = {
     "educação corporativa",
     "engenharia de segurança do trabalho",
     "diagnóstico de saúde corporativa",
+    "saúde corporativa em todo o Brasil",
+    "consultoria de SST nacional",
+    "ecossistema de saúde corporativa nacional",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -87,6 +90,12 @@ export const metadata: Metadata = {
     description: site.shortDescription,
   },
   robots: { index: true, follow: true },
+  // Sinal geográfico clássico (Bing e outros ainda o consideram): cobertura
+  // nacional, sem restringir a uma única cidade/UF.
+  other: {
+    "geo.region": "BR",
+    "geo.placename": "Brasil",
+  },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",

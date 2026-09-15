@@ -3,6 +3,21 @@ import { faq, site, solutions } from "./content";
 
 const url = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
 
+/**
+ * As 27 UFs — enumerar cada estado (em vez de só "Brasil" como país) dá aos
+ * mecanismos de busca e engines de IA (GEO) um sinal explícito e literal de
+ * cobertura nacional, útil para responder "a FourLife atende [estado]?" em
+ * vez de depender de inferência a partir de um único nó "Country".
+ */
+const brazilianStates = [
+  "Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará",
+  "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão",
+  "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará",
+  "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro",
+  "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima",
+  "Santa Catarina", "São Paulo", "Sergipe", "Tocantins",
+];
+
 export function organizationLd() {
   return {
     "@context": "https://schema.org",
@@ -11,17 +26,17 @@ export function organizationLd() {
     name: site.legalName,
     alternateName: site.name,
     url,
+    logo: `${url}/icon.svg`,
     email: site.contact.email,
     description: site.shortDescription,
     slogan: site.slogan,
     inLanguage: "pt-BR",
-    // Nacional (B2B, todo o Brasil) + as praças com estrutura própria da
-    // Diferenciais Carlos Chagas (medicina ocupacional presencial).
+    // Nacional (B2B, todo o Brasil — cada UF listada explicitamente para
+    // GEO) + as praças com estrutura própria da Diferenciais Carlos Chagas
+    // (medicina ocupacional presencial).
     areaServed: [
       { "@type": "Country", name: "Brasil" },
-      { "@type": "City", name: "Porto Alegre" },
-      { "@type": "City", name: "Canoas" },
-      { "@type": "City", name: "Cachoeirinha" },
+      ...brazilianStates.map((name) => ({ "@type": "State" as const, name })),
     ],
     contactPoint: [
       {
