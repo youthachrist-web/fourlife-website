@@ -491,8 +491,8 @@ export const techInnovation = {
       detail:
         "Uso de IA e analytics para coletar e tratar dados de saúde física e mental, identificando padrões de risco antes que se tornem afastamentos — com recomendações personalizadas por colaborador.",
       image: {
-        src: "/images/tech-dashboard-ia-preditiva.png",
-        alt: "Médico consulta um painel digital com histórico do paciente, gráficos e indicadores em tempo real.",
+        src: "/images/tech-ia-analytics.jpg",
+        alt: "Médico acompanha um procedimento assistido por braço robótico, com um tablet em mãos.",
       },
     },
     {
@@ -519,14 +519,16 @@ export const techInnovation = {
         alt: "Equipe médica treina reanimação cardiopulmonar em um manequim, coletando dados clínicos durante a simulação.",
       },
     },
-  ] satisfies TechInnovationItem[],
-  compactItems: [
     {
       name: "Dashboard RH em tempo real",
       detail:
         "Indicadores de saúde, afastamentos, retorno sobre investimento e alertas automatizados para tomada de decisão.",
+      image: {
+        src: "/images/tech-dashboard-ia-preditiva.png",
+        alt: "Médico consulta um painel digital com histórico do paciente, gráficos e indicadores em tempo real.",
+      },
     },
-  ] satisfies CompactItem[],
+  ] satisfies TechInnovationItem[],
 };
 
 /**

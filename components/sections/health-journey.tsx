@@ -47,11 +47,10 @@ import {
 
 const stageIcons = [Stethoscope, HeartHandshake, Activity, TrendingUp];
 const phaseIcons = [Syringe, UsersRound, ClipboardCheck];
-const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
+const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap, LayoutDashboard];
 const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
 const eduIcons = [BookOpen, Presentation, Sparkles, RefreshCw];
 
-const techCompactIcons = [LayoutDashboard];
 const normsHighlightIcons = [ClipboardList, FileCheck2, Award];
 const eduTrackIcons = [BookOpen, Wrench, GraduationCap, Award];
 const eduCompactIcons = [UserCheck, Gift, TrendingUp, ShieldCheck];
@@ -278,7 +277,6 @@ export function HealthJourney({
       <PillarShowcase
         showcase={techInnovation}
         icons={techIcons}
-        compactIcons={techCompactIcons}
         ariaLabel="Pilar 2 — Tecnologia e inovação em detalhe"
       />
       <PillarShowcase
@@ -369,7 +367,7 @@ function PillarShowcase({
       ) : null}
 
       <div className="mb-2 mt-6 flex items-center gap-1.5 text-xs font-medium text-muted">
-        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os 4 itens
+        <MoveHorizontal className="h-3.5 w-3.5" /> arraste para ver os {showcase.items.length} itens
       </div>
 
       <DragScroll ariaLabel={ariaLabel} className="-mx-5 px-5 sm:mx-0 sm:px-0">
