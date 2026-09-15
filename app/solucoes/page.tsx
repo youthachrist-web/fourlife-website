@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { SolutionCard } from "@/components/sections/solution-card";
 import { CtaBand } from "@/components/sections/cta-band";
 import { solutions } from "@/lib/content";
@@ -45,8 +46,10 @@ export default function SolucoesPage() {
           body="Cada solução resolve uma causa concreta de perda de produtividade e alimenta o núcleo FourLife com dados. O resultado é uma estratégia única — não fornecedores isolados."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {solutions.map((s) => (
-            <SolutionCard key={s.slug} id={s.slug} solution={s} />
+          {solutions.map((s, i) => (
+            <Reveal key={s.slug} delay={i * 70}>
+              <SolutionCard id={s.slug} solution={s} className="h-full" />
+            </Reveal>
           ))}
         </div>
       </Section>

@@ -1,3 +1,4 @@
+import { Quote } from "lucide-react";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { testimonials } from "@/lib/content";
@@ -15,9 +16,10 @@ export function Testimonials() {
             as="figure"
             key={t.name}
             delay={i * 90}
-            className="flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)]"
+            className="group flex h-full flex-col rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
           >
-            <blockquote className="flex-1 text-sm leading-relaxed text-slate">
+            <Quote className="icon-pop h-6 w-6 text-brand-300 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110" />
+            <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate">
               “{t.quote}”
             </blockquote>
             <figcaption className="mt-5 border-t border-line pt-4">

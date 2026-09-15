@@ -69,7 +69,7 @@ export function Differentials({
               <div className="p-6">
                 <div className="flex items-start justify-between gap-3">
                   {/* Ícone com motion contínua (anel pulsando) */}
-                  <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                  <span className="icon-pop relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
                     <span
                       aria-hidden
                       className="absolute inset-0 animate-ping rounded-xl bg-brand-300/50 [animation-duration:2.4s]"

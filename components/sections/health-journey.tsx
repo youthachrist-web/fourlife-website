@@ -115,12 +115,14 @@ export function HealthJourney({
 
               <div className="flex flex-1 flex-col p-5">
                 <div className="flex items-start justify-between gap-2">
-                  <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                    <span
-                      aria-hidden
-                      className="absolute inset-0 animate-ping rounded-xl bg-brand-300/40 [animation-duration:2.6s]"
-                    />
-                    <Icon className="relative h-5 w-5" />
+                  <span className="icon-pop relative inline-block">
+                    <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                      <span
+                        aria-hidden
+                        className="absolute inset-0 animate-ping rounded-xl bg-brand-300/40 [animation-duration:2.6s]"
+                      />
+                      <Icon className="relative h-5 w-5" />
+                    </span>
                   </span>
                   <div className="relative flex h-9 w-9 shrink-0 items-center justify-center">
                     <svg viewBox="0 0 36 36" className="h-9 w-9 -rotate-90">
@@ -218,7 +220,7 @@ export function HealthJourney({
                   className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2"
                   style={{ left: `${left}%` }}
                 >
-                  <span className="relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-background bg-brand-700 text-white shadow-[var(--shadow-card)]">
+                  <span className="icon-pop relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-background bg-brand-700 text-white shadow-[var(--shadow-card)]">
                     <span
                       aria-hidden
                       className="absolute inset-0 animate-ping rounded-full bg-brand-400/60"
@@ -351,7 +353,10 @@ function PillarShowcase({
                 delay={i * 60}
                 className="flex flex-col items-center text-center"
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-lime-300 bg-brand-50 text-brand-700">
+                <span
+                  className="icon-pop icon-float flex h-14 w-14 items-center justify-center rounded-full border-2 border-lime-300 bg-brand-50 text-brand-700"
+                  style={{ "--float-delay": `${i * 0.3}s` } as React.CSSProperties}
+                >
                   {Icon ? <Icon className="h-6 w-6" /> : null}
                 </span>
                 <span className="mt-3 font-display text-sm font-semibold text-ink">
@@ -388,8 +393,10 @@ function PillarShowcase({
                 imgClassName="transition-transform duration-700 group-hover:scale-105"
               />
               <div className="p-5">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                  <Icon className="h-5 w-5" />
+                <span className="icon-pop relative inline-block">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                    <Icon className="h-5 w-5" />
+                  </span>
                 </span>
                 <span className="mt-3 block font-display text-base font-semibold text-ink">
                   {item.name}
@@ -414,7 +421,7 @@ function PillarShowcase({
                 delay={i * 70}
                 className="rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                <span className="icon-pop flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
                   {Icon ? <Icon className="h-5 w-5" /> : null}
                 </span>
                 <span className="mt-3 block font-display text-base font-semibold text-ink">
@@ -441,7 +448,7 @@ function PillarShowcase({
                 className="rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
               >
                 <span className="flex items-center gap-2 font-display text-sm font-semibold text-ink">
-                  {Icon ? <Icon className="h-4 w-4 text-brand-600" /> : null}
+                  {Icon ? <Icon className="icon-pop h-4 w-4 text-brand-600" /> : null}
                   {group.title}
                 </span>
                 <ul className="mt-3 space-y-2">

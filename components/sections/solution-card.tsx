@@ -21,7 +21,7 @@ export function SolutionCard({
     <article
       id={id}
       className={cn(
-        "flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] scroll-mt-28",
+        "group flex flex-col rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] scroll-mt-28 transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]",
         className,
       )}
     >
@@ -40,7 +40,11 @@ export function SolutionCard({
           </h3>
           <p className="text-sm text-muted">{solution.category}</p>
         </div>
-        <LogoBadge solution={solution} size="md" />
+        <span className="icon-pop">
+          <span className="inline-block transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+            <LogoBadge solution={solution} size="md" />
+          </span>
+        </span>
       </div>
 
       <p className="mt-4 text-sm font-medium text-slate">{solution.role}</p>

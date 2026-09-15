@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { CtaBand } from "@/components/sections/cta-band";
 import { pillars, ecosystemIntro, site } from "@/lib/content";
 import { JsonLd, breadcrumbLd, pageSocial } from "@/lib/seo";
@@ -50,14 +51,15 @@ export default function SobrePage() {
       <Section className="bg-background">
         <SectionHeading eyebrow="Como pensamos" title="Quatro pilares, uma estratégia" />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((pillar) => (
-            <div
+          {pillars.map((pillar, i) => (
+            <Reveal
               key={pillar.name}
-              className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)]"
+              delay={i * 80}
+              className="rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <p className="font-display text-lg font-semibold text-ink">{pillar.name}</p>
               <p className="mt-2 text-sm text-slate">{pillar.detail}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>

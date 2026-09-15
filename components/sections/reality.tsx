@@ -55,7 +55,7 @@ export function Reality() {
       <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div className="lg:sticky lg:top-28">
           <p className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-brand-700">
-            <Newspaper className="h-3.5 w-3.5" /> Na imprensa
+            <Newspaper className="icon-pop icon-float h-3.5 w-3.5" /> Na imprensa
           </p>
           <h3 className="mt-4 font-display text-2xl font-semibold text-ink">
             O afastamento virou pauta nacional — todo mês
@@ -74,7 +74,7 @@ export function Reality() {
               delay={i * 110}
               className="relative rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-card)]"
             >
-              <span className="absolute -left-[1.72rem] top-6 h-3 w-3 rounded-full border-2 border-background bg-brand-400" />
+              <span className="icon-pop absolute -left-[1.72rem] top-6 h-3 w-3 rounded-full border-2 border-background bg-brand-400" />
               <div className="flex flex-wrap items-center gap-2 text-xs">
                 <span className="rounded bg-brand-800 px-2 py-0.5 font-semibold text-white">
                   {clip.source}

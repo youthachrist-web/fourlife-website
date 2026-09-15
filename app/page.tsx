@@ -67,7 +67,7 @@ export default function HomePage() {
           body="Da saúde mental ao compliance de SST, da telemedicina à educação — cada solução gera dados que o núcleo FourLife transforma em decisão."
         />
         <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-muted">
-          <ArrowRight className="h-3.5 w-3.5" /> arraste para ver as soluções
+          <ArrowRight className="h-3.5 w-3.5 icon-float" /> arraste para ver as soluções
         </div>
         <DragScroll ariaLabel="Soluções do ecossistema" className="-mx-5 mt-3 px-5 sm:mx-0 sm:px-0">
           {solutions.map((s, i) => (
@@ -85,7 +85,7 @@ export default function HomePage() {
             href="/solucoes"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
-            Ver as 7 soluções em detalhe <ArrowRight className="h-4 w-4" />
+            Ver as 7 soluções em detalhe <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
       </Section>

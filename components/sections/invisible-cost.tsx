@@ -34,7 +34,7 @@ export function InvisibleCost() {
               <div className="flex items-start justify-between gap-3">
                 <span
                   className={cn(
-                    "flex h-11 w-11 items-center justify-center rounded-xl",
+                    "icon-pop flex h-11 w-11 items-center justify-center rounded-xl",
                     point.critical ? "bg-error/10 text-error" : "bg-brand-50 text-brand-700",
                   )}
                 >

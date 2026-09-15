@@ -14,11 +14,11 @@ export function Hero() {
     <section className="relative overflow-hidden border-b border-line bg-surface">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-60" aria-hidden />
       <div
-        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-100 blur-3xl"
+        className="blob-drift pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-brand-100 blur-3xl"
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-lime-100 blur-3xl"
+        className="blob-drift-alt pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-lime-100 blur-3xl"
         aria-hidden
       />
       {/* Oversized "4" watermark — same chunky numeral as the FourLife logo.
@@ -44,10 +44,10 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <LeadCta size="lg">
-              Agendar diagnóstico gratuito <ArrowRight className="h-4 w-4" />
+              Agendar diagnóstico gratuito <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </LeadCta>
             <ButtonLink href="/#pilares" size="lg" variant="outline">
-              Conhecer os 4 pilares <ArrowRight className="h-4 w-4" />
+              Conhecer os 4 pilares <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </ButtonLink>
           </div>
 
@@ -85,7 +85,10 @@ export function Hero() {
                   const Icon = pillarIcons[i];
                   return (
                     <li key={pillar.name} className="flex gap-4">
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700">
+                      <span
+                        className="icon-pop icon-float flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-700"
+                        style={{ "--float-delay": `${i * 0.35}s` } as React.CSSProperties}
+                      >
                         <Icon className="h-5 w-5" />
                       </span>
                       <span>

@@ -17,7 +17,7 @@ export function Cost() {
             className="group rounded-2xl border border-line bg-surface p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
           >
             {/* Ícone com motion contínua (anel pulsando) */}
-            <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-error/10 text-error">
+            <span className="icon-pop relative flex h-11 w-11 items-center justify-center rounded-xl bg-error/10 text-error">
               <span
                 aria-hidden
                 className="absolute inset-0 animate-ping rounded-xl bg-error/20 [animation-duration:2.4s]"

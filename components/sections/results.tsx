@@ -27,7 +27,7 @@ export function Results() {
               <Reveal key={point.label} delay={i * 100}>
                 <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
                   <span className="flex items-center gap-2 text-sm font-medium text-ink">
-                    <Icon className="h-4 w-4 shrink-0 text-success" />
+                    <Icon className="icon-pop h-4 w-4 shrink-0 text-success" />
                     {point.label}
                   </span>
                   <span className="font-display text-xl font-semibold text-success">
@@ -50,7 +50,7 @@ export function Results() {
             delay={300}
             className="flex flex-col items-center justify-center rounded-2xl border border-brand-200 bg-brand-50 p-6 text-center sm:p-8"
           >
-            <HandCoins className="h-8 w-8 text-brand-700" />
+            <HandCoins className="icon-pop icon-float h-8 w-8 text-brand-700" />
             <p className="mt-4 font-display text-5xl font-bold text-brand-800">
               <CountUp value={roi.value} />
             </p>

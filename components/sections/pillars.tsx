@@ -75,8 +75,10 @@ export function Pillars() {
                   {pillar.number.replace(/^0/, "")}
                 </span>
 
-                <span className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                  <Icon className="h-5 w-5" />
+                <span className="icon-pop relative inline-block">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50 text-brand-700 transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                    <Icon className="h-5 w-5" />
+                  </span>
                 </span>
                 <h3 className="relative mt-4 font-display text-lg font-semibold text-ink">
                   {pillar.name}

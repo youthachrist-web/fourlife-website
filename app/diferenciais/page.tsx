@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 import { HealthJourney } from "@/components/sections/health-journey";
 import { CtaBand } from "@/components/sections/cta-band";
 import { LeadCta } from "@/components/lead/lead-cta";
@@ -58,22 +59,24 @@ export default function DiferenciaisPage() {
           </p>
           <div className="mt-8">
             <LeadCta size="lg" interest="Diferenciais Carlos Chagas (saúde ocupacional)">
-              Falar com a assessoria <ArrowRight className="h-4 w-4" />
+              Falar com a assessoria <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </LeadCta>
           </div>
         </div>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {differentials.items.map((item) => (
-            <li
+          {differentials.items.map((item, i) => (
+            <Reveal
+              as="li"
               key={item.title}
-              className="flex flex-col rounded-2xl border border-line bg-background p-6 shadow-[var(--shadow-card)]"
+              delay={i * 70}
+              className="flex flex-col rounded-2xl border border-line bg-background p-6 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
             >
               <h2 className="font-display text-base font-semibold text-ink">
                 {item.title}
               </h2>
               <p className="mt-2 text-sm leading-relaxed text-slate">{item.detail}</p>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </Section>
