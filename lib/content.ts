@@ -40,12 +40,18 @@ export const site = {
   },
 } as const;
 
+/**
+ * Navegação principal — segue a própria narrativa do site: o que fazemos, como
+ * funciona, a prova, as soluções, o porquê, quem somos e, por fim, o blog.
+ */
 export const nav = [
   { label: "Pilares", href: "/#pilares" },
   { label: "Jornada", href: "/#jornada" },
+  { label: "Resultados", href: "/#resultados" },
   { label: "Soluções", href: "/solucoes" },
   { label: "Diferenciais", href: "/diferenciais" },
   { label: "Sobre", href: "/sobre" },
+  { label: "Blog", href: "/realidade-invisivel" },
 ] as const;
 
 export const cta = {

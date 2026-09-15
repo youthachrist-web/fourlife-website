@@ -46,12 +46,12 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between gap-4">
         <Logo priority />
 
-        <nav aria-label="Navegação principal" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Navegação principal" className="hidden items-center gap-0.5 xl:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-slate transition-colors hover:bg-brand-50 hover:text-primary"
+              className="whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-slate transition-colors hover:bg-brand-50 hover:text-primary"
             >
               {item.label}
             </Link>
@@ -64,7 +64,7 @@ export function SiteHeader() {
           </LeadCta>
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink xl:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -76,7 +76,7 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div id="mobile-nav" className="border-t border-line bg-background lg:hidden">
+        <div id="mobile-nav" className="border-t border-line bg-background xl:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {nav.map((item) => (
               <Link
