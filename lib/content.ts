@@ -487,11 +487,12 @@ export const techInnovation = {
   quote: "Saúde digital como benefício corporativo real — plataforma, dados e IA a serviço do seu RH.",
   items: [
     {
-      name: "IA e analytics",
-      detail: "Uso de IA e analytics para coletar e tratar dados de saúde física e mental.",
+      name: "Dashboard & IA preditiva",
+      detail:
+        "Painel em tempo real com indicadores de saúde, afastamentos e ROI, cruzados por IA e analytics preditiva que identifica padrões de risco antes que virem afastamento — com recomendações personalizadas por colaborador que empoderam o RH e protegem a empresa.",
       image: {
-        src: "/images/tech-ia-analytics.jpg",
-        alt: "Médico acompanha um procedimento assistido por braço robótico, com um tablet em mãos.",
+        src: "/images/tech-dashboard-ia-preditiva.png",
+        alt: "Médico consulta um painel digital com histórico do paciente, gráficos e indicadores em tempo real.",
       },
     },
     {
@@ -519,18 +520,6 @@ export const techInnovation = {
       },
     },
   ] satisfies TechInnovationItem[],
-  compactItems: [
-    {
-      name: "Dashboard RH em tempo real",
-      detail:
-        "Indicadores de saúde, afastamentos, retorno sobre investimento e alertas automatizados para tomada de decisão.",
-    },
-    {
-      name: "IA Analytics preditiva",
-      detail:
-        "Identifica padrões de risco antes que se tornem afastamentos — recomendações personalizadas por colaborador que empoderam o RH e protegem a empresa.",
-    },
-  ] satisfies CompactItem[],
 };
 
 /**

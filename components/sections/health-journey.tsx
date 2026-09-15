@@ -19,8 +19,6 @@ import {
   Presentation,
   Sparkles,
   RefreshCw,
-  LayoutDashboard,
-  Bot,
   Wrench,
   Award,
   UserCheck,
@@ -52,7 +50,6 @@ const techIcons = [BrainCircuit, FileText, Lightbulb, GraduationCap];
 const normsIcons = [HardHat, FileCheck2, ShieldCheck, Scale];
 const eduIcons = [BookOpen, Presentation, Sparkles, RefreshCw];
 
-const techCompactIcons = [LayoutDashboard, Bot];
 const normsHighlightIcons = [ClipboardList, FileCheck2, Award];
 const eduTrackIcons = [BookOpen, Wrench, GraduationCap, Award];
 const eduCompactIcons = [UserCheck, Gift, TrendingUp, ShieldCheck];
@@ -279,7 +276,6 @@ export function HealthJourney({
       <PillarShowcase
         showcase={techInnovation}
         icons={techIcons}
-        compactIcons={techCompactIcons}
         ariaLabel="Pilar 2 — Tecnologia e inovação em detalhe"
       />
       <PillarShowcase
