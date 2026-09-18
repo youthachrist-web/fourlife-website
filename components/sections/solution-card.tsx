@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 import { LogoBadge } from "@/components/ui/logo-badge";
-import type { Solution } from "@/lib/content";
+import { solutions, type Solution } from "@/lib/content";
 
 const accentRing: Record<Solution["accent"], string> = {
   brand: "text-brand-700 bg-brand-50 ring-brand-100",
@@ -33,7 +33,7 @@ export function SolutionCard({
               accentRing[solution.accent],
             )}
           >
-            Solução {solution.order} / 7
+            Solução {solution.order} / {solutions.length}
           </span>
           <h3 className="mt-3 font-display text-xl font-semibold text-ink">
             {solution.name}
