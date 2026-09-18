@@ -21,7 +21,9 @@ export const site = {
   heroBody:
     "Reduzimos presenteísmo e absenteísmo, garantimos conformidade com NR-01 e SST, e desenvolvemos seus talentos do EJA ao MBA — tudo em uma plataforma integrada.",
   // Set NEXT_PUBLIC_SITE_URL in the environment for the deployed domain.
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://fourlife.com.br",
+  // www é o host canônico (fourlife.com.br "nu" redireciona 301 para ele —
+  // ver next.config.ts), então o fallback já reflete isso.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.fourlife.com.br",
   locale: "pt-BR",
   contact: {
     // From EcossistemaFourLife.pptx, slide 18.

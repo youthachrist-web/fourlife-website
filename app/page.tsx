@@ -24,7 +24,7 @@ import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { DragScroll } from "@/components/ui/drag-scroll";
 import { SolutionCard } from "@/components/sections/solution-card";
-import { JsonLd, faqLd, servicesLd } from "@/lib/seo";
+import { JsonLd, faqLd, howToLd, servicesLd } from "@/lib/seo";
 import { solutions, site, ecosystemDifferentials } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ const ecosystemDifferentialsIcons = [
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={[faqLd(), servicesLd()]} />
+      <JsonLd data={[faqLd(), servicesLd(), howToLd()]} />
       <Hero />
       <InvisibleCost />
       <Risks />

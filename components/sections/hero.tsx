@@ -38,7 +38,10 @@ export function Hero() {
           <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.08] text-ink sm:text-5xl lg:text-6xl">
             {site.slogan}
           </h1>
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">
+          <p
+            data-speakable="hero-body"
+            className="mt-5 max-w-xl text-lg leading-relaxed text-slate"
+          >
             {site.heroBody}
           </p>
 

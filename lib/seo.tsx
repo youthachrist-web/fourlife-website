@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { faq, site, solutions } from "./content";
+import { faq, healthJourney, site, solutions } from "./content";
 
 const url = (process.env.NEXT_PUBLIC_SITE_URL || site.url).replace(/\/$/, "");
 
@@ -26,7 +26,14 @@ export function organizationLd() {
     name: site.legalName,
     alternateName: site.name,
     url,
-    logo: `${url}/icon.svg`,
+    // Google só reconhece o logo do Organization/Knowledge Panel em raster
+    // (PNG/JPG, mín. 112x112px) — o icon.svg é só o favicon do <head>.
+    logo: {
+      "@type": "ImageObject",
+      url: `${url}/brand/fourlife-logo.png`,
+      width: 683,
+      height: 366,
+    },
     email: site.contact.email,
     description: site.shortDescription,
     slogan: site.slogan,
@@ -151,6 +158,38 @@ export function websiteLd() {
     name: site.name,
     inLanguage: "pt-BR",
     publisher: { "@id": `${url}/#organization` },
+    // Marca o resumo do Hero como o trecho preferencial pra leitura em voz
+    // alta (Google Assistant/Actions e engines de IA usam isso pra extrair
+    // a resposta curta e "citável" da página — sinal central de GEO).
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[data-speakable='hero-body']"],
+    },
+  };
+}
+
+/**
+ * HowTo da Jornada da Saúde (ciclo de 6 meses) — conteúdo já existente na
+ * home (`healthJourney.stages`), agora também como dado estruturado. Alvo
+ * de rich results ("HowTo") e de extração direta por engines de IA (GEO)
+ * ao responder "como funciona a Jornada da Saúde da FourLife".
+ */
+export function howToLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: healthJourney.title,
+    description: healthJourney.body,
+    totalTime: "P6M",
+    step: healthJourney.stages.map((stage, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: stage.name,
+      text: stage.detail,
+      ...(stage.image
+        ? { image: `${url}${stage.image.src}` }
+        : {}),
+    })),
   };
 }
 
