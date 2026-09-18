@@ -28,8 +28,10 @@ Contato comercial: comercial@fourlife.com.br
   e produtividade, indicadores de retorno sobre investimento em SST.
 - Estratégia de marca e aquisição B2B (Agência Orion): posicionamento,
   comunicação institucional, CRM.
+- Consultoria e treinamentos em SST (NR Consultoria): treinamentos de NRs,
+  diagnóstico de riscos ocupacionais e conformidade regulatória.
 
-## As 7 soluções do ecossistema
+## As 8 soluções do ecossistema
 
 1. FourLife — núcleo de gestão e People Analytics preditivo; conecta, orquestra e mensura o ecossistema.
 2. AVall.iÔ — gestão de riscos psicossociais, clima organizacional e saúde mental (NR-1).
@@ -38,6 +40,7 @@ Contato comercial: comercial@fourlife.com.br
 5. ZapVida — telemedicina preventiva: 1 consulta médica ou psicológica por mês por colaborador, sem coparticipação.
 6. Uninovia — educação corporativa, microlearning, Upskilling/Reskilling e formação continuada via Cashback Social.
 7. Agência Orion — estratégia de marca, posicionamento e inteligência comercial B2B.
+8. NR Consultoria — consultoria e treinamentos em Saúde e Segurança do Trabalho (SST), garantindo o Pilar 3 (conformidade).
 
 ## Como a FourLife gera retorno
 
@@ -93,14 +96,14 @@ Uninovia oferece formação continuada via Cashback Social.
 
 P: Tenho um fornecedor para cada coisa e nenhum conversa entre si. Como a
 FourLife resolve?
-R: A FourLife é o núcleo que conecta as 7 soluções em uma única estratégia
+R: A FourLife é o núcleo que conecta as 8 soluções em uma única estratégia
 orquestrada por dados. Um contrato, um painel, uma direção. Começa por um
 diagnóstico gratuito.
 
 ## Páginas
 
 - / — visão geral do ecossistema, 4 pilares, Jornada da Saúde e Diferenciais Carlos Chagas
-- /solucoes — detalhe das 7 soluções
+- /solucoes — detalhe das 8 soluções
 - /diferenciais — Diferenciais Carlos Chagas em detalhe
 - /sobre — posicionamento institucional
 - /contato — fale com o time comercial

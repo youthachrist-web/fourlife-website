@@ -47,9 +47,9 @@ amigável e `/api/health` reporta `database: "unconfigured"`.
 app/
   page.tsx                Home — narrativa do ecossistema (Hero → 4 Pilares → Jornada da
                           Saúde → Checkup estratégico → Diferenciais Carlos Chagas →
-                          Realidade → Custo → Ecossistema → 7 Soluções → Depoimentos →
+                          Realidade → Custo → Ecossistema → 8 Soluções → Depoimentos →
                           FAQ → CTA)
-  solucoes/               As 7 soluções em detalhe
+  solucoes/               As 8 soluções em detalhe
   diferenciais/           Diferenciais Carlos Chagas em detalhe
   sobre/  contato/        Institucional + captação
   privacidade/  termos/  obrigado/   Legal + agradecimento

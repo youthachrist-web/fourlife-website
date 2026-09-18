@@ -8,7 +8,7 @@ import { JsonLd, breadcrumbLd, pageSocial, servicesLd } from "@/lib/seo";
 
 const title = "Soluções do ecossistema FourLife";
 const description =
-  "As sete soluções do ecossistema FourLife: gestão inteligente e People Analytics, saúde mental e riscos psicossociais (NR-1), compliance de SST e eSocial, medicina ocupacional, telemedicina corporativa, educação corporativa e estratégia comercial B2B.";
+  "As oito soluções do ecossistema FourLife: gestão inteligente e People Analytics, saúde mental e riscos psicossociais (NR-1), compliance de SST e eSocial, medicina ocupacional, telemedicina corporativa, educação corporativa, estratégia comercial B2B e consultoria/treinamentos em SST.";
 
 export const metadata: Metadata = {
   title: "Soluções",
@@ -42,7 +42,7 @@ export default function SolucoesPage() {
       <Section className="bg-surface">
         <SectionHeading
           eyebrow="O ecossistema"
-          title="Sete soluções, um núcleo inteligente"
+          title="Oito soluções, um núcleo inteligente"
           body="Cada solução resolve uma causa concreta de perda de produtividade e alimenta o núcleo FourLife com dados. O resultado é uma estratégia única — não fornecedores isolados."
         />
         <div className="mt-12 grid gap-6 lg:grid-cols-2">

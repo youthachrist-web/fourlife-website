@@ -353,7 +353,7 @@ export const ecosystemIntro = {
 };
 
 export const ecosystemStats = [
-  { value: "7", label: "soluções integradas" },
+  { value: "8", label: "soluções integradas" },
   { value: "4", label: "pilares estratégicos" },
   { value: "360º", label: "diagnóstico do negócio" },
   { value: "ROI", label: "mensurável por serviço" },
@@ -925,6 +925,22 @@ export const solutions: Solution[] = [
     contributes:
       "Posiciona e faz crescer o ecossistema, convertendo estratégia em aquisição e engajamento.",
   },
+  {
+    slug: "nr-consultoria",
+    name: "NR Consultoria",
+    order: 8,
+    category: "Consultoria & treinamentos em SST",
+    role: "Consultoria e treinamentos em Saúde e Segurança do Trabalho, garantindo o Pilar 3 (conformidade).",
+    partnerNote: "Segurança do Trabalho",
+    logo: "/partners/nr-consultoria.jpg",
+    accent: "lime",
+    whatIs:
+      "Consultoria especializada em Saúde e Segurança do Trabalho (SST), com treinamentos e programas de conformidade regulatória para empresas de todos os portes.",
+    delivers:
+      "Treinamentos obrigatórios das NRs, diagnóstico de riscos ocupacionais, laudos técnicos e acompanhamento contínuo para manter a empresa em conformidade com a legislação trabalhista.",
+    contributes:
+      "Reforça o Pilar 3 (conformidade), somando expertise prática em treinamentos e consultoria de SST ao ecossistema.",
+  },
 ];
 
 /* --------------------------------------------------------------------------- */
@@ -961,7 +977,7 @@ export const faq = [
     pain: "Dor 5 — Muitos fornecedores desconectados",
     question: "Tenho um fornecedor para cada coisa e nenhum conversa entre si. Como a FourLife resolve?",
     answer:
-      "A FourLife é o núcleo que conecta as 7 soluções — gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação e estratégia — em uma única estratégia orquestrada por dados. Um contrato, um painel, uma direção. Começa por um diagnóstico gratuito.",
+      "A FourLife é o núcleo que conecta as 8 soluções — gestão inteligente, saúde mental, compliance de SST, medicina ocupacional, telemedicina, educação, estratégia e consultoria/treinamentos em SST — em uma única estratégia orquestrada por dados. Um contrato, um painel, uma direção. Começa por um diagnóstico gratuito.",
   },
   {
     pain: "Dor 6 — Empresa fora do Rio Grande do Sul",
@@ -1006,5 +1022,6 @@ export const interestOptions = [
   "Telemedicina (ZapVida)",
   "Educação corporativa (Uninovia)",
   "Estratégia & marketing (Agência Orion)",
+  "Consultoria & treinamentos em SST (NR Consultoria)",
   "Outro / não sei ainda",
 ] as const;

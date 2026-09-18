@@ -62,7 +62,7 @@ export default function HomePage() {
 
       <Section id="solucoes" className="bg-background">
         <SectionHeading
-          eyebrow="As 7 soluções"
+          eyebrow="As 8 soluções"
           title="Uma frente para cada causa de perda de produtividade"
           body="Da saúde mental ao compliance de SST, da telemedicina à educação — cada solução gera dados que o núcleo FourLife transforma em decisão."
         />
@@ -85,7 +85,7 @@ export default function HomePage() {
             href="/solucoes"
             className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
-            Ver as 7 soluções em detalhe <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            Ver as 8 soluções em detalhe <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
       </Section>
