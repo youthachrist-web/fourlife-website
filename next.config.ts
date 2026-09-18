@@ -24,19 +24,6 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 2678400,
     deviceSizes: [360, 420, 640, 750, 828, 1080, 1200, 1920],
   },
-  // Consolida autoridade de SEO num único host: fourlife.com.br (sem www)
-  // é o canônico em todo o metadata/sitemap, então o domínio "nu" (apex)
-  // redireciona 301 para o www, evitando conteúdo duplicado nos dois hosts.
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [{ type: "host" as const, value: "fourlife.com.br" }],
-        destination: "https://www.fourlife.com.br/:path*",
-        permanent: true,
-      },
-    ];
-  },
   async headers() {
     const csp = [
       "default-src 'self'",
